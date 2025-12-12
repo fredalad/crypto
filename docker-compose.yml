@@ -1,0 +1,14 @@
+# services:
+#   app:
+#     build: .
+#     volumes:
+#       - .:/app
+#     environment:
+#       - PYTHONUNBUFFERED=1
+#     command: python main.py
+
+services:
+  app:
+    build: .
+    stdin_open: true
+    tty: true
