@@ -50,11 +50,15 @@ def attach_prices_to_events(events_df: pd.DataFrame) -> pd.DataFrame:
     )
 
     unique_contract_hash = unique_successful_hash()
+    print(unique_contract_hash)
+    # print("as;ldjflasjdflkasdklfjaskldjfklsajdklfjskldj")
     for i, token_key in enumerate(token_keys, start=1):
+        break
         symbol = token_key["symbol"]
         contract = unique_contract_hash[symbol]
         print(f"[{i}/{len(token_keys)}] Fetching prices for {token_key}...")
         try:
+            print()
             if contract == "NATIVE" and symbol == "ETH_BASE":
                 # Native ETH on Base -> use Ethereum spot price
                 price_df = fetch_native_eth_prices(min_ts, max_ts)

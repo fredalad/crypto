@@ -29,4 +29,4 @@ RUN uv venv \
 COPY . .
 
 # --- Default: interactive shell (dev) ---------------------------------------
-CMD ["/bin/bash"]
+CMD ["sleep", "infinity"]
