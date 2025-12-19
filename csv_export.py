@@ -24,6 +24,7 @@ def write_csv(filename: str, rows: List[Dict[str, Any]]) -> None:
         "token_name",
         "token_decimals",
         "token_amount",
+        "cg_base_contract",
         "gas",
         "gasPrice",
         "gasUsed",

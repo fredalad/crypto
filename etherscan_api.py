@@ -24,26 +24,53 @@ def etherscan_get(params: Dict[str, Any]) -> List[Dict[str, Any]]:
     }
     all_params = {**base_params, **params}
 
-    resp = requests.get(ETHERSCAN_API_URL, params=all_params, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
+    max_retries = 5
+    base_delay = 10  # seconds
+    attempt = 1
 
-    status = data.get("status")
-    result = data.get("result")
+    while True:
+        try:
+            resp = requests.get(ETHERSCAN_API_URL, params=all_params, timeout=30)
+            resp.raise_for_status()
+            data = resp.json()
+        except Exception as exc:
+            if attempt >= max_retries:
+                raise
+            print(
+                f"Etherscan request failed (attempt {attempt}/{max_retries}); "
+                f"retrying in {base_delay * (2 ** (attempt - 1))}s. Error: {exc}"
+            )
+            attempt += 1
+            time.sleep(base_delay * (2 ** (attempt - 2)))
+            continue
 
-    if status == "0":
-        # Treat "No transactions found" as empty list
-        if isinstance(result, str) and "No transactions" in result:
-            return []
-        raise RuntimeError(f"Etherscan API error: {data}")
+        status = data.get("status")
+        result = data.get("result")
 
-    if status != "1":
-        raise RuntimeError(f"Unexpected Etherscan response: {data}")
+        if status == "0":
+            # Treat "No transactions found" as empty list
+            if isinstance(result, str) and "No transactions" in result:
+                return []
 
-    if not isinstance(result, list):
-        raise RuntimeError(f"Expected list in result, got: {type(result)}")
+            if attempt >= max_retries:
+                raise RuntimeError(f"Etherscan API error after retries: {data}")
 
-    return result
+            delay = base_delay * (2 ** (attempt - 1))
+            print(
+                f"Etherscan API error (attempt {attempt}/{max_retries}): {data}. "
+                f"Retrying in {delay}s..."
+            )
+            attempt += 1
+            time.sleep(delay)
+            continue
+
+        if status != "1":
+            raise RuntimeError(f"Unexpected Etherscan response: {data}")
+
+        if not isinstance(result, list):
+            raise RuntimeError(f"Expected list in result, got: {type(result)}")
+
+        return result
 
 
 def fetch_base_native_txs(

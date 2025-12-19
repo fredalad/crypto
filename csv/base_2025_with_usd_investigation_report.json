@@ -1,0 +1,205 @@
+[
+  {
+    "token_symbol": "DEGEN",
+    "token_name": "DEGEN",
+    "total_rows": 98,
+    "rows_missing_usd": 98,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x0897375c5c2ca8a9a004558f0998f74efa28bc05bde88f757c779e5952915a5a",
+      "0xd1b1607ef72463231f2ec80c25783d80639a25fba7aeaf0107edc5db7c5b6bf4",
+      "0x41a4921c39d1c86045643da8aa2ca36098364e9f6656a348f4a250084e1ce380",
+      "0x1f65fa44ef7d6e99478b17e25f09504af841ebba5cc720e873242fd056fadb78",
+      "0xdffb999e8296d2bebfa5f2a9a1564f846c29d0788dd4e48e55d508ec2445495c"
+    ],
+    "repriced_hashes_found": [
+      "0xd1b1607ef72463231f2ec80c25783d80639a25fba7aeaf0107edc5db7c5b6bf4"
+    ]
+  },
+  {
+    "token_symbol": "DEGEN",
+    "token_name": "Degen",
+    "total_rows": 98,
+    "rows_missing_usd": 98,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x0897375c5c2ca8a9a004558f0998f74efa28bc05bde88f757c779e5952915a5a",
+      "0xd1b1607ef72463231f2ec80c25783d80639a25fba7aeaf0107edc5db7c5b6bf4",
+      "0x41a4921c39d1c86045643da8aa2ca36098364e9f6656a348f4a250084e1ce380",
+      "0x1f65fa44ef7d6e99478b17e25f09504af841ebba5cc720e873242fd056fadb78",
+      "0xdffb999e8296d2bebfa5f2a9a1564f846c29d0788dd4e48e55d508ec2445495c"
+    ],
+    "repriced_hashes_found": [
+      "0xd1b1607ef72463231f2ec80c25783d80639a25fba7aeaf0107edc5db7c5b6bf4"
+    ]
+  },
+  {
+    "token_symbol": "FAI",
+    "token_name": "FAI",
+    "total_rows": 5,
+    "rows_missing_usd": 5,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x4b25a6b7eaa185028f38a71cb6b8b301fdd195736def3336c16a57be7cbef205",
+      "0xd03bdc91bc3b522c7b792421a7b3907ed7c0587771bd0cbd0c51cb8625cc1822",
+      "0xda0ad090604b9e401465738ad0082443d78ee35bc7856d62d0a241620b8a2ef8",
+      "0x1755bb4a87d8c213511e849c5e1201342f48bb954814c3c271d693f71c00892e",
+      "0x1c0bbac94ce02d5f1d3a6b907930666b0c31cdcfe7813565b43203270a3dc24a"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "ONDO",
+    "token_name": "ONDO",
+    "total_rows": 2,
+    "rows_missing_usd": 2,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0xb4c4e64884622a5c2b4fd3bb593ec18061a437c3b428eb7bb74c3397391306b4",
+      "0x0bd3cb059bb171f1e834c78b91ab22439eafb628087ff4eb714c97906b63f579"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "PEPE",
+    "token_name": "Pepe",
+    "total_rows": 5,
+    "rows_missing_usd": 5,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x50a043864af0ece1c2ae191385dbe229ad098d37c8ac0933b92818634b9431ad",
+      "0xc4aae57379b96652375275d20da0ed4634ff0b280a1a603f52f527afb1a21a80",
+      "0x2b29172490f9e9ed4ae4d73032e92ba994b9feea190b1f4a3c20292ac5e6719c",
+      "0x60bb0af3b5c398f4bd86cb2aca080d71c4e649f8de0c5ad6444f36b92471cb79",
+      "0x03842210475f7b5c449df418b64194d93aac6b9d1132d6cf8534ca1aec0679a4"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "SOL",
+    "token_name": "SOL",
+    "total_rows": 4,
+    "rows_missing_usd": 4,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x12588cb2805ba54b0c881c06c908d7dc8bbeb19090c34dc38b282814f22698b2",
+      "0xb804334b62e077687d408ba18c3d7502239b40ab582990521180220d77d764d6",
+      "0xeb8071af13705c3010cf9690100bf75155d81be094271152f32fe523a11d2b80",
+      "0x59a095b2538ed7a47f0595858c0e8b20b3fd0e31df33e1a4f43b58c914a8d59f"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "TRUMP",
+    "token_name": "OFFICIAL TRUMP",
+    "total_rows": 17,
+    "rows_missing_usd": 17,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x0b17e373960db0e7a05630f8ca2e069bf3a8f67d32d8e975aeb2487478d893ba",
+      "0x05262e23f828bd88279c245cd1e36d8009d481ae959ad58a384da7912696acde",
+      "0x9a272cc0e893918fe250fc55d142ed18d080ef22bc843fd8afa02f1775e5a741",
+      "0x356fc43c1e614cd70705296a9837f376482cec39b63466a3315d346a9e6bc02f",
+      "0x59ede22d43d74c8ff6ddc8db9cac36d73850d7c58bb658c8e4a55fa3e319d2f4"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "TRUMP",
+    "token_name": "Official Trump",
+    "total_rows": 17,
+    "rows_missing_usd": 17,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x0b17e373960db0e7a05630f8ca2e069bf3a8f67d32d8e975aeb2487478d893ba",
+      "0x05262e23f828bd88279c245cd1e36d8009d481ae959ad58a384da7912696acde",
+      "0x9a272cc0e893918fe250fc55d142ed18d080ef22bc843fd8afa02f1775e5a741",
+      "0x356fc43c1e614cd70705296a9837f376482cec39b63466a3315d346a9e6bc02f",
+      "0x59ede22d43d74c8ff6ddc8db9cac36d73850d7c58bb658c8e4a55fa3e319d2f4"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "Trump",
+    "token_name": "Trump",
+    "total_rows": 17,
+    "rows_missing_usd": 17,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x0b17e373960db0e7a05630f8ca2e069bf3a8f67d32d8e975aeb2487478d893ba",
+      "0x05262e23f828bd88279c245cd1e36d8009d481ae959ad58a384da7912696acde",
+      "0x9a272cc0e893918fe250fc55d142ed18d080ef22bc843fd8afa02f1775e5a741",
+      "0x356fc43c1e614cd70705296a9837f376482cec39b63466a3315d346a9e6bc02f",
+      "0x59ede22d43d74c8ff6ddc8db9cac36d73850d7c58bb658c8e4a55fa3e319d2f4"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "USDC",
+    "token_name": "USDC",
+    "total_rows": 687,
+    "rows_missing_usd": 49,
+    "rows_with_usd": 638,
+    "sample_missing_hashes": [
+      "0x86f452be77db6930a090f3bdf06aa33b0cb05525b21c674ab72af0de8aed3ea1",
+      "0x94b703c99d9559ade9d2d71bfe0747d49f891b04917f5c6c92161afd1ab8a149",
+      "0x67e0d1cde7bcbb7d4efe45e33df667216c5eb18d219536749a7e0fd720f7ec8d",
+      "0xec70d204a7c4e3e4991eb35458bbf67da2cb29cf233383d05cef8bd4aa15dfe1",
+      "0x0a2217559cc6ee75847ec2e51a8e8d4f91d90e5aa070812dd5eb5aa992dba14f"
+    ],
+    "repriced_hashes_found": [
+      "0x86f452be77db6930a090f3bdf06aa33b0cb05525b21c674ab72af0de8aed3ea1"
+    ]
+  },
+  {
+    "token_symbol": "WIF",
+    "token_name": "dogwifhat",
+    "total_rows": 1,
+    "rows_missing_usd": 1,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x4ee203501d68765fc34625d2ff46b6eed04f7da748d6654558541513750b1663"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "XRP",
+    "token_name": "XRP",
+    "total_rows": 6,
+    "rows_missing_usd": 6,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0xe6f2c7ddcd8e560be97d897555cb4561c2e30c6f4fdf6922ab6086dd6fc1d271",
+      "0xeb449364457f056ab769ca8234a26c219252e3cf807b4120903e33c092b6baa1",
+      "0x3e55be402586348c09965ff680fb5a2dc9dd5e5030630afc12c6688fb490e8dd",
+      "0x5af96dbb52a336fbeb7f5ea96ed778e6a26a2c5f616ebe0cf38ac3ff3656f732",
+      "0xe0eb8e18991705347a624b86b927acf44e9d60ecc9dffab3c68c8a64d5a8f5a9"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "cbDOGE",
+    "token_name": "Coinbase Wrapped DOGE",
+    "total_rows": 1,
+    "rows_missing_usd": 1,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0x3eee8777a49284eec9bbbce315a8a3fc1ebe15e081474052d067f4756b132ee0"
+    ],
+    "repriced_hashes_found": []
+  },
+  {
+    "token_symbol": "cbXRP",
+    "token_name": "Coinbase Wrapped XRP",
+    "total_rows": 4,
+    "rows_missing_usd": 4,
+    "rows_with_usd": 0,
+    "sample_missing_hashes": [
+      "0xf28d7dbe51e10b1e879c5fb146e568891d5c15b33084ce0f5c53c3a1e1ae4edf",
+      "0xd08d6d4be3f0694e6738a25777e01495f6ed31d91c05c29bd03ab9dbcad40bf1",
+      "0x3467b627d1738a1254c52647d9f8fe2888ed4d0abcb0696b0ebd6fd51d32a8c1",
+      "0x84602b9f9cfbd22593417c3a11e574078349cc3da59abf7ccc0a5a433729d386"
+    ],
+    "repriced_hashes_found": []
+  }
+]

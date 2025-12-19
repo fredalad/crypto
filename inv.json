@@ -1,0 +1,58 @@
+[
+  {
+    "token_symbol": "DEGEN",
+    "token_name": "DEGEN"
+  },
+  {
+    "token_symbol": "DEGEN",
+    "token_name": "Degen"
+  },
+  {
+    "token_symbol": "FAI",
+    "token_name": "FAI"
+  },
+  {
+    "token_symbol": "ONDO",
+    "token_name": "ONDO"
+  },
+  {
+    "token_symbol": "PEPE",
+    "token_name": "Pepe"
+  },
+  {
+    "token_symbol": "SOL",
+    "token_name": "SOL"
+  },
+  {
+    "token_symbol": "TRUMP",
+    "token_name": "OFFICIAL TRUMP"
+  },
+  {
+    "token_symbol": "TRUMP",
+    "token_name": "Official Trump"
+  },
+  {
+    "token_symbol": "Trump",
+    "token_name": "Trump"
+  },
+  {
+    "token_symbol": "USDC",
+    "token_name": "USDC"
+  },
+  {
+    "token_symbol": "WIF",
+    "token_name": "dogwifhat"
+  },
+  {
+    "token_symbol": "XRP",
+    "token_name": "XRP"
+  },
+  {
+    "token_symbol": "cbDOGE",
+    "token_name": "Coinbase Wrapped DOGE"
+  },
+  {
+    "token_symbol": "cbXRP",
+    "token_name": "Coinbase Wrapped XRP"
+  }
+]

@@ -1,5 +1,10 @@
 import pandas as pd
-from price_fetchers import fetch_erc20_prices_on_base, fetch_native_eth_prices
+from price_fetchers import (
+    fetch_erc20_prices_on_base,
+    fetch_native_eth_prices,
+    build_events_from_base_csv,
+    ensure_base_datetime_columns,
+)
 from config import REQUEST_SLEEP_SEC
 import time
 from config import unique_tokens, unique_successful_hash
@@ -51,9 +56,9 @@ def attach_prices_to_events(events_df: pd.DataFrame) -> pd.DataFrame:
 
     unique_contract_hash = unique_successful_hash()
     print(unique_contract_hash)
-    # print("as;ldjflasjdflkasdklfjaskldjfklsajdklfjskldj")
+
     for i, token_key in enumerate(token_keys, start=1):
-        break
+        # break
         symbol = token_key["symbol"]
         contract = unique_contract_hash[symbol]
         print(f"[{i}/{len(token_keys)}] Fetching prices for {token_key}...")
@@ -122,3 +127,34 @@ def merge_events_back_to_base_csv(
     merged = merged.set_index("idx").sort_index()
 
     return merged
+
+
+def enrich_yearly_csv(
+    input_path: str,
+    output_path: str,
+    year: int = 2025,
+) -> None:
+    """
+    Read a base activity CSV, filter to a specific year, fetch prices,
+    merge back, and write to disk.
+    """
+    print(f"Loading CSV: {input_path}")
+    df = pd.read_csv(input_path)
+    df = ensure_base_datetime_columns(df)
+
+    print(f"Filtering to {year} transactions only...")
+    df_year = df[df["dt"].dt.year == year].copy()
+    print(f"Total rows in {year}: {len(df_year)}")
+
+    print(f"Building normalized events ({year} only)...")
+    events_df = build_events_from_base_csv(df_year)
+    print(f"Total in/out events in {year}: {len(events_df)}")
+
+    print(f"Fetching CoinGecko prices ({year} only) and attaching to events...")
+    events_priced = attach_prices_to_events(events_df)
+
+    print(f"Merging {year} price data back into {year} CSV rows...")
+    df_year_with_prices = merge_events_back_to_base_csv(df_year, events_priced)
+
+    print(f"Writing output to: {output_path}")
+    df_year_with_prices.to_csv(output_path, index=False)

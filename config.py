@@ -98,6 +98,8 @@ def unique_tokens():
         "aBasWETH",
         "cbBTC",
         "tBTC",
+        "DEGEN",
+        "USDC",
     }
 
 
@@ -150,4 +152,6 @@ def unique_successful_hash():
         "tBTC": "0x236aa50979d5f3de3bd1eeb40e81137f22ab794b",
         "toby": "0xb8d98a102b0079b69ffbc760c8d857a31653e56e",
         "uSOL": "0x9b8df6e244526ab5f6e6400d331db28c8fdddb55",
+        "DEGEN": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
+        "USDC": "0x86f452be77db6930a090f3bdf06aa33b0cb05525b21c674ab72af0de8aed3ea1",
     }
