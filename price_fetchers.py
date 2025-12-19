@@ -220,6 +220,8 @@ def build_events_from_base_csv(df: pd.DataFrame) -> pd.DataFrame:
                 "activity_type": row.get("activity_type"),
                 "token_symbol": token_symbol,
                 "token_contract": token_contract,
+                "token_name": row.get("token_name"),
+                "cg_base_contract": row.get("cg_base_contract"),
                 "token_key": token_key,
                 "quantity": float(qty),
             }
