@@ -21,19 +21,21 @@ def extract_hash(tx: dict) -> str:
 
 def collect_all_tx_ids(address: str) -> Set[str]:
     """
-    Fetch native + token transfers and return a deduplicated set of hashes.
+    Fetch native + token transfers and return a deduplicated set of hash|type lines.
     """
     native_txs = fetch_all_base_native_txs(address)
     token_txs = fetch_all_base_token_transfers(address)
 
-    hashes: Set[str] = set()
+    entries: Set[str] = set()
 
     for tx in native_txs + token_txs:
         h = extract_hash(tx)
         if h:
-            hashes.add(h.lower())
+            # txreceipt_status only present on native list; tokentx includes tokenSymbol
+            tx_type = "native" if tx in native_txs else "token_transfer"
+            entries.add(f"{h.lower()}|{tx_type}")
 
-    return hashes
+    return entries
 
 
 def main() -> None:
