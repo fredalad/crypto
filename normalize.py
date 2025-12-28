@@ -13,6 +13,7 @@ def normalize_for_csv(
     address: str,
     native_txs: List[Dict[str, Any]],
     token_txs: List[Dict[str, Any]],
+    nft_txs: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     address = address.lower()
     rows: List[Dict[str, Any]] = []
@@ -56,6 +57,8 @@ def normalize_for_csv(
                 "gasPrice": gas_price,
                 "gasUsed": gas_used,
                 "tx_fee_eth": wei_to_eth(str(fee_wei)),
+                "token_in_assets": "",
+                "token_out_assets": "",
             }
         )
 
@@ -94,6 +97,47 @@ def normalize_for_csv(
                 "gasPrice": "",
                 "gasUsed": "",
                 "tx_fee_eth": "",
+                "token_in_assets": "",
+                "token_out_assets": "",
+            }
+        )
+
+    # NFT transfers (ERC-721) for position NFTs (e.g., Aerodrome v3 LPs)
+    for tx in nft_txs:
+        from_addr = tx.get("from", "")
+        to_addr = tx.get("to", "")
+        contract_addr = tx.get("contractAddress", "")
+
+        protocol = (
+            protocol_label_for_address(to_addr)
+            or protocol_label_for_address(from_addr)
+            or protocol_label_for_address(contract_addr)
+        )
+
+        rows.append(
+            {
+                "hash": tx.get("hash", ""),
+                "tx_type": "base_nft_transfer",
+                "blockNumber": tx.get("blockNumber", ""),
+                "timeStamp": tx.get("timeStamp", ""),
+                "timeStamp_iso": to_iso(tx.get("timeStamp", "")),
+                "from": from_addr,
+                "to": to_addr,
+                "direction": direction(address, from_addr, to_addr),
+                "protocol": protocol,
+                "activity_type": "",  # will fill later
+                "native_amount_eth": "",
+                "token_contract": contract_addr,
+                "token_symbol": tx.get("tokenSymbol", ""),
+                "token_name": tx.get("tokenName", ""),
+                "token_decimals": "",
+                "token_amount": 1,  # NFT transfer represents 1 position token
+                "gas": "",
+                "gasPrice": "",
+                "gasUsed": "",
+                "tx_fee_eth": "",
+                "token_in_assets": "",
+                "token_out_assets": "",
             }
         )
 

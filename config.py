@@ -19,7 +19,47 @@ LP_SYMBOL_HINTS = [
     " uni-v3",
     " v2-lp",
     " v3-lp",
+    "vamm-",
+    "samm-",
+    " amm-",
+    " amm ",
+    " position",
+    "pos nft",
+    " amm nft",
 ]
+
+# Governance/voter contracts (used to tag VOTE txs when no token transfers)
+VOTE_CONTRACT_HINTS = {
+    # Aerodrome vote contract (Base)
+    "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
+}
+
+# Some contracts should be treated as approvals even if they look like voter contracts
+APPROVAL_CONTRACT_HINTS = {
+    # Aerodrome Voter (Base) — treat as approval
+    "0x827922686190790b37229fd06084350e74485b72",
+}
+
+# Lock/vote contracts
+LOCK_CONTRACTS = {
+    # Aerodrome Voter Escrow (lock increase)
+    "0xebf418fe2512e7e6bd9b87a8f0f294acdc67e6b4",
+}
+
+LOCK_VOTE_CONTRACTS = {
+    # Aerodrome vote action
+    "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
+}
+
+# Heuristic: minimum gasUsed to treat a zero-value call to VOTE_CONTRACT_HINTS as a vote
+VOTE_MIN_GASUSED = 120000
+
+# Aerodrome contract registry (fill with actual addresses)
+AERODROME_CONTRACTS = {
+    "lp_pair": set(),  # e.g., pool/pair contracts
+    "gauge": set(),  # e.g., gauge contracts
+    "voting_escrow": set(),  # e.g., ve/escrow contract
+}
 
 # Optional: known protocol/gauge/pool contracts on Base
 # (fill this in with contracts you actually use)

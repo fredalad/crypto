@@ -138,3 +138,92 @@ def fetch_all_base_token_transfers(address: str) -> List[Dict[str, Any]]:
 
     print(f"[base tokens] Total fetched: {len(all_txs)}")
     return all_txs
+
+
+def fetch_tx_logs(tx_hash: str) -> List[Dict[str, Any]]:
+    """
+    Fetch logs for a specific transaction hash (Base chain) via proxy/getTransactionReceipt.
+    Returns raw log entries (topics/data/address).
+    """
+    require_api_key()
+
+    params = {
+        "apikey": ETHERSCAN_API_KEY,
+        "chainid": CHAIN_ID_BASE,
+        "module": "proxy",
+        "action": "eth_getTransactionReceipt",
+        "txhash": tx_hash,
+    }
+    resp = requests.get(ETHERSCAN_API_URL, params=params, timeout=30)
+    resp.raise_for_status()
+    data = resp.json()
+
+    # Proxy style response
+    if "result" not in data or data.get("result") in (None, "null"):
+        raise RuntimeError(f"Etherscan proxy error for {tx_hash}: {data}")
+
+    result = data["result"]
+    logs = result.get("logs", []) or []
+
+    # Normalize logs to a lightweight shape
+    norm_logs: List[Dict[str, Any]] = []
+    for log in logs:
+        norm_logs.append(
+            {
+                "address": log.get("address", ""),
+                "topics": log.get("topics", []),
+                "data": log.get("data", ""),
+                # event name not decoded here; topic[0] is used in classify via EVENT_SIGS
+                "event": log.get("event", ""),
+            }
+        )
+
+    return norm_logs
+
+
+def fetch_base_nft_transfers(
+    address: str,
+    start_block: int = 0,
+    end_block: int = 9_999_999_999,
+    sort: str = "asc",
+    page: int = 1,
+    offset: int = 1000,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch ERC-721 transfers on the Base network for this address.
+    Needed to see Aerodrome v3 position NFTs (liquidity positions).
+    """
+    params = {
+        "module": "account",
+        "action": "tokennfttx",
+        "address": address,
+        "startblock": start_block,
+        "endblock": end_block,
+        "page": page,
+        "offset": offset,
+        "sort": sort,
+    }
+    return etherscan_get(params)
+
+
+def fetch_all_base_nft_transfers(address: str) -> List[Dict[str, Any]]:
+    all_txs: List[Dict[str, Any]] = []
+    page = 1
+    offset = 1000
+
+    while True:
+        print(f"[base nfts] Fetching page {page}...")
+        txs = fetch_base_nft_transfers(address, page=page, offset=offset)
+
+        if not txs:
+            break
+
+        all_txs.extend(txs)
+        if len(txs) < offset:
+            break
+
+        page += 1
+        time.sleep(0.2)
+
+    print(f"[base nfts] Total fetched: {len(all_txs)}")
+    return all_txs

@@ -39,12 +39,43 @@ def direction(address: str, from_addr: str, to_addr: str) -> str:
     return "other"
 
 
-def is_lp_symbol(symbol: str) -> bool:
-    if not symbol:
+def is_lp_symbol(symbol: str, token_name: str = "") -> bool:
+    """
+    Lightweight LP detector: checks both symbol and token name for common LP hints.
+    Aerodrome pools use symbols like 'vAMM-XXX/YYY', so we include 'amm' patterns.
+    """
+    if not symbol and not token_name:
         return False
-    s = symbol.lower()
+    s = f"{symbol or ''} {token_name or ''}".lower()
     return any(hint in s for hint in LP_SYMBOL_HINTS)
 
 
 def protocol_label_for_address(addr: str) -> str:
     return PROTOCOL_ADDRESS_LABELS.get((addr or "").lower(), "")
+
+
+def detect_contract_type(tx_to: str, logs: list) -> str:
+    """
+    Rough contract typing for Aerodrome:
+    - Direct address match via AERODROME_CONTRACTS
+    - Otherwise infer from log event names
+    """
+    from config import AERODROME_CONTRACTS
+
+    tx_to = (tx_to or "").lower()
+
+    for category, contracts in AERODROME_CONTRACTS.items():
+        if tx_to in contracts:
+            return category
+
+    # Infer from logs (expects decoded event names in log["event"])
+    for log in logs or []:
+        event = (log.get("event") or "").lower()
+        if event in {"mint", "burn"}:
+            return "lp_pair"
+        if event in {"deposit", "withdraw", "claimrewards"}:
+            return "gauge"
+        if event in {"rebase", "createlock", "increaseamount"}:
+            return "voting_escrow"
+
+    return "unknown"
