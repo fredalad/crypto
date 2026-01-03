@@ -8,7 +8,7 @@ from config import (
 from typing import Dict, Any
 
 
-def cg_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
+def coin_gecko_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
     """
     Small wrapper for CoinGecko API GET.
     - Adds API key if provided (demo style: x_cg_demo_api_key query param). :contentReference[oaicite:3]{index=3}

@@ -1,7 +1,7 @@
 import pandas as pd
 from config import ASSET_PLATFORM_ID_BASE
 from typing import List, Dict, Any
-from http_helper import cg_get
+from http_helper import coin_gecko_get
 
 
 def fetch_native_eth_prices(unix_from: int, unix_to: int) -> pd.DataFrame:
@@ -9,7 +9,7 @@ def fetch_native_eth_prices(unix_from: int, unix_to: int) -> pd.DataFrame:
     Fetch ETH/USD historical prices for the given UNIX range.
     Uses /coins/{id}/market_chart/range. :contentReference[oaicite:4]{index=4}
     """
-    data = cg_get(
+    data = coin_gecko_get(
         "/coins/ethereum/market_chart/range",
         {
             "vs_currency": "usd",
@@ -45,7 +45,7 @@ def fetch_erc20_prices_on_base(
     contract_address = contract_address.lower()
 
     path = f"/coins/{ASSET_PLATFORM_ID_BASE}/contract/{contract_address}/market_chart/range"
-    data = cg_get(
+    data = coin_gecko_get(
         path,
         {
             "vs_currency": "usd",
