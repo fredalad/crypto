@@ -44,6 +44,20 @@ Responsible for:
 
 ## Target Repository Structure
 
+```text
+apps/
+  protocol_indexer/
+    __main__.py
+    aero/
+      aerodrome_index.py
+  wallet_engine/
+    __main__.py
+    pipeline.py
+apps/protocol_indexer/aero/   # protocol outputs (pools.csv/jsonl)
+csv/    # wallet exports + log cache
+old/    # archived exports
+main.py # legacy shim -> apps.wallet_engine
+```
 
 ---
 
