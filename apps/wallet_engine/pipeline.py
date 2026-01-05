@@ -17,6 +17,8 @@ from ..shared.config import (
     WALLET_DATA_DIR,
     WALLET_ENRICH_2025_BASENAME,
     WALLET_LOG_CACHE_PATH,
+    WALLET_SPAM_TOKENS_PATH,
+    WALLET_SPAM_TX_HASHES_PATH,
     require_api_key,
     VOTE_CONTRACT_HINTS,
 )
@@ -24,6 +26,12 @@ from ..shared.etherscan_v2 import EtherscanV2
 from .classify import classify_transactions
 from .csv_export import write_csv
 from .normalize import normalize_for_csv
+from .log_spam_filter import (
+    build_log_filter_context,
+    filter_logs_by_hash,
+    load_spam_tokens,
+    load_spam_tx_hashes,
+)
 from .price_fetchers import build_events_from_base_csv
 from .pricing_logic import attach_prices_to_events, merge_events_back_to_base_csv
 
@@ -133,11 +141,27 @@ def run_export(
             logs_by_hash[h] = []
         time.sleep(0.1)  # gentle rate limit
 
+    # Filter logs before caching/serialization
+    log_filter_ctx = build_log_filter_context()
+    logs_by_hash = filter_logs_by_hash(
+        logs_by_hash,
+        spam_tokens_path=WALLET_SPAM_TOKENS_PATH,
+        spam_tx_hashes_path=WALLET_SPAM_TX_HASHES_PATH,
+        context=log_filter_ctx,
+    )
+
     # Persist cache with any newly fetched logs
     write_log_cache(log_cache_path, logs_by_hash)
 
-    # Pass 2: re-classify with logs for candidates
-    classify_transactions(rows, logs_by_hash=logs_by_hash)
+    # Pass 2: re-classify with logs for candidates, tagging spam where applicable
+    spam_tokens = load_spam_tokens(WALLET_SPAM_TOKENS_PATH)
+    spam_tx_hashes = load_spam_tx_hashes(WALLET_SPAM_TX_HASHES_PATH)
+    classify_transactions(
+        rows,
+        logs_by_hash=logs_by_hash,
+        spam_tokens=spam_tokens,
+        spam_tx_hashes=spam_tx_hashes,
+    )
 
     write_csv(output_path, rows)
 

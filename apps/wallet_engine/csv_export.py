@@ -19,7 +19,7 @@ def write_csv(filename: str, rows: List[Dict[str, Any]]) -> None:
         # "to",
         "direction",
         "protocol",
-        "activity_type",  # CLAIM_REWARD | LP_DEPOSIT | LP_WITHDRAW | SWAP | OTHER | SEND_NATIVE | RECEIVE_NATIVE
+        "activity_type",  # CLAIM_REWARD | LP_DEPOSIT | LP_WITHDRAW | SWAP | LOCK_INCREASE | VOTE | SPAM | NA
         "native_amount_eth",
         "token_contract",
         "token_symbol",

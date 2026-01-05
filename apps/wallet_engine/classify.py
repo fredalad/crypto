@@ -1,5 +1,5 @@
 from collections import defaultdict
-from typing import List, Dict, Any, DefaultDict, Optional
+from typing import List, Dict, Any, DefaultDict, Optional, Set
 
 # Topic0 -> action names (log-driven)
 EVENT_SIGS = {
@@ -26,6 +26,21 @@ EVENT_SIGS = {
 # Swap topic signatures (same for v2/v3)
 SWAP_TOPIC0 = "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822"
 SWAP_V3_TOPIC0 = "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67"
+
+MEANINGFUL_ACTIVITY_TYPES = {
+    "SWAP",
+    "LP_DEPOSIT",
+    "LP_WITHDRAW",
+    "CLAIM_REWARD",
+    "LOCK_INCREASE",
+    "LOCK_REBASE",
+    "VOTE",
+    "RESET_VOTE",
+}
+
+
+def _norm_addr(addr: str) -> str:
+    return (addr or "").strip().lower()
 
 
 def aggregate_assets(tx_rows: List[Dict[str, Any]]) -> (str, str):
@@ -140,6 +155,9 @@ def action_from_logs(logs: List[Dict[str, Any]]) -> str:
 def classify_transactions(
     rows: List[Dict[str, Any]],
     logs_by_hash: Optional[Dict[str, List[Dict[str, Any]]]] = None,
+    *,
+    spam_tokens: Optional[Set[str]] = None,
+    spam_tx_hashes: Optional[Set[str]] = None,
 ) -> None:
     """
     In-place classification: sets 'activity_type' per row.
@@ -152,8 +170,11 @@ def classify_transactions(
     - Approvals -> APPROVAL
     - Vote/Reset -> VOTE / RESET_VOTE
     If no actionable logs -> NA
+    If tx is spam-tagged and not economically meaningful -> SPAM
     """
     logs_by_hash = logs_by_hash or {}
+    spam_tokens = {_norm_addr(x) for x in (spam_tokens or set()) if x}
+    spam_tx_hashes = {(x or "").strip().lower() for x in (spam_tx_hashes or set()) if x}
 
     # Group rows by tx hash
     by_hash: DefaultDict[str, List[Dict[str, Any]]] = defaultdict(list)
@@ -164,6 +185,16 @@ def classify_transactions(
         tx_logs = logs_by_hash.get(tx_hash, [])
 
         tx_level_activity = action_from_logs(tx_logs) or "NA"
+        if tx_level_activity not in MEANINGFUL_ACTIVITY_TYPES:
+            tx_hash_norm = (tx_hash or "").strip().lower()
+            spam_hit = tx_hash_norm in spam_tx_hashes
+            if not spam_hit and spam_tokens:
+                spam_hit = any(
+                    _norm_addr(r.get("token_contract", "")) in spam_tokens
+                    for r in tx_rows
+                )
+            if spam_hit:
+                tx_level_activity = "SPAM"
 
         # Assign to token rows
         for r in tx_rows:
