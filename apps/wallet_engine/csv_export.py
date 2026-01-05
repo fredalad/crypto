@@ -1,6 +1,7 @@
-import csv
 from collections import defaultdict
-from typing import List, Dict, Any
+from typing import Any, Dict, List
+
+from ..shared.csv_utils import write_csv_rows
 
 
 def write_csv(filename: str, rows: List[Dict[str, Any]]) -> None:
@@ -76,10 +77,5 @@ def write_csv(filename: str, rows: List[Dict[str, Any]]) -> None:
         collapsed_rows.append(combined)
 
     print(f"Writing {len(rows)} rows to {filename}")
-    with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for row in collapsed_rows:
-            writer.writerow(row)
-
+    write_csv_rows(filename, collapsed_rows, fieldnames)
     print(f"CSV written: {filename} ({len(collapsed_rows)} grouped rows)")

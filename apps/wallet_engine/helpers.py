@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 from typing import Dict, Any
 
-from .config import LP_SYMBOL_HINTS, PROTOCOL_ADDRESS_LABELS
+from ..shared.config import LP_SYMBOL_HINTS, PROTOCOL_ADDRESS_LABELS
 
 
 def to_iso(timestamp: str) -> str:
@@ -60,7 +60,7 @@ def detect_contract_type(tx_to: str, logs: list) -> str:
     - Direct address match via AERODROME_CONTRACTS
     - Otherwise infer from log event names
     """
-    from config import AERODROME_CONTRACTS
+    from ..shared.config import AERODROME_CONTRACTS
 
     tx_to = (tx_to or "").lower()
 

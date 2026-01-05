@@ -5,27 +5,36 @@ from typing import Dict, List, Optional
 
 import pandas as pd
 
-from .classify import classify_transactions
-from .config import (
+from ..shared.config import (
     APPROVAL_CONTRACT_HINTS,
     BASE_WALLET_ADDRESS,
+    CHAIN_ID_BASE,
+    ETHERSCAN_API_KEY,
+    ETHERSCAN_V2_URL,
     LOCK_CONTRACTS,
     LOCK_VOTE_CONTRACTS,
+    WALLET_ACTIVITY_CSV_PATH,
+    WALLET_DATA_DIR,
+    WALLET_ENRICH_2025_BASENAME,
+    WALLET_LOG_CACHE_PATH,
+    require_api_key,
     VOTE_CONTRACT_HINTS,
 )
+from ..shared.etherscan_v2 import EtherscanV2
+from .classify import classify_transactions
 from .csv_export import write_csv
-from .etherscan_api import (
-    fetch_all_base_native_txs,
-    fetch_all_base_nft_transfers,
-    fetch_all_base_token_transfers,
-    fetch_tx_logs,
-)
 from .normalize import normalize_for_csv
 from .price_fetchers import build_events_from_base_csv
 from .pricing_logic import attach_prices_to_events, merge_events_back_to_base_csv
 
-DEFAULT_OUTPUT_CSV = "csv/base_activity.csv"
-DEFAULT_LOG_CACHE_PATH = "csv/log_cache.jsonl"
+DEFAULT_OUTPUT_CSV = WALLET_ACTIVITY_CSV_PATH
+DEFAULT_LOG_CACHE_PATH = WALLET_LOG_CACHE_PATH
+
+
+def _resolve_wallet_output_basename(basename: str) -> str:
+    if os.path.isabs(basename) or os.path.dirname(basename):
+        return basename
+    return os.path.join(WALLET_DATA_DIR, basename)
 
 
 def load_log_cache(path: str) -> Dict[str, List[Dict[str, str]]]:
@@ -53,6 +62,7 @@ def load_log_cache(path: str) -> Dict[str, List[Dict[str, str]]]:
 
 def write_log_cache(path: str, cache: Dict[str, List[Dict[str, str]]]) -> None:
     try:
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             for h, logs in cache.items():
                 json.dump({"hash": h, "logs": logs}, f)
@@ -78,9 +88,17 @@ def run_export(
 
     print(f"Exporting Base activity for address: {wallet_address}")
 
-    native_txs = fetch_all_base_native_txs(wallet_address)
-    token_txs = fetch_all_base_token_transfers(wallet_address)
-    nft_txs = fetch_all_base_nft_transfers(wallet_address)
+    require_api_key()
+    client = EtherscanV2(
+        ETHERSCAN_API_KEY,
+        CHAIN_ID_BASE,
+        base_url=ETHERSCAN_V2_URL,
+        timeout=(10.0, 30.0),
+    )
+
+    native_txs = client.fetch_all_account_txs(wallet_address)
+    token_txs = client.fetch_all_token_transfers(wallet_address)
+    nft_txs = client.fetch_all_nft_transfers(wallet_address)
 
     rows = normalize_for_csv(wallet_address, native_txs, token_txs, nft_txs)
 
@@ -109,7 +127,7 @@ def run_export(
         if idx % 25 == 0 or idx == total_missing:
             print(f"[logs] Fetching {idx}/{total_missing} (hash {h})")
         try:
-            logs_by_hash[h] = fetch_tx_logs(h)
+            logs_by_hash[h] = client.fetch_tx_logs(h)
         except Exception as e:
             print(f"[logs] Failed for {h}: {e}")
             logs_by_hash[h] = []
@@ -127,9 +145,10 @@ def run_export(
 def enrich_2025(
     *,
     input_path: str = DEFAULT_OUTPUT_CSV,
-    output_filename: str = "base_2025",
+    output_filename: str = WALLET_ENRICH_2025_BASENAME,
 ) -> None:
-    output_path = output_filename + "_with_usd.csv"
+    output_base = _resolve_wallet_output_basename(output_filename)
+    output_path = output_base + "_with_usd.csv"
 
     print(f"Loading CSV: {input_path}")
     df = pd.read_csv(input_path)
@@ -159,6 +178,7 @@ def enrich_2025(
     df_2025_with_prices = merge_events_back_to_base_csv(df_2025, events_priced)
 
     print(f"Writing output to: {output_path}")
+    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
     df_2025_with_prices.to_csv(output_path, index=False)
 
     print("Done - 2025-only enriched file created.")

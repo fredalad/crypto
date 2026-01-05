@@ -53,8 +53,9 @@ apps/
   wallet_engine/
     __main__.py
     pipeline.py
-apps/protocol_indexer/aero/   # protocol outputs (pools.csv/jsonl)
-csv/    # wallet exports + log cache
+apps/protocol_indexer/aero/   # protocol outputs (code + static datasets)
+apps/shared/data/protocol/    # protocol outputs (pools.csv/jsonl)
+apps/shared/data/wallet/      # wallet exports + log cache
 old/    # archived exports
 main.py # legacy shim -> apps.wallet_engine
 ```

@@ -1,18 +1,90 @@
 import os
+
 from dotenv import load_dotenv
+from eth_utils import keccak
 
 load_dotenv()
 
-ETHERSCAN_API_KEY = os.getenv("ETHERSCAN_API_KEY")
-BASE_WALLET_ADDRESS = os.getenv("BASE_WALLET_ADDRESS")
+# -----------------------------
+# Shared API + network config
+# -----------------------------
 
-# Etherscan V2 unified base URL
-ETHERSCAN_API_URL = "https://api.etherscan.io/v2/api"
+ETHERSCAN_API_KEY = os.getenv("ETHERSCAN_API_KEY")
+ETHERSCAN_V2_URL = "https://api.etherscan.io/v2/api"
+ETHERSCAN_API_URL = ETHERSCAN_V2_URL
 
 # Base mainnet chain ID in Etherscan V2
 CHAIN_ID_BASE = "8453"
+CHAINID_BASE = CHAIN_ID_BASE
 
-# Heuristics: how we detect LP tokens by symbol
+BASE_WALLET_ADDRESS = os.getenv("BASE_WALLET_ADDRESS")
+
+COINGECKO_API_KEY = os.getenv("COINGECKO_API_KEY", "").strip()
+COINGECKO_BASE_URL = os.getenv("COINGECKO_BASE_URL", "https://api.coingecko.com/api/v3")
+ASSET_PLATFORM_ID_BASE = "base"
+REQUEST_SLEEP_SEC = 3.0
+
+TIMEOUT_MARKERS = (
+    "query timeout",
+    "timeout occured",
+    "timeout occurred",
+    "server too busy",
+)
+RATE_LIMIT_MARKERS = ("rate limit", "max rate limit")
+
+SHARED_DIR = os.path.dirname(__file__)
+SHARED_DATA_DIR = os.path.join(SHARED_DIR, "data")
+WALLET_DATA_DIR = os.path.join(SHARED_DATA_DIR, "wallet")
+PROTOCOL_DATA_DIR = os.path.join(SHARED_DATA_DIR, "protocol")
+
+WALLET_ACTIVITY_CSV_PATH = os.path.join(WALLET_DATA_DIR, "base_activity.csv")
+WALLET_LOG_CACHE_PATH = os.path.join(WALLET_DATA_DIR, "log_cache.jsonl")
+WALLET_ENRICH_2025_BASENAME = "base_2025"
+PROTOCOL_POOLS_OUT_PREFIX = os.path.join(PROTOCOL_DATA_DIR, "pools")
+
+
+def require_api_key() -> None:
+    if not ETHERSCAN_API_KEY:
+        raise RuntimeError(
+            "Missing ETHERSCAN_API_KEY in environment (.env). "
+            "Create an Etherscan API key and set ETHERSCAN_API_KEY=..."
+        )
+
+
+# -----------------------------
+# Aerodrome protocol config
+# -----------------------------
+
+# Aerodrome vAMM/sAMM Pool Factory
+AERO_POOL_FACTORY_VAMM = "0x420dd381b31aef6683db6b902084cb0ffece40da"
+
+# Aerodrome SlipStream CLFactory (creates CL pools)
+AERO_CL_FACTORY = "0x5e7bb104d84c7cb9b682aac2f3d509f5f406809a"
+
+# vAMM/sAMM event:
+# event PoolCreated(address indexed token0, address indexed token1, bool indexed stable, address pool, uint256);
+VAMM_POOLCREATED_SIG = "PoolCreated(address,address,bool,address,uint256)"
+
+# SlipStream CL event (CLFactory):
+# event PoolCreated(address indexed token0, address indexed token1, int24 indexed tickSpacing, address pool);
+CL_POOLCREATED_SIG = "PoolCreated(address,address,int24,address)"
+
+
+def topic0(signature: str) -> str:
+    return "0x" + keccak(text=signature).hex()
+
+
+VAMM_POOLCREATED_TOPIC0 = topic0(VAMM_POOLCREATED_SIG)
+CL_POOLCREATED_TOPIC0 = topic0(CL_POOLCREATED_SIG)
+
+# tickSpacingToFee(int24)
+TICKSPACING_TO_FEE_SELECTOR = "0x" + keccak(text="tickSpacingToFee(int24)").hex()[:8]
+
+
+# -----------------------------
+# Wallet engine config
+# -----------------------------
+
 LP_SYMBOL_HINTS = [
     "lp",
     " uni-v2",
@@ -28,19 +100,16 @@ LP_SYMBOL_HINTS = [
     " amm nft",
 ]
 
-# Governance/voter contracts (used to tag VOTE txs when no token transfers)
 VOTE_CONTRACT_HINTS = {
     # Aerodrome vote contract (Base)
     "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
 }
 
-# Some contracts should be treated as approvals even if they look like voter contracts
 APPROVAL_CONTRACT_HINTS = {
-    # Aerodrome Voter (Base) — treat as approval
+    # Aerodrome Voter (Base) treat as approval
     "0x827922686190790b37229fd06084350e74485b72",
 }
 
-# Lock/vote contracts
 LOCK_CONTRACTS = {
     # Aerodrome Voter Escrow (lock increase)
     "0xebf418fe2512e7e6bd9b87a8f0f294acdc67e6b4",
@@ -51,42 +120,19 @@ LOCK_VOTE_CONTRACTS = {
     "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
 }
 
-# Heuristic: minimum gasUsed to treat a zero-value call to VOTE_CONTRACT_HINTS as a vote
 VOTE_MIN_GASUSED = 120000
 
-# Aerodrome contract registry (fill with actual addresses)
 AERODROME_CONTRACTS = {
     "lp_pair": set(),  # e.g., pool/pair contracts
     "gauge": set(),  # e.g., gauge contracts
     "voting_escrow": set(),  # e.g., ve/escrow contract
 }
 
-# Optional: known protocol/gauge/pool contracts on Base
-# (fill this in with contracts you actually use)
 PROTOCOL_ADDRESS_LABELS = {
     # "0x...".lower(): "Aerodrome Gauge",
     # "0x...".lower(): "Aerodrome Pool",
     # "0x...".lower(): "Uniswap V3 Pool",
 }
-
-COINGECKO_API_KEY = os.getenv("COINGECKO_API_KEY", "").strip()
-
-# Free/demo base URL by default; override with COINGECKO_BASE_URL if using Pro
-COINGECKO_BASE_URL = os.getenv("COINGECKO_BASE_URL", "https://api.coingecko.com/api/v3")
-
-# Asset platform id for Base network in CoinGecko
-ASSET_PLATFORM_ID_BASE = "base"  # used for /coins/{id}/contract/{contract}/... :contentReference[oaicite:2]{index=2}
-
-# How long to sleep between token requests (seconds) to be nice to the API
-REQUEST_SLEEP_SEC = 3.0
-
-
-def require_api_key():
-    if not ETHERSCAN_API_KEY:
-        raise RuntimeError(
-            "Missing ETHERSCAN_API_KEY in environment (.env). "
-            "Create an Etherscan API key and set ETHERSCAN_API_KEY=..."
-        )
 
 
 def unique_tokens():

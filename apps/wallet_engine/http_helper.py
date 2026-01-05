@@ -1,9 +1,6 @@
 import requests
 
-from .config import (
-    COINGECKO_BASE_URL,
-    COINGECKO_API_KEY,
-)
+from ..shared.config import COINGECKO_BASE_URL, COINGECKO_API_KEY
 
 from typing import Dict, Any
 

@@ -1,5 +1,5 @@
 import pandas as pd
-from .config import ASSET_PLATFORM_ID_BASE
+from ..shared.config import ASSET_PLATFORM_ID_BASE
 from typing import List, Dict, Any
 from .http_helper import coin_gecko_get
 

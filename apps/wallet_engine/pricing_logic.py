@@ -1,8 +1,8 @@
 import pandas as pd
 from .price_fetchers import fetch_erc20_prices_on_base, fetch_native_eth_prices
-from .config import REQUEST_SLEEP_SEC
+from ..shared.config import REQUEST_SLEEP_SEC
 import time
-from .config import unique_tokens, unique_successful_hash
+from ..shared.config import unique_tokens, unique_successful_hash
 
 
 def attach_prices_to_events(events_df: pd.DataFrame) -> pd.DataFrame:
