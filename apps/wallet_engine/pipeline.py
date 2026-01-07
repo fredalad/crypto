@@ -1,212 +1,178 @@
-import json
-import os
-import time
-from typing import Dict, List, Optional
+from __future__ import annotations
 
-import pandas as pd
+from typing import Any, Dict, List
 
-from ..shared.config import (
-    APPROVAL_CONTRACT_HINTS,
+from apps.shared.config import (
     BASE_WALLET_ADDRESS,
     CHAIN_ID_BASE,
     ETHERSCAN_API_KEY,
-    ETHERSCAN_V2_URL,
-    LOCK_CONTRACTS,
-    LOCK_VOTE_CONTRACTS,
+    ETHERSCAN_API_URL,
+    REQUEST_SLEEP_SEC,
     WALLET_ACTIVITY_CSV_PATH,
-    WALLET_DATA_DIR,
-    WALLET_ENRICH_2025_BASENAME,
-    WALLET_LOG_CACHE_PATH,
-    WALLET_SPAM_TOKENS_PATH,
-    WALLET_SPAM_TX_HASHES_PATH,
     require_api_key,
-    VOTE_CONTRACT_HINTS,
 )
-from ..shared.etherscan_v2 import EtherscanV2
-from .classify import classify_transactions
-from .csv_export import write_csv
-from .normalize import normalize_for_csv
-from .log_spam_filter import (
-    build_log_filter_context,
-    filter_logs_by_hash,
-    load_spam_tokens,
-    load_spam_tx_hashes,
-)
-from .price_fetchers import build_events_from_base_csv
-from .pricing_logic import attach_prices_to_events, merge_events_back_to_base_csv
+from apps.shared.csv_utils import write_csv_rows
+from apps.shared.etherscan_v2 import EtherscanV2
+from apps.shared.logging_utils import get_logger, setup_logging
+from apps.wallet_engine.contract_cache import get_contract_metadata
+from apps.wallet_engine.receipt_cache import process_wallet_transactions
 
-DEFAULT_OUTPUT_CSV = WALLET_ACTIVITY_CSV_PATH
-DEFAULT_LOG_CACHE_PATH = WALLET_LOG_CACHE_PATH
+log = get_logger("wallet_engine")
 
 
-def _resolve_wallet_output_basename(basename: str) -> str:
-    if os.path.isabs(basename) or os.path.dirname(basename):
-        return basename
-    return os.path.join(WALLET_DATA_DIR, basename)
+def _build_client() -> EtherscanV2:
+    require_api_key()
+    return EtherscanV2(
+        api_key=ETHERSCAN_API_KEY,
+        chainid=CHAIN_ID_BASE,
+        base_url=ETHERSCAN_API_URL,
+    )
 
 
-def load_log_cache(path: str) -> Dict[str, List[Dict[str, str]]]:
-    cache: Dict[str, List[Dict[str, str]]] = {}
-    if not os.path.exists(path):
-        return cache
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                try:
-                    obj = json.loads(line)
-                    h = obj.get("hash")
-                    logs = obj.get("logs", [])
-                    if h:
-                        cache[h] = logs
-                except Exception:
-                    continue
-    except Exception:
-        return {}
-    return cache
+def _resolve_wallet_address(address: str | None) -> str:
+    resolved = (address or BASE_WALLET_ADDRESS or "").strip()
+    if not resolved:
+        raise RuntimeError("Missing wallet address. Set BASE_WALLET_ADDRESS in .env.")
+    return resolved
 
 
-def write_log_cache(path: str, cache: Dict[str, List[Dict[str, str]]]) -> None:
-    try:
-        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-        with open(path, "w", encoding="utf-8") as f:
-            for h, logs in cache.items():
-                json.dump({"hash": h, "logs": logs}, f)
-                f.write("\n")
-    except Exception as e:
-        print(f"[logs] Failed to write cache: {e}")
+def _fieldnames(rows: List[Dict[str, str]]) -> List[str]:
+    preferred = [
+        "hash",
+        "from",
+        "to",
+        "value",
+        "blockNumber",
+        "timeStamp",
+        "nonce",
+        "gas",
+        "gasPrice",
+        "gasUsed",
+        "isError",
+        "txreceipt_status",
+        "input",
+    ]
+    seen = set()
+    out: List[str] = []
+    for key in preferred:
+        if any(key in row for row in rows):
+            out.append(key)
+            seen.add(key)
+    for row in rows:
+        for key in row.keys():
+            if key not in seen:
+                out.append(key)
+                seen.add(key)
+    return out
+
+
+def _collect_contract_addresses(rows: List[Dict[str, Any]]) -> List[str]:
+    addresses = set()
+    for row in rows:
+        tx_type = row.get("tx_type")
+        if tx_type in ("token", "nft"):
+            addr = (row.get("contractAddress") or "").strip()
+            if addr:
+                addresses.add(addr)
+            continue
+        if tx_type == "native":
+            to_addr = (row.get("to") or "").strip()
+            input_data = (row.get("input") or "").strip()
+            if to_addr and input_data and input_data != "0x":
+                addresses.add(to_addr)
+    return sorted(addresses)
+
+
+def _cache_contract_metadata(rows: List[Dict[str, Any]]) -> None:
+    addresses = _collect_contract_addresses(rows)
+    if not addresses:
+        return
+    log.info("Caching contract metadata for %d addresses", len(addresses))
+    total = len(addresses)
+    for i, address in enumerate(addresses, start=1):
+        remaining = total - i
+        log.info("[%d/%d] contracts remaining=%d", i, total, remaining)
+        get_contract_metadata(address)
+
+
+def fetch_wallet_transactions(
+    address: str,
+    *,
+    start_block: int = 0,
+    end_block: int = 9_999_999_999,
+    sort: str = "asc",
+) -> List[Dict[str, str]]:
+    client = _build_client()
+    native_txs = client.fetch_all_account_txs(
+        address,
+        start_block=start_block,
+        end_block=end_block,
+        sort=sort,
+        sleep_s=REQUEST_SLEEP_SEC,
+    )
+    token_txs = client.fetch_all_token_transfers(
+        address,
+        start_block=start_block,
+        end_block=end_block,
+        sort=sort,
+        sleep_s=REQUEST_SLEEP_SEC,
+    )
+    nft_txs = client.fetch_all_nft_transfers(
+        address,
+        start_block=start_block,
+        end_block=end_block,
+        sort=sort,
+        sleep_s=REQUEST_SLEEP_SEC,
+    )
+
+    combined: List[Dict[str, str]] = []
+    for row in native_txs:
+        row["tx_type"] = "native"
+        combined.append(row)
+    for row in token_txs:
+        row["tx_type"] = "token"
+        combined.append(row)
+    for row in nft_txs:
+        row["tx_type"] = "nft"
+        combined.append(row)
+
+    def _sort_key(r: Dict[str, str]) -> int:
+        try:
+            return int(r.get("timeStamp") or 0)
+        except (TypeError, ValueError):
+            return 0
+
+    combined.sort(key=_sort_key)
+    if sort == "desc":
+        combined.reverse()
+    return combined
 
 
 def run_export(
     *,
-    address: Optional[str] = None,
-    output_path: str = DEFAULT_OUTPUT_CSV,
-    log_cache_path: str = DEFAULT_LOG_CACHE_PATH,
+    address: str | None = None,
+    start_block: int = 0,
+    end_block: int = 9_999_999_999,
+    sort: str = "asc",
+    log_level: str = "INFO",
 ) -> None:
-    wallet_address = address or BASE_WALLET_ADDRESS
-    if not wallet_address:
-        raise RuntimeError(
-            "Set BASE_WALLET_ADDRESS in .env to your Base wallet address "
-            "(e.g. 0xabc...)"
-        )
-
-    wallet_address = wallet_address.strip()
-
-    print(f"Exporting Base activity for address: {wallet_address}")
-
-    require_api_key()
-    client = EtherscanV2(
-        ETHERSCAN_API_KEY,
-        CHAIN_ID_BASE,
-        base_url=ETHERSCAN_V2_URL,
-        timeout=(10.0, 30.0),
+    setup_logging(log_level)
+    addr = _resolve_wallet_address(address)
+    log.info("Fetching wallet transactions for %s", addr)
+    rows = fetch_wallet_transactions(
+        addr,
+        start_block=start_block,
+        end_block=end_block,
+        sort=sort,
     )
+    process_wallet_transactions(rows)
+    _cache_contract_metadata(rows)
+    log.info("Fetched %d transactions", len(rows))
 
-    native_txs = client.fetch_all_account_txs(wallet_address)
-    token_txs = client.fetch_all_token_transfers(wallet_address)
-    nft_txs = client.fetch_all_nft_transfers(wallet_address)
-
-    rows = normalize_for_csv(wallet_address, native_txs, token_txs, nft_txs)
-
-    # Pass 1: classify without logs (fast)
-    classify_transactions(rows, logs_by_hash={})
-
-    # Determine which tx hashes need logs (to refine OTHER/lock/vote/approval)
-    candidate_hashes = set()
-    for r in rows:
-        h = r.get("hash")
-        if not h:
-            continue
-        candidate_hashes.add(h)
-
-    print(f"[logs] Candidate tx hashes for logs: {len(candidate_hashes)}")
-
-    # Collect logs only for candidates; reuse cache to avoid re-fetching
-    logs_cache = load_log_cache(log_cache_path)
-    logs_by_hash = dict(logs_cache)
-    missing_hashes = [h for h in candidate_hashes if h not in logs_cache]
-    total_missing = len(missing_hashes)
-
-    print(f"[logs] Cache size: {len(logs_cache)} | missing to fetch: {total_missing}")
-
-    for idx, h in enumerate(sorted(missing_hashes), start=1):
-        if idx % 25 == 0 or idx == total_missing:
-            print(f"[logs] Fetching {idx}/{total_missing} (hash {h})")
-        try:
-            logs_by_hash[h] = client.fetch_tx_logs(h)
-        except Exception as e:
-            print(f"[logs] Failed for {h}: {e}")
-            logs_by_hash[h] = []
-        time.sleep(0.1)  # gentle rate limit
-
-    # Filter logs before caching/serialization
-    log_filter_ctx = build_log_filter_context()
-    logs_by_hash = filter_logs_by_hash(
-        logs_by_hash,
-        spam_tokens_path=WALLET_SPAM_TOKENS_PATH,
-        spam_tx_hashes_path=WALLET_SPAM_TX_HASHES_PATH,
-        context=log_filter_ctx,
-    )
-
-    # Persist cache with any newly fetched logs
-    write_log_cache(log_cache_path, logs_by_hash)
-
-    # Pass 2: re-classify with logs for candidates, tagging spam where applicable
-    spam_tokens = load_spam_tokens(WALLET_SPAM_TOKENS_PATH)
-    spam_tx_hashes = load_spam_tx_hashes(WALLET_SPAM_TX_HASHES_PATH)
-    classify_transactions(
-        rows,
-        logs_by_hash=logs_by_hash,
-        spam_tokens=spam_tokens,
-        spam_tx_hashes=spam_tx_hashes,
-    )
-
-    write_csv(output_path, rows)
-
-
-def enrich_2025(
-    *,
-    input_path: str = DEFAULT_OUTPUT_CSV,
-    output_filename: str = WALLET_ENRICH_2025_BASENAME,
-) -> None:
-    output_base = _resolve_wallet_output_basename(output_filename)
-    output_path = output_base + "_with_usd.csv"
-
-    print(f"Loading CSV: {input_path}")
-    df = pd.read_csv(input_path)
-
-    # --- FILTER TO 2025 ONLY ---
-    print("Filtering to 2025 transactions only...")
-
-    # Ensure we have a datetime column
-    if "timeStamp_iso" in df.columns:
-        df["dt"] = pd.to_datetime(df["timeStamp_iso"], errors="coerce", utc=True)
-    else:
-        df["timeStamp"] = pd.to_numeric(df["timeStamp"], errors="coerce")
-        df["dt"] = pd.to_datetime(df["timeStamp"], unit="s", errors="coerce", utc=True)
-
-    df_2025 = df[df["dt"].dt.year == 2025].copy()
-    print(f"Total rows in 2025: {len(df_2025)}")
-
-    # -------------------------------------------------------
-    print("Building normalized events (2025 only)...")
-    events_df = build_events_from_base_csv(df_2025)
-    print(f"Total in/out events in 2025: {len(events_df)}")
-
-    print("Fetching CoinGecko prices (2025 only) and attaching to events...")
-    events_priced = attach_prices_to_events(events_df)
-
-    print("Merging 2025 price data back into 2025 CSV rows...")
-    df_2025_with_prices = merge_events_back_to_base_csv(df_2025, events_priced)
-
-    print(f"Writing output to: {output_path}")
-    os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
-    df_2025_with_prices.to_csv(output_path, index=False)
-
-    print("Done - 2025-only enriched file created.")
+    fieldnames = _fieldnames(rows)
+    write_csv_rows(WALLET_ACTIVITY_CSV_PATH, rows, fieldnames)
+    log.info("Wrote CSV: %s", WALLET_ACTIVITY_CSV_PATH)
 
 
 def enrich() -> None:
-    enrich_2025()
+    raise NotImplementedError("Wallet enrichment pipeline not implemented yet.")

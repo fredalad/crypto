@@ -97,6 +97,7 @@ These outputs **must not change format casually**.
 1. **Fetch**
    - Pull all wallet txs via Etherscan V2
    - Include logs & receipts
+   - Determine Spam and create a cache to ignore them in future
 
 2. **Classify**
    - Swap
@@ -136,3 +137,4 @@ CLAIM_FEES
 CLAIM_REWARDS
 TRANSFER
 UNKNOWN
+SPAM

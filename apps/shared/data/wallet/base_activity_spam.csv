@@ -1,1 +1,0 @@
-hash,tx_type,blockNumber,timeStamp,timeStamp_iso,direction,protocol,activity_type,native_amount_eth,token_contract,token_symbol,token_name,token_decimals,token_amount,gas,gasPrice,gasUsed,tx_fee_eth,token_in_assets,token_out_assets

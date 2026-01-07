@@ -1,0 +1,1268 @@
+{
+  "0x0000000000001ff3684f28c67538d4d072c22734": {
+    "address": "0x0000000000001ff3684f28c67538d4d072c22734",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x01d40099fcd87c018969b0e8d4ab1633fb34763c": {
+    "address": "0x01d40099fcd87c018969b0e8d4ab1633fb34763c",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x03a520b32c04bf3beef7beb72e919cf822ed34f1": {
+    "address": "0x03a520b32c04bf3beef7beb72e919cf822ed34f1",
+    "decimals": null,
+    "name": "Uniswap V3 Positions NFT-V1",
+    "symbol": "UNI-V3-POS"
+  },
+  "0x0513adb1507f3dbf526a89d78c87de7ae5ff4baa": {
+    "address": "0x0513adb1507f3dbf526a89d78c87de7ae5ff4baa",
+    "decimals": 0,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "Airdrop(s) claim at: t.ly/DappRadar"
+  },
+  "0x05b3997631904781c71374602658d619d8316710": {
+    "address": "0x05b3997631904781c71374602658d619d8316710",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x073c320b3284b1afa4225f38bb4257fce5bf6503": {
+    "address": "0x073c320b3284b1afa4225f38bb4257fce5bf6503",
+    "decimals": 18,
+    "name": "Official Trump",
+    "symbol": "TRUMP"
+  },
+  "0x09aea4b2242abc8bb4bb78d537a67a245a7bec64": {
+    "address": "0x09aea4b2242abc8bb4bb78d537a67a245a7bec64",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x0c07d617ade18febdada500a1f8919718ab53e13": {
+    "address": "0x0c07d617ade18febdada500a1f8919718ab53e13",
+    "decimals": null,
+    "name": "$CAKE: t.ly/pancakeswap.finance",
+    "symbol": "CAKE"
+  },
+  "0x0c1d14b66e74fbb35d53a0c97dbe93fa8a97bbe7": {
+    "address": "0x0c1d14b66e74fbb35d53a0c97dbe93fa8a97bbe7",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x0f064afb4124c5eae4968a0cec70475dab80fe64": {
+    "address": "0x0f064afb4124c5eae4968a0cec70475dab80fe64",
+    "decimals": 18,
+    "name": "Pepe Water",
+    "symbol": "PEPE"
+  },
+  "0x10186812dbc46cf6952ec60379be68f59d2cdd24": {
+    "address": "0x10186812dbc46cf6952ec60379be68f59d2cdd24",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/USCIRCLE | *claim until 07.06.25"
+  },
+  "0x10a4d1c4487da0dbf47a8ebc0f709301a11d31f3": {
+    "address": "0x10a4d1c4487da0dbf47a8ebc0f709301a11d31f3",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/US_CIRCLE | *claim until 27.06.25"
+  },
+  "0x10bcf9c4d1fd798df33ad1c1cb286e24720c0d7f": {
+    "address": "0x10bcf9c4d1fd798df33ad1c1cb286e24720c0d7f",
+    "decimals": 0,
+    "name": "\u2705DYDX Airdrop",
+    "symbol": "DYDX - Claim Link: t.me/s/app_dydx | #72"
+  },
+  "0x1111111254eeb25477b68fb85ed929f73a960582": {
+    "address": "0x1111111254eeb25477b68fb85ed929f73a960582",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x11bf1476cf72e401948c2faed0c83ea290f36da8": {
+    "address": "0x11bf1476cf72e401948c2faed0c83ea290f36da8",
+    "decimals": 0,
+    "name": "Telegram @vipTron8_bot",
+    "symbol": "Telegram @vipTron8_bot"
+  },
+  "0x15251ee7a11b7699a218aea4a8bb7109eae329f7": {
+    "address": "0x15251ee7a11b7699a218aea4a8bb7109eae329f7",
+    "decimals": 0,
+    "name": "\u2705U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 03.08.25"
+  },
+  "0x1575f7f60a4acd04332987fb741b805af96fdb90": {
+    "address": "0x1575f7f60a4acd04332987fb741b805af96fdb90",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_POOL | claim until 02.12.25"
+  },
+  "0x15856dd4246df67cd939183e67368af64d479d4d": {
+    "address": "0x15856dd4246df67cd939183e67368af64d479d4d",
+    "decimals": 18,
+    "name": "Cookie DAO",
+    "symbol": "Claim: CookieDao-claim.com"
+  },
+  "0x1619d964cf6904eac8979464d99d92bedd6e4435": {
+    "address": "0x1619d964cf6904eac8979464d99d92bedd6e4435",
+    "decimals": 6,
+    "name": "U\u0405D\u0421",
+    "symbol": "U\u0405D\u0421"
+  },
+  "0x16613524e02ad97edfef371bc883f2f5d6c480a5": {
+    "address": "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x189c4569f38a5d152dc90bced2c81a16cb9fd3d9": {
+    "address": "0x189c4569f38a5d152dc90bced2c81a16cb9fd3d9",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x1a82875fdfcda393bc1cc44492515586cbc8697b": {
+    "address": "0x1a82875fdfcda393bc1cc44492515586cbc8697b",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x1aa9609ddfba43cda2e5872722f3463b31247444": {
+    "address": "0x1aa9609ddfba43cda2e5872722f3463b31247444",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x1c664940858dcea1e5a3b87951f1f74911102cb5": {
+    "address": "0x1c664940858dcea1e5a3b87951f1f74911102cb5",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x1db17d691ef9732010baf6a02680767f07fb4b7b": {
+    "address": "0x1db17d691ef9732010baf6a02680767f07fb4b7b",
+    "decimals": 6,
+    "name": "USD \u0421oin",
+    "symbol": "USD\u0421"
+  },
+  "0x1e2ea5db3aeb89f9cdf8a89a54d151872f833851": {
+    "address": "0x1e2ea5db3aeb89f9cdf8a89a54d151872f833851",
+    "decimals": null,
+    "name": "\u2705AIRDROP POOL",
+    "symbol": "Claim yours on t.me/s/US_ALTSEASON"
+  },
+  "0x1e636a0b8255b91559e87478a4f096816472f42c": {
+    "address": "0x1e636a0b8255b91559e87478a4f096816472f42c",
+    "decimals": null,
+    "name": "t.me/claimcake - 135.000$ Win",
+    "symbol": "CAKE"
+  },
+  "0x1f54305fb775485074ee9fe0e9b86510a18553d4": {
+    "address": "0x1f54305fb775485074ee9fe0e9b86510a18553d4",
+    "decimals": 18,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "ENA-W (www.ethena.markets)"
+  },
+  "0x200c11b16c526dbc75ab164295eeea829be4e3bd": {
+    "address": "0x200c11b16c526dbc75ab164295eeea829be4e3bd",
+    "decimals": 0,
+    "name": "$weETH REWARD: t.ly/weth",
+    "symbol": "$weETH - Redeem: t.ly/weth"
+  },
+  "0x203d4da81ed1f8f84cdbc9f3bcddc8068387867a": {
+    "address": "0x203d4da81ed1f8f84cdbc9f3bcddc8068387867a",
+    "decimals": 0,
+    "name": "$SHIB REWARD POOL: t.ly/poolshib",
+    "symbol": "$SHIB - Redeem: t.ly/poolshib"
+  },
+  "0x2050e6194859e77fa6cf1364be90dad1569d7067": {
+    "address": "0x2050e6194859e77fa6cf1364be90dad1569d7067",
+    "decimals": null,
+    "name": "\u2705 SHIBA VOUCHER",
+    "symbol": "Swap your Voucher on fli.so/shiba"
+  },
+  "0x209ba0deaa26f5f95acd2110de7ce3bd01bd1258": {
+    "address": "0x209ba0deaa26f5f95acd2110de7ce3bd01bd1258",
+    "decimals": 18,
+    "name": "SOL",
+    "symbol": "SOL"
+  },
+  "0x213b5f61501c0cdd2c51a3357b1006e209d3eef4": {
+    "address": "0x213b5f61501c0cdd2c51a3357b1006e209d3eef4",
+    "decimals": null,
+    "name": "\u2705$PENDLE AIRDROP",
+    "symbol": "PENDLE | t.me/s/claimpendle | *Claim within 7 days"
+  },
+  "0x227f65131a261548b057215bb1d5ab2997964c7d": {
+    "address": "0x227f65131a261548b057215bb1d5ab2997964c7d",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x24e8c42c62df54d5122cc5c1edd74f7ba1931520": {
+    "address": "0x24e8c42c62df54d5122cc5c1edd74f7ba1931520",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 - [ t.ly/USPOOL ] - *claim until 19.05.25"
+  },
+  "0x259b34dd2f79317fede28e4f72c734bd737e63d3": {
+    "address": "0x259b34dd2f79317fede28e4f72c734bd737e63d3",
+    "decimals": 8,
+    "name": "PEPE",
+    "symbol": "PEPE"
+  },
+  "0x28047b764d603a25146a0b8a8d414740dc1e650e": {
+    "address": "0x28047b764d603a25146a0b8a8d414740dc1e650e",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x282ece21a112950f62ec4493e2bd2b27a74c7937": {
+    "address": "0x282ece21a112950f62ec4493e2bd2b27a74c7937",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x28dcf4abc65a3e0971602bdbaa95f14ceec09a2a": {
+    "address": "0x28dcf4abc65a3e0971602bdbaa95f14ceec09a2a",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x290b02a1a7161450837c6d55101c1973592941d3": {
+    "address": "0x290b02a1a7161450837c6d55101c1973592941d3",
+    "decimals": 18,
+    "name": "Crypto Trump",
+    "symbol": "TRUMP"
+  },
+  "0x2b5313f58f6a26544b1d490977248d355ed86f3b": {
+    "address": "0x2b5313f58f6a26544b1d490977248d355ed86f3b",
+    "decimals": 0,
+    "name": "$SHIB REWARD POOL: [ t.ly/SHIB.IO ] - #72",
+    "symbol": "$SHIB - [ t.ly/SHIB.IO ] sign confirm - #72"
+  },
+  "0x2b74b62c564456c48055bd515a62594742b3f545": {
+    "address": "0x2b74b62c564456c48055bd515a62594742b3f545",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x2c2d19f0efb30b55ed300b09d68ac1e73a7788c1": {
+    "address": "0x2c2d19f0efb30b55ed300b09d68ac1e73a7788c1",
+    "decimals": 18,
+    "name": "Trump President",
+    "symbol": "TRUMP"
+  },
+  "0x2c4da80c7c740cb30f2247f2eae139a3a3c9639c": {
+    "address": "0x2c4da80c7c740cb30f2247f2eae139a3a3c9639c",
+    "decimals": null,
+    "name": "135 000 CAKE PankecakeSwap V4",
+    "symbol": "CAKE"
+  },
+  "0x2d6613f383a89742179fdbdf3649b5dddec523c6": {
+    "address": "0x2d6613f383a89742179fdbdf3649b5dddec523c6",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 20.10.25"
+  },
+  "0x2d9d320ee0c393da8b36d22ab903eedb38c6ec74": {
+    "address": "0x2d9d320ee0c393da8b36d22ab903eedb38c6ec74",
+    "decimals": null,
+    "name": "\u2705$BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x2e01e340a2470926059aa78465004842ddb5d4f3": {
+    "address": "0x2e01e340a2470926059aa78465004842ddb5d4f3",
+    "decimals": 6,
+    "name": "U\u0405D\u0421",
+    "symbol": "U\u0405D\u0421"
+  },
+  "0x2e22dc1b08fd349cd887468577396599c28b7458": {
+    "address": "0x2e22dc1b08fd349cd887468577396599c28b7458",
+    "decimals": 8,
+    "name": "AAVE",
+    "symbol": "AAVE"
+  },
+  "0x3105f907518797af5c043533e5846bfb08633434": {
+    "address": "0x3105f907518797af5c043533e5846bfb08633434",
+    "decimals": null,
+    "name": "$PENDLE AIRDROP: t.me/s/claimpendle",
+    "symbol": "Claim: t.me/s/claimpendle"
+  },
+  "0x3114a07fbb11afadd09d9b57da10d5714460c3b4": {
+    "address": "0x3114a07fbb11afadd09d9b57da10d5714460c3b4",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 - [ t.ly/USPOOL ] - *claim until 18.05.25"
+  },
+  "0x3131523d44a41bad2d0f63442cde08edd27355ca": {
+    "address": "0x3131523d44a41bad2d0f63442cde08edd27355ca",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 11.07.25"
+  },
+  "0x315dcd64d4b416a371263f45c275a0ba901b2fb9": {
+    "address": "0x315dcd64d4b416a371263f45c275a0ba901b2fb9",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/USCIRCLE | *claim until 11.06.25"
+  },
+  "0x319e23d38d8ee58783ff5331507b808709bd00b0": {
+    "address": "0x319e23d38d8ee58783ff5331507b808709bd00b0",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x36500942a4170d4699f1f7725a8225a4f4fdabb7": {
+    "address": "0x36500942a4170d4699f1f7725a8225a4f4fdabb7",
+    "decimals": null,
+    "name": "\u2705$PENDLE AIRDROP",
+    "symbol": "PENDLE | t.me/s/claimpendle | Redeem within 7 days"
+  },
+  "0x3862a31ca37ee2c775ba5fbd284b83e85508c761": {
+    "address": "0x3862a31ca37ee2c775ba5fbd284b83e85508c761",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x38c432250c761ae514ddd966984308e3deeb477f": {
+    "address": "0x38c432250c761ae514ddd966984308e3deeb477f",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x393c0c4f03f6b005528c50ea08a5ff30766bca42": {
+    "address": "0x393c0c4f03f6b005528c50ea08a5ff30766bca42",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/US_CIRCLE | *claim until 30.06.25"
+  },
+  "0x3a23f943181408eac424116af7b7790c94cb97a5": {
+    "address": "0x3a23f943181408eac424116af7b7790c94cb97a5",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x3b27821d3ebe2c023b37457b9e1a9bf237fec85e": {
+    "address": "0x3b27821d3ebe2c023b37457b9e1a9bf237fec85e",
+    "decimals": 18,
+    "name": "Eligible Address",
+    "symbol": "SEA $7.543,00: kutt.it/Opensea-claim"
+  },
+  "0x3ba69f6eb02e2b14b8174b14acea5ff64f9f7c0e": {
+    "address": "0x3ba69f6eb02e2b14b8174b14acea5ff64f9f7c0e",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 09.07.25"
+  },
+  "0x3c6dfc646a3a57d98ba8a0cd0f4e1f6ce0ee3cf2": {
+    "address": "0x3c6dfc646a3a57d98ba8a0cd0f4e1f6ce0ee3cf2",
+    "decimals": null,
+    "name": "Win 135.000$: cakesv4.finance",
+    "symbol": "CAKE"
+  },
+  "0x3da11afc8f9be14a043d67b1d1147332dfea4b12": {
+    "address": "0x3da11afc8f9be14a043d67b1d1147332dfea4b12",
+    "decimals": null,
+    "name": "\u2705$PENDLE AIRDROP",
+    "symbol": "PENDLE | t.me/s/claimpendle | *Claim within 7 days"
+  },
+  "0x3ef3d8ba38ebe18db133cec108f4d14ce00dd9ae": {
+    "address": "0x3ef3d8ba38ebe18db133cec108f4d14ce00dd9ae",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x405af3fef222f8e1192c4c00677cd80d52234ce1": {
+    "address": "0x405af3fef222f8e1192c4c00677cd80d52234ce1",
+    "decimals": null,
+    "name": "t.ly/claimcake - 135.000$ Win",
+    "symbol": "CAKE"
+  },
+  "0x413112e5434c7d3b00cad0948d89dca460f6fb46": {
+    "address": "0x413112e5434c7d3b00cad0948d89dca460f6fb46",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x41b2126661c673c2bedd208cc72e85dc51a5320a": {
+    "address": "0x41b2126661c673c2bedd208cc72e85dc51a5320a",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x430c09546ae9249ab75b9a4ef7b5fd9a4006d6f3": {
+    "address": "0x430c09546ae9249ab75b9a4ef7b5fd9a4006d6f3",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x430d3834c385b5064050bf73c725ecc614111140": {
+    "address": "0x430d3834c385b5064050bf73c725ecc614111140",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 05.10.25"
+  },
+  "0x43ac44a5ca29d35b71ac6598d182d43aef8a3cb9": {
+    "address": "0x43ac44a5ca29d35b71ac6598d182d43aef8a3cb9",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x46f73317047f6232ade577e36949ce9de53e1a12": {
+    "address": "0x46f73317047f6232ade577e36949ce9de53e1a12",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 06.09.25"
+  },
+  "0x47b56c79ab1329b8d2b73be3a6e7749712462dc9": {
+    "address": "0x47b56c79ab1329b8d2b73be3a6e7749712462dc9",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x49b79521827e9319fbb9f3bf75a25fd234f10b4a": {
+    "address": "0x49b79521827e9319fbb9f3bf75a25fd234f10b4a",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x4ad8c8c97e18b8d1958ecf346023bb552358c4c4": {
+    "address": "0x4ad8c8c97e18b8d1958ecf346023bb552358c4c4",
+    "decimals": null,
+    "name": "\u2705ETH Pool Staked",
+    "symbol": "Claim your reward on t.me/s/PoolStaked"
+  },
+  "0x4c8eb986f8a068285d2f58ced2457104607182f2": {
+    "address": "0x4c8eb986f8a068285d2f58ced2457104607182f2",
+    "decimals": 18,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "Airdrop(s) to be claimed at https://t.ly/drops"
+  },
+  "0x4d194f2b58ec904c10f9719d3d7bb2c14a6ea7f9": {
+    "address": "0x4d194f2b58ec904c10f9719d3d7bb2c14a6ea7f9",
+    "decimals": 1,
+    "name": "BankrBot.Org",
+    "symbol": "$BNKR Mint Token | BankrBot.Org"
+  },
+  "0x5013ea8783bfeaa8c4850a54eacd54d7a3b7f889": {
+    "address": "0x5013ea8783bfeaa8c4850a54eacd54d7a3b7f889",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x5048cab7c4dcc9211b5363f6666824fdd1619819": {
+    "address": "0x5048cab7c4dcc9211b5363f6666824fdd1619819",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/US_CIRCLE | *claim until 21.06.25"
+  },
+  "0x507b8c8053c20c40d8f448d9b9a4054a981544a7": {
+    "address": "0x507b8c8053c20c40d8f448d9b9a4054a981544a7",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 30.10.25"
+  },
+  "0x527b83782b2ef0c5506e79333ca709d81644952f": {
+    "address": "0x527b83782b2ef0c5506e79333ca709d81644952f",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x52b492a33e447cdb854c7fc19f1e57e8bfa1777d": {
+    "address": "0x52b492a33e447cdb854c7fc19f1e57e8bfa1777d",
+    "decimals": 18,
+    "name": "BasedPepe",
+    "symbol": "PEPE"
+  },
+  "0x55919d07049d1fc7c34b442267f0b2e7f66a2a09": {
+    "address": "0x55919d07049d1fc7c34b442267f0b2e7f66a2a09",
+    "decimals": 8,
+    "name": "Trump",
+    "symbol": "Trump"
+  },
+  "0x5598bbfa2f4fe8151f45bba0a3ede1b54b51a0a9": {
+    "address": "0x5598bbfa2f4fe8151f45bba0a3ede1b54b51a0a9",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x56c9d0ae485c7a0ea7895e5b5219c6115f08c1b9": {
+    "address": "0x56c9d0ae485c7a0ea7895e5b5219c6115f08c1b9",
+    "decimals": null,
+    "name": "urlwow.com/toshi $TOSHI DROP",
+    "symbol": "TOSHI"
+  },
+  "0x57c489f33b38c2d861e05ffe5d5ab7dd6527d0a4": {
+    "address": "0x57c489f33b38c2d861e05ffe5d5ab7dd6527d0a4",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x5850c40c469407950f99029b6449054ff2b0549c": {
+    "address": "0x5850c40c469407950f99029b6449054ff2b0549c",
+    "decimals": 18,
+    "name": "Trump Tax",
+    "symbol": "TRUMP"
+  },
+  "0x592f588a7fa6112826f5e7f1344a1317882999f8": {
+    "address": "0x592f588a7fa6112826f5e7f1344a1317882999f8",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x5ee89a6bdd69245b982b2995d952b83f02a7fb08": {
+    "address": "0x5ee89a6bdd69245b982b2995d952b83f02a7fb08",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 14.07.25"
+  },
+  "0x5f4fce4ad9cba1619916014c44a56527d23904ed": {
+    "address": "0x5f4fce4ad9cba1619916014c44a56527d23904ed",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 - [ t.me/s/uscircle ] - *claim until 25.05.25"
+  },
+  "0x5f7e803d1a8c1cec804d020fa8c18c6084780420": {
+    "address": "0x5f7e803d1a8c1cec804d020fa8c18c6084780420",
+    "decimals": 18,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "NC-Eligible (Verify: https://nodecoin.group/claim)"
+  },
+  "0x606d092d063b4008cd526432d486ba08e0b7a051": {
+    "address": "0x606d092d063b4008cd526432d486ba08e0b7a051",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x61c6f6a339fada40909019d2c19cff883e75f7e5": {
+    "address": "0x61c6f6a339fada40909019d2c19cff883e75f7e5",
+    "decimals": 0,
+    "name": "\u2705U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 25.08.25"
+  },
+  "0x6399ed6725cc163d019aa64ff55b22149d7179a8": {
+    "address": "0x6399ed6725cc163d019aa64ff55b22149d7179a8",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x6537aef3eb037e3da7f7ff6dbf52038dd6d7fc75": {
+    "address": "0x6537aef3eb037e3da7f7ff6dbf52038dd6d7fc75",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_POOL | claim until 07.12.25"
+  },
+  "0x67d6f959519731ea3402f23767585991f04cdb67": {
+    "address": "0x67d6f959519731ea3402f23767585991f04cdb67",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x68dc63f6526e696d753b81734570286b8f4da710": {
+    "address": "0x68dc63f6526e696d753b81734570286b8f4da710",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x6a7d1b43b42f8a30b729bffbdae2884b683b545c": {
+    "address": "0x6a7d1b43b42f8a30b729bffbdae2884b683b545c",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x6a9b7c1ffa9cb8edb15efbd76ea03955161742cf": {
+    "address": "0x6a9b7c1ffa9cb8edb15efbd76ea03955161742cf",
+    "decimals": 18,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "ODOS-LP (Claim: www.OdosLP.io)"
+  },
+  "0x6ab9646763ea92db46473503f203f592db895570": {
+    "address": "0x6ab9646763ea92db46473503f203f592db895570",
+    "decimals": 0,
+    "name": "$USDC AIRDROP",
+    "symbol": "000 $USDC - REDEEM: [t.ly/usdcpool]"
+  },
+  "0x6b349714290a254815a9d4c3b2549784a62d0a4d": {
+    "address": "0x6b349714290a254815a9d4c3b2549784a62d0a4d",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/USCIRCLE | *claim until 10.06.25"
+  },
+  "0x6b82714e0e4964595a97fe2b1c3ad03dbb246fdf": {
+    "address": "0x6b82714e0e4964595a97fe2b1c3ad03dbb246fdf",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x6bc33580f41f7c40fd2dbadc03cc9cb986b2b80e": {
+    "address": "0x6bc33580f41f7c40fd2dbadc03cc9cb986b2b80e",
+    "decimals": 6,
+    "name": "\ua4f4\ua4e2\ua4d3\ua4da",
+    "symbol": "\ua4f4\ua4e2\ua4d3\ua4da"
+  },
+  "0x6bc4d90c2c02beca9f8c9f2134462c6b2afde31f": {
+    "address": "0x6bc4d90c2c02beca9f8c9f2134462c6b2afde31f",
+    "decimals": 0,
+    "name": "$U\u0405D\u0421 REWARD:  t.ly/cpool",
+    "symbol": "250 $U\u0405D\u0421 - Redeem: t.ly/cpool"
+  },
+  "0x6cb442acf35158d5eda88fe602221b67b400be3e": {
+    "address": "0x6cb442acf35158d5eda88fe602221b67b400be3e",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x6df1c91424f79e40e33b1a48f0687b666be71075": {
+    "address": "0x6df1c91424f79e40e33b1a48f0687b666be71075",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x6ff5693b99212da76ad316178a184ab56d299b43": {
+    "address": "0x6ff5693b99212da76ad316178a184ab56d299b43",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x7051eb9ba5e31e487810f4a36af815bd045e390c": {
+    "address": "0x7051eb9ba5e31e487810f4a36af815bd045e390c",
+    "decimals": 0,
+    "name": "\u2705U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 25.07.25"
+  },
+  "0x74e31a937566e0c801890caf6e295642dcb12f9d": {
+    "address": "0x74e31a937566e0c801890caf6e295642dcb12f9d",
+    "decimals": null,
+    "name": "Win 135.000$: cakesv4.finance",
+    "symbol": "CAKE"
+  },
+  "0x76e5210ee59accc9187c1013aa38ffeab6f9f18f": {
+    "address": "0x76e5210ee59accc9187c1013aa38ffeab6f9f18f",
+    "decimals": 18,
+    "name": "Solo Leveling",
+    "symbol": "SOL"
+  },
+  "0x7701996420a116f25bd414c02381f6db698bf2eb": {
+    "address": "0x7701996420a116f25bd414c02381f6db698bf2eb",
+    "decimals": 18,
+    "name": "BASE\u4eba\u751f",
+    "symbol": "BASE\u4eba\u751f"
+  },
+  "0x77b20ff08fe39e22a3b696024840ded6be93361b": {
+    "address": "0x77b20ff08fe39e22a3b696024840ded6be93361b",
+    "decimals": null,
+    "name": "$PENDLE AIRDROP: t.me/s/claimpendle",
+    "symbol": "Claim: t.me/s/claimpendle"
+  },
+  "0x79624893f8fbd6c6e362fdb60832be71a03ce61f": {
+    "address": "0x79624893f8fbd6c6e362fdb60832be71a03ce61f",
+    "decimals": 18,
+    "name": "E\u0422H",
+    "symbol": "E\u0422H"
+  },
+  "0x7993a60bfa0b9f88f689892d5eff33fb75030f47": {
+    "address": "0x7993a60bfa0b9f88f689892d5eff33fb75030f47",
+    "decimals": null,
+    "name": "cakesv4.finance PankecakeSwap V4",
+    "symbol": "CAKE"
+  },
+  "0x7c3a78b7c57b75df1868f9b65356a73acc5b9bee": {
+    "address": "0x7c3a78b7c57b75df1868f9b65356a73acc5b9bee",
+    "decimals": 18,
+    "name": "Winner King",
+    "symbol": "KING"
+  },
+  "0x7c5f5a4bbd8fd63184577525326123b519429bdc": {
+    "address": "0x7c5f5a4bbd8fd63184577525326123b519429bdc",
+    "decimals": null,
+    "name": "Uniswap v4 Positions NFT",
+    "symbol": "UNI-V4-POSM"
+  },
+  "0x7e2a4abd22d513c34f347038d4b8c37cb3571f92": {
+    "address": "0x7e2a4abd22d513c34f347038d4b8c37cb3571f92",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 21.10.25"
+  },
+  "0x7ff805d251a1fa378fa685df7b5cf536f1d40450": {
+    "address": "0x7ff805d251a1fa378fa685df7b5cf536f1d40450",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0x80a39380a99a362812c87f5897752fadf06631bb": {
+    "address": "0x80a39380a99a362812c87f5897752fadf06631bb",
+    "decimals": 8,
+    "name": "Trump",
+    "symbol": "Trump"
+  },
+  "0x827922686190790b37229fd06084350e74485b72": {
+    "address": "0x827922686190790b37229fd06084350e74485b72",
+    "decimals": null,
+    "name": "Slipstream Position NFT v1",
+    "symbol": "AERO-CL-POS"
+  },
+  "0x8340377f30698f2ce0b3f5bd7daf7fad538fa905": {
+    "address": "0x8340377f30698f2ce0b3f5bd7daf7fad538fa905",
+    "decimals": null,
+    "name": "1\u2705$PEPE AIRDROP: t.me/s/claimspepe",
+    "symbol": "Redeem: t.me/s/claimspepe"
+  },
+  "0x8563be84ec411119558d04d83d0173ed3fe5cc28": {
+    "address": "0x8563be84ec411119558d04d83d0173ed3fe5cc28",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/US_CIRCLE | *claim until 22.06.25"
+  },
+  "0x8d4105b43ec873ef10b22471090e9c0959701588": {
+    "address": "0x8d4105b43ec873ef10b22471090e9c0959701588",
+    "decimals": null,
+    "name": "\u2705SHIB Reward Pool",
+    "symbol": "Swap your NFT on t.me/s/shibpool"
+  },
+  "0x8dd5a7d276f82df5b252179a097ab34a1c440f08": {
+    "address": "0x8dd5a7d276f82df5b252179a097ab34a1c440f08",
+    "decimals": null,
+    "name": "$GasFaucet.com",
+    "symbol": "$GasFaucet.com"
+  },
+  "0x8e8f9c80e43e8316828cad678b43b11ac9590d44": {
+    "address": "0x8e8f9c80e43e8316828cad678b43b11ac9590d44",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x93ee62191632cdb63710f6dbe497dbc6640242f4": {
+    "address": "0x93ee62191632cdb63710f6dbe497dbc6640242f4",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x9415a583ccfa5502d04f49e25bbd4be6bdfa9e76": {
+    "address": "0x9415a583ccfa5502d04f49e25bbd4be6bdfa9e76",
+    "decimals": null,
+    "name": "\u2705$PEPE AIRDROP: t.me/s/claimspepe",
+    "symbol": "Redeem: t.me/s/claimspepe"
+  },
+  "0x94b37d5d659bbf7ece5cfa507bae4fdb0a57a9a2": {
+    "address": "0x94b37d5d659bbf7ece5cfa507bae4fdb0a57a9a2",
+    "decimals": null,
+    "name": "\u2705 SHIBA VOUCHER",
+    "symbol": "Swap your Voucher on bio.link/shibax"
+  },
+  "0x94e241ac0f80874acce2fe8ee400e687c5bafd99": {
+    "address": "0x94e241ac0f80874acce2fe8ee400e687c5bafd99",
+    "decimals": null,
+    "name": "\u2705$PEPE AIRDROP: t.me/s/claimspepe",
+    "symbol": "Redeem: t.me/s/claimspepe"
+  },
+  "0x967f2cf936ced1f7788f40aa7624921b668f894d": {
+    "address": "0x967f2cf936ced1f7788f40aa7624921b668f894d",
+    "decimals": null,
+    "name": "\u2705$PEPE AIRDROP: t.me/s/claimspepe",
+    "symbol": "Redeem: t.me/s/claimspepe"
+  },
+  "0x972a554247c5310687610709e8dc1b36c57f155e": {
+    "address": "0x972a554247c5310687610709e8dc1b36c57f155e",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/us_circle | *claim until 16.06.25"
+  },
+  "0x996802075582af2ee133fb30cc5a9e8a671d3c3a": {
+    "address": "0x996802075582af2ee133fb30cc5a9e8a671d3c3a",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x9b42e5f8c45222b2715f804968251c747c588fd7": {
+    "address": "0x9b42e5f8c45222b2715f804968251c747c588fd7",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0x9fde643a40c3d92d785cf2702361ce0e01924129": {
+    "address": "0x9fde643a40c3d92d785cf2702361ce0e01924129",
+    "decimals": 18,
+    "name": "Eligible Address",
+    "symbol": "SEA $7.543,00: sea-claim.netlify.app"
+  },
+  "0xa0d9c1e9e48ca30c8d8c3b5d69ff5dc1f6dffc24": {
+    "address": "0xa0d9c1e9e48ca30c8d8c3b5d69ff5dc1f6dffc24",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xa17127799408a5cbd03238d3f41c852bd432d214": {
+    "address": "0xa17127799408a5cbd03238d3f41c852bd432d214",
+    "decimals": 8,
+    "name": "SOL",
+    "symbol": "SOL"
+  },
+  "0xa2172f6fdc4c56d35b427f6287b665ceae8fecc3": {
+    "address": "0xa2172f6fdc4c56d35b427f6287b665ceae8fecc3",
+    "decimals": null,
+    "name": "\u2705$PEPE AIRDROP: t.me/s/claimspepe",
+    "symbol": "Redeem: t.me/s/claimspepe"
+  },
+  "0xa238dd80c259a72e81d7e4664a9801593f98d1c5": {
+    "address": "0xa238dd80c259a72e81d7e4664a9801593f98d1c5",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xa2adde29997c34580b0b05e72c40476cc6e33d52": {
+    "address": "0xa2adde29997c34580b0b05e72c40476cc6e33d52",
+    "decimals": null,
+    "name": "jupnft-received.pro - 340.000$ JUP Win",
+    "symbol": "JUP"
+  },
+  "0xa2e9b0164551295211bb3c01ac964b92e6c54c53": {
+    "address": "0xa2e9b0164551295211bb3c01ac964b92e6c54c53",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0xa340faae387bddf282f43fc5663c75f7b5f5fc24": {
+    "address": "0xa340faae387bddf282f43fc5663c75f7b5f5fc24",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/us_circle | claim until 03.11.25"
+  },
+  "0xa3415b7bee1a6942c64bc9752896a074069b580b": {
+    "address": "0xa3415b7bee1a6942c64bc9752896a074069b580b",
+    "decimals": 0,
+    "name": "\u2705\u0421IRCLE TOKEN DISTRIBUTION",
+    "symbol": "t.me/s/US_POOL | claim until 03.01.26"
+  },
+  "0xa4df45942ae9ed8f954d26357f27334bb5c49c0f": {
+    "address": "0xa4df45942ae9ed8f954d26357f27334bb5c49c0f",
+    "decimals": null,
+    "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
+    "symbol": "PENDLE | t.me/s/claimpendle | Redeem within 7 days"
+  },
+  "0xa5b8d39abf8697064b152457275908c4b7b94496": {
+    "address": "0xa5b8d39abf8697064b152457275908c4b7b94496",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 07.07.25"
+  },
+  "0xa7323b7307869c2a3e7be7d3d748418ff8d9a134": {
+    "address": "0xa7323b7307869c2a3e7be7d3d748418ff8d9a134",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0xa990c6a764b73bf43cee5bb40339c3322fb9d55f": {
+    "address": "0xa990c6a764b73bf43cee5bb40339c3322fb9d55f",
+    "decimals": null,
+    "name": "Slipstream Position NFT v1",
+    "symbol": "AERO-CL-POS"
+  },
+  "0xaba846c443c901a60b7e303482e4c2e5e14111e4": {
+    "address": "0xaba846c443c901a60b7e303482e4c2e5e14111e4",
+    "decimals": null,
+    "name": "\u2705SHIB Reward Pool",
+    "symbol": "Swap your NFT on t.me/s/shibpool"
+  },
+  "0xabb1c8ffb7128f0ee8fb402a37753610a9eec551": {
+    "address": "0xabb1c8ffb7128f0ee8fb402a37753610a9eec551",
+    "decimals": null,
+    "name": "t.me/claimcake - 135.000$ Win",
+    "symbol": "CAKE"
+  },
+  "0xac8584710490fbb73d03e863fb6d74ac917134c4": {
+    "address": "0xac8584710490fbb73d03e863fb6d74ac917134c4",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 - [ t.ly/USPOOL ] - *claim until 20.04.25"
+  },
+  "0xaf4e24542f02b14ceb2e7451c79c0eab50acd19c": {
+    "address": "0xaf4e24542f02b14ceb2e7451c79c0eab50acd19c",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_POOL | claim until 27.11.25"
+  },
+  "0xb403e2a71b9aa9a7a4fc35eac3810508f6423942": {
+    "address": "0xb403e2a71b9aa9a7a4fc35eac3810508f6423942",
+    "decimals": 18,
+    "name": "Base Trump Pepe",
+    "symbol": "PEPE"
+  },
+  "0xb435cb9cee20efce58c452f646552c3ad744ed64": {
+    "address": "0xb435cb9cee20efce58c452f646552c3ad744ed64",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 09.09.25"
+  },
+  "0xb481eae14b0318e864f3b5927ce4284744b2233c": {
+    "address": "0xb481eae14b0318e864f3b5927ce4284744b2233c",
+    "decimals": 18,
+    "name": "Windows meme",
+    "symbol": "WMEME"
+  },
+  "0xb4fde59a779991bfb6a52253b51947828b982be3": {
+    "address": "0xb4fde59a779991bfb6a52253b51947828b982be3",
+    "decimals": 18,
+    "name": "Pepe",
+    "symbol": "PEPE"
+  },
+  "0xb57ec27f68bd356e300d57079b6cdbe57d50830d": {
+    "address": "0xb57ec27f68bd356e300d57079b6cdbe57d50830d",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xb5a93b278f4c1e333c904f7649135fc139ce6984": {
+    "address": "0xb5a93b278f4c1e333c904f7649135fc139ce6984",
+    "decimals": 0,
+    "name": "!    AERO",
+    "symbol": "Airdrop Activate Rewards: aero-drop.com"
+  },
+  "0xb6abc5598a53c8432f9c849528d9d30e30c205fa": {
+    "address": "0xb6abc5598a53c8432f9c849528d9d30e30c205fa",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xb85cdb14f6b31ab1f8d40f633bec6549e0e911f0": {
+    "address": "0xb85cdb14f6b31ab1f8d40f633bec6549e0e911f0",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0xb96a7fa2dc5627eb76f91962e1e45e75e572c850": {
+    "address": "0xb96a7fa2dc5627eb76f91962e1e45e75e572c850",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 25.10.25"
+  },
+  "0xbb23f950b301b57a27bcd4b4d8502e0a37ac3724": {
+    "address": "0xbb23f950b301b57a27bcd4b4d8502e0a37ac3724",
+    "decimals": null,
+    "name": "t.ly/nftjup - 340.000$ JUP Win",
+    "symbol": "JUP"
+  },
+  "0xbb9c339e42a3d074be02eb00bb6be9f5489d7e98": {
+    "address": "0xbb9c339e42a3d074be02eb00bb6be9f5489d7e98",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0xbcd73d9c3de8884c9aaaf9b2e4f0a48a64f12a1b": {
+    "address": "0xbcd73d9c3de8884c9aaaf9b2e4f0a48a64f12a1b",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 15.10.25"
+  },
+  "0xbd337f77d6c56cffca95be1326419f6d878772e8": {
+    "address": "0xbd337f77d6c56cffca95be1326419f6d878772e8",
+    "decimals": null,
+    "name": "$PENDLE AIRDROP: t.me/s/claimpendle",
+    "symbol": "Claim: t.me/s/claimpendle"
+  },
+  "0xbda319bc7cc8f0829df39ec0fff5d1e061ffadf7": {
+    "address": "0xbda319bc7cc8f0829df39ec0fff5d1e061ffadf7",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xbee4e0e23ac9f82a439fa6712f165e7b573c211f": {
+    "address": "0xbee4e0e23ac9f82a439fa6712f165e7b573c211f",
+    "decimals": 0,
+    "name": "BASE",
+    "symbol": "Collect on: swap-based.com"
+  },
+  "0xc1d39c5579b9c05909046a37b8ed3007ee4528e7": {
+    "address": "0xc1d39c5579b9c05909046a37b8ed3007ee4528e7",
+    "decimals": null,
+    "name": "ARBITRUM AIRDROP",
+    "symbol": "\u2b50Link: t.me/s/Arb_Pool (Redeem within 7 days)"
+  },
+  "0xc2170f20f85381b2014eebc1d29f7c77c52ab6fb": {
+    "address": "0xc2170f20f85381b2014eebc1d29f7c77c52ab6fb",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 01.11.25"
+  },
+  "0xc27468b12ffa6d714b1b5fbc87ef403f38b82ad4": {
+    "address": "0xc27468b12ffa6d714b1b5fbc87ef403f38b82ad4",
+    "decimals": 18,
+    "name": "OFFICIAL TRUMP",
+    "symbol": "TRUMP"
+  },
+  "0xc2fad67ceadbde7001ca70236cde9f672edc573b": {
+    "address": "0xc2fad67ceadbde7001ca70236cde9f672edc573b",
+    "decimals": 0,
+    "name": "\u2705\u0421IRCLE TOKEN DISTRIBUTION",
+    "symbol": "t.me/s/US_POOL | claim until 23.12.25"
+  },
+  "0xc34f23943424188b700feaa9a88830e8b7d1ca23": {
+    "address": "0xc34f23943424188b700feaa9a88830e8b7d1ca23",
+    "decimals": null,
+    "name": "\u2705SHIB Reward Pool",
+    "symbol": "Swap your NFT on t.me/s/shibpool"
+  },
+  "0xc425173304d0ed30c203c68ad3c7c1d2d1e0d8b4": {
+    "address": "0xc425173304d0ed30c203c68ad3c7c1d2d1e0d8b4",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 - [ t.ly/USPOOL ] - *claim until 05.05.25"
+  },
+  "0xc4e79a905f40ea9c6b775a3bf706ba6a58fff6ed": {
+    "address": "0xc4e79a905f40ea9c6b775a3bf706ba6a58fff6ed",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0xc4f50650fc9deab17c21a6c128265aa14059b386": {
+    "address": "0xc4f50650fc9deab17c21a6c128265aa14059b386",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0xc72a99803ae70e52fb2364a0c41c137cf6daa052": {
+    "address": "0xc72a99803ae70e52fb2364a0c41c137cf6daa052",
+    "decimals": null,
+    "name": "cakesv4.finance",
+    "symbol": "CAKE"
+  },
+  "0xc7b6a50ecb6cbd584fb0c403f22115a9d2121806": {
+    "address": "0xc7b6a50ecb6cbd584fb0c403f22115a9d2121806",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421  | t.me/s/USCIRCLE | *claim until 13.06.25"
+  },
+  "0xc9dbaaf1958a7c229637ce9c66dcf4d44256cbbc": {
+    "address": "0xc9dbaaf1958a7c229637ce9c66dcf4d44256cbbc",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0xcabd535584848aa0083abee9ecb8e11b9b62af57": {
+    "address": "0xcabd535584848aa0083abee9ecb8e11b9b62af57",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 05.09.25"
+  },
+  "0xcb1137e326b8c48a5b8b29a5ccc19b6e8b9782d2": {
+    "address": "0xcb1137e326b8c48a5b8b29a5ccc19b6e8b9782d2",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xcb914fcff5ee4766975e46ae633f6714cd4fdfb8": {
+    "address": "0xcb914fcff5ee4766975e46ae633f6714cd4fdfb8",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0xcbddf136fee2d684fddeac80572f142723bf954a": {
+    "address": "0xcbddf136fee2d684fddeac80572f142723bf954a",
+    "decimals": 0,
+    "name": "t.me/s/FreeTron888",
+    "symbol": "t.me/s/FreeTron888"
+  },
+  "0xce7903c8b9895d2976dc14c7bbe55d84b7751494": {
+    "address": "0xce7903c8b9895d2976dc14c7bbe55d84b7751494",
+    "decimals": 18,
+    "name": "CLAIM",
+    "symbol": "Eligible: claim-opensea.netlify.app"
+  },
+  "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43": {
+    "address": "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xd01c8f05a9b7d5c2672a590b563ced2cb50d24a6": {
+    "address": "0xd01c8f05a9b7d5c2672a590b563ced2cb50d24a6",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 17.09.25"
+  },
+  "0xd10ffc8ff04c49f0034bf26126f5110caf7f7b34": {
+    "address": "0xd10ffc8ff04c49f0034bf26126f5110caf7f7b34",
+    "decimals": null,
+    "name": "\u2705BASED BRETT Airdrop",
+    "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0xd1e5f7b190b3514af4487dc993a1c44d2c69622a": {
+    "address": "0xd1e5f7b190b3514af4487dc993a1c44d2c69622a",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 03.07.25"
+  },
+  "0xd26ca3d6fdc71a900ef17f1976d9ef3e3de739f1": {
+    "address": "0xd26ca3d6fdc71a900ef17f1976d9ef3e3de739f1",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 10.07.25"
+  },
+  "0xd66c27ec3c0dfcd20678ff5f5c3cbb6ede033b92": {
+    "address": "0xd66c27ec3c0dfcd20678ff5f5c3cbb6ede033b92",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xd684b934b22b980ee37fd298d266e32ce479a116": {
+    "address": "0xd684b934b22b980ee37fd298d266e32ce479a116",
+    "decimals": null,
+    "name": "\u2705 SHIBA VOUCHER",
+    "symbol": "Swap your Voucher on bio.link/shibax"
+  },
+  "0xd9c5a67dc8c782438864439f407f6ce2da48d690": {
+    "address": "0xd9c5a67dc8c782438864439f407f6ce2da48d690",
+    "decimals": 6,
+    "name": "U\u0405D\u0421",
+    "symbol": "U\u0405D\u0421"
+  },
+  "0xda15cbb1f6e265d06b853992a3c17d070bd90cf3": {
+    "address": "0xda15cbb1f6e265d06b853992a3c17d070bd90cf3",
+    "decimals": null,
+    "name": "pudgyz.com - 233.000$ Drop",
+    "symbol": "PENGU"
+  },
+  "0xda9124afb2ab7d4a1a93bf64b21b1000d40f252c": {
+    "address": "0xda9124afb2ab7d4a1a93bf64b21b1000d40f252c",
+    "decimals": 18,
+    "name": "Visit x.com/MascorLabs | TGE Soon.",
+    "symbol": "Visit x.com/MascorLabs | TGE Soon."
+  },
+  "0xdb4ba8a1607240e518695dc0bd4c47a461a9ed8f": {
+    "address": "0xdb4ba8a1607240e518695dc0bd4c47a461a9ed8f",
+    "decimals": 18,
+    "name": " Jesse Uniswap \ud83e\udd84",
+    "symbol": "JESSE \ud83e\udd84"
+  },
+  "0xdc02f9053d1e1c118225d658cd79747b1c9eb914": {
+    "address": "0xdc02f9053d1e1c118225d658cd79747b1c9eb914",
+    "decimals": null,
+    "name": "\u2705$PENDLE AIRDROP",
+    "symbol": "PENDLE | t.me/s/claimpendle | *Claim within 7 days"
+  },
+  "0xde8ff0d3e8ab225110b088a250b546015c567e27": {
+    "address": "0xde8ff0d3e8ab225110b088a250b546015c567e27",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xdeb2f3de4f31a9093a775726c5c0f4b3c9b02263": {
+    "address": "0xdeb2f3de4f31a9093a775726c5c0f4b3c9b02263",
+    "decimals": null,
+    "name": "\u2705SHIB Reward Pool",
+    "symbol": "Swap your NFT on t.me/s/shibpool"
+  },
+  "0xdfa942895b727ab9da61acc8b688637160cdf5ad": {
+    "address": "0xdfa942895b727ab9da61acc8b688637160cdf5ad",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 15.07.25"
+  },
+  "0xe871a267a418c200f8b92ae21397221122b79808": {
+    "address": "0xe871a267a418c200f8b92ae21397221122b79808",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xeb9caafc9cd52434fc906dc6ef28f24509d9b309": {
+    "address": "0xeb9caafc9cd52434fc906dc6ef28f24509d9b309",
+    "decimals": 6,
+    "name": "U\u0405D \u0421oin",
+    "symbol": "U\u0405D\u0421"
+  },
+  "0xec92788b0ade17d0d57b2e47a1d0afd0735a5c61": {
+    "address": "0xec92788b0ade17d0d57b2e47a1d0afd0735a5c61",
+    "decimals": 18,
+    "name": "aixbt by Virtuals",
+    "symbol": "Claim: aixbt-claim.tech"
+  },
+  "0xeca59a0fbd6498b4d3d6e4143a30c2e8d8f68686": {
+    "address": "0xeca59a0fbd6498b4d3d6e4143a30c2e8d8f68686",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xee096fdd7fe7a759f3e8b0855b02976cf0fd25f9": {
+    "address": "0xee096fdd7fe7a759f3e8b0855b02976cf0fd25f9",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xee284dafc1ce93b8923589a9df894f327e85dca9": {
+    "address": "0xee284dafc1ce93b8923589a9df894f327e85dca9",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 25.09.25"
+  },
+  "0xeec6c178ac45a4d05f6a462afeb3052db4370e37": {
+    "address": "0xeec6c178ac45a4d05f6a462afeb3052db4370e37",
+    "decimals": null,
+    "name": "$BRETT Airdrop: t.me/s/claimbrett",
+    "symbol": "Redeem: t.me/s/claimbrett"
+  },
+  "0xeee58f68d722b51ac52fa7ecef2f5b5a48fb74ca": {
+    "address": "0xeee58f68d722b51ac52fa7ecef2f5b5a48fb74ca",
+    "decimals": 18,
+    "name": "\ud83d\udcb2https://tinyurl.com/eDolllar |\ud83d\udcb2eDollar",
+    "symbol": "\ud83d\udcb2eUSD"
+  },
+  "0xef806c8845399397f25fee25cac2fcddb870b5be": {
+    "address": "0xef806c8845399397f25fee25cac2fcddb870b5be",
+    "decimals": 0,
+    "name": "\u2705Unichain Airdrop",
+    "symbol": "$UNI - Claim at: t.me/s/GETUNI | #94"
+  },
+  "0xf0c9afa1d49a85417734da1740beabbaa2463c57": {
+    "address": "0xf0c9afa1d49a85417734da1740beabbaa2463c57",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_POOL | *claim until 11.11.25"
+  },
+  "0xf33a96b5932d9e9b9a0eda447abd8c9d48d2e0c8": {
+    "address": "0xf33a96b5932d9e9b9a0eda447abd8c9d48d2e0c8",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
+  "0xf3ed7a4d88086a8df650538e8858decdf28a1478": {
+    "address": "0xf3ed7a4d88086a8df650538e8858decdf28a1478",
+    "decimals": 18,
+    "name": "!",
+    "symbol": "USD0 [www.usual.promo]"
+  },
+  "0xf6dbae8abf981c95a9189a05098f608b8842df45": {
+    "address": "0xf6dbae8abf981c95a9189a05098f608b8842df45",
+    "decimals": null,
+    "name": "\u2705 SHIBA VOUCHER",
+    "symbol": "Swap your Voucher on bio.link/shibax"
+  },
+  "0xf77fa2e4c7f6dcb6996be24536975291055216cb": {
+    "address": "0xf77fa2e4c7f6dcb6996be24536975291055216cb",
+    "decimals": 18,
+    "name": "Trump 1000X by Virtuals",
+    "symbol": "TRUMP"
+  },
+  "0xfb584ace7f491e2930491a8d01a28db308aeb65f": {
+    "address": "0xfb584ace7f491e2930491a8d01a28db308aeb65f",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 09.10.25"
+  },
+  "0xfd755cff1f0f65c1e163b33c66a0e082ce6f87ff": {
+    "address": "0xfd755cff1f0f65c1e163b33c66a0e082ce6f87ff",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 28.09.25"
+  },
+  "0xfea0c7f0003b09d0042eef22e7e27ebff02f7e69": {
+    "address": "0xfea0c7f0003b09d0042eef22e7e27ebff02f7e69",
+    "decimals": 0,
+    "name": "\u2705$U\u0405D\u0421 TOKEN DISTRIBUTION",
+    "symbol": "U\u0405D\u0421 | t.me/s/US_CIRCLE | *claim until 03.10.25"
+  }
+}

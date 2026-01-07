@@ -38,6 +38,7 @@ WALLET_DATA_DIR = os.path.join(SHARED_DATA_DIR, "wallet")
 PROTOCOL_DATA_DIR = os.path.join(SHARED_DATA_DIR, "protocol")
 
 WALLET_ACTIVITY_CSV_PATH = os.path.join(WALLET_DATA_DIR, "base_activity.csv")
+WALLET_ACTIVITY_SPAM_CSV_PATH = os.path.join(WALLET_DATA_DIR, "base_activity_spam.csv")
 WALLET_LOG_CACHE_PATH = os.path.join(WALLET_DATA_DIR, "log_cache.jsonl")
 WALLET_SPAM_TOKENS_PATH = os.path.join(WALLET_DATA_DIR, "spam_tokens.json")
 WALLET_SPAM_TX_HASHES_PATH = os.path.join(WALLET_DATA_DIR, "spam_tx_hashes.json")
