@@ -33,12 +33,16 @@ DECIMALS_SELECTOR = "0x313ce567"
 
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
 CACHE_PATH = os.path.join(CACHE_DIR, "contracts.json")
+CONTRACTS_SPAM_PATH = os.path.join(CACHE_DIR, "contracts_spam.json")
+CONTRACTS_VALID_PATH = os.path.join(CACHE_DIR, "contracts_valid.json")
 LEGACY_DIR = os.path.join(CACHE_DIR, "contracts")
 
 log = get_logger("wallet_engine.contract_cache")
 
 _CLIENT: Optional[EtherscanV2] = None
 _CACHE: Optional[Dict[str, Dict[str, Any]]] = None
+_SPAM_REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
+_VALID_REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
 
 
 def _ensure_logging() -> None:
@@ -92,6 +96,36 @@ def _load_json(path: str) -> Dict[str, Any]:
     return {}
 
 
+def _load_registry(path: str) -> Dict[str, Dict[str, Any]]:
+    data = _load_json(path) if os.path.exists(path) else {}
+    out: Dict[str, Dict[str, Any]] = {}
+    if isinstance(data, dict):
+        for key, value in data.items():
+            addr = _normalize_address(key)
+            if not addr:
+                continue
+            out[addr] = value if isinstance(value, dict) else {}
+    return out
+
+
+def _get_spam_registry() -> Dict[str, Dict[str, Any]]:
+    global _SPAM_REGISTRY
+    if _SPAM_REGISTRY is None:
+        _SPAM_REGISTRY = _load_registry(CONTRACTS_SPAM_PATH)
+    return _SPAM_REGISTRY
+
+
+def _get_valid_registry() -> Dict[str, Dict[str, Any]]:
+    global _VALID_REGISTRY
+    if _VALID_REGISTRY is None:
+        _VALID_REGISTRY = _load_registry(CONTRACTS_VALID_PATH)
+    return _VALID_REGISTRY
+
+
+def _save_registry(path: str, data: Dict[str, Dict[str, Any]]) -> None:
+    _save_json_atomic(path, data)
+
+
 def _load_legacy_cache() -> Dict[str, Dict[str, Any]]:
     legacy: Dict[str, Dict[str, Any]] = {}
     if not os.path.isdir(LEGACY_DIR):
@@ -132,6 +166,19 @@ def _load_cache() -> Dict[str, Dict[str, Any]]:
 
     _CACHE = cache
     return _CACHE
+
+
+def _get_cached_meta(address: str) -> Dict[str, Any]:
+    cache = _load_cache()
+    cached = cache.get(_normalize_address(address))
+    if isinstance(cached, dict):
+        return cached
+    return {
+        "address": _normalize_address(address),
+        "name": None,
+        "symbol": None,
+        "decimals": None,
+    }
 
 
 def _strip_hex_prefix(data: str) -> str:
@@ -190,6 +237,73 @@ def _safe_eth_call(address: str, data_hex: str) -> Optional[str]:
         return _get_client().eth_call(address, data_hex)
     except Exception:
         return None
+
+
+def mark_contract_valid(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
+    addr = _normalize_address(address)
+    if not addr:
+        return
+    valid = _get_valid_registry()
+    spam = _get_spam_registry()
+    if addr in valid:
+        return
+    record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
+    valid[addr] = record
+    if addr in spam:
+        spam.pop(addr, None)
+    _save_registry(CONTRACTS_VALID_PATH, valid)
+    _save_registry(CONTRACTS_SPAM_PATH, spam)
+
+
+def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
+    addr = _normalize_address(address)
+    if not addr:
+        return
+    valid = _get_valid_registry()
+    if addr in valid:
+        return
+    spam = _get_spam_registry()
+    if addr in spam:
+        return
+    record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
+    spam[addr] = record
+    _save_registry(CONTRACTS_SPAM_PATH, spam)
+
+
+def mark_contract_spam_force(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
+    addr = _normalize_address(address)
+    if not addr:
+        return
+    spam = _get_spam_registry()
+    if addr in spam:
+        return
+    record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
+    spam[addr] = record
+    _save_registry(CONTRACTS_SPAM_PATH, spam)
+
+
+def is_known_spam(address: str) -> bool:
+    addr = _normalize_address(address)
+    if not addr:
+        return False
+    if addr in _get_valid_registry():
+        return False
+    return addr in _get_spam_registry()
+
+
+def is_known_valid(address: str) -> bool:
+    addr = _normalize_address(address)
+    if not addr:
+        return False
+    return addr in _get_valid_registry()
+
+
+def get_spam_contracts() -> set[str]:
+    return set(_get_spam_registry().keys())
+
+
+def get_valid_contracts() -> set[str]:
+    return set(_get_valid_registry().keys())
 
 
 def get_contract_metadata(address: str) -> Dict[str, Any]:

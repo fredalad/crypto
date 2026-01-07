@@ -9,12 +9,19 @@ from apps.shared.config import (
     ETHERSCAN_API_URL,
     REQUEST_SLEEP_SEC,
     WALLET_ACTIVITY_CSV_PATH,
+    WALLET_ACTIVITY_SPAM_CSV_PATH,
     require_api_key,
 )
 from apps.shared.csv_utils import write_csv_rows
 from apps.shared.etherscan_v2 import EtherscanV2
 from apps.shared.logging_utils import get_logger, setup_logging
-from apps.wallet_engine.contract_cache import get_contract_metadata
+from apps.wallet_engine.contract_cache import (
+    get_spam_contracts,
+    get_contract_metadata,
+    is_known_valid,
+    mark_contract_spam,
+    mark_contract_valid,
+)
 from apps.wallet_engine.receipt_cache import process_wallet_transactions
 
 log = get_logger("wallet_engine")
@@ -64,6 +71,64 @@ def _fieldnames(rows: List[Dict[str, str]]) -> List[str]:
                 out.append(key)
                 seen.add(key)
     return out
+
+
+def _split_airdrops(
+    rows: List[Dict[str, Any]],
+) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    clean_rows: List[Dict[str, Any]] = []
+    spam_rows: List[Dict[str, Any]] = []
+    for row in rows:
+        function_name = (row.get("functionName") or "").strip().lower()
+        if (
+            "airdrop" in function_name
+            or "dispersetoken" in function_name
+            or "batchtransfer" in function_name
+        ):
+            spam_rows.append(row)
+        else:
+            clean_rows.append(row)
+    return clean_rows, spam_rows
+
+
+def _row_contract_address(row: Dict[str, Any]) -> str:
+    tx_type = row.get("tx_type")
+    if tx_type in ("token", "nft"):
+        return (row.get("contractAddress") or "").strip()
+    if tx_type == "native":
+        to_addr = (row.get("to") or "").strip()
+        input_data = (row.get("input") or "").strip()
+        if to_addr and input_data and input_data != "0x":
+            return to_addr
+    return ""
+
+
+def _filter_preexisting_spam(
+    rows: List[Dict[str, Any]], preexisting_spam: set[str]
+) -> List[Dict[str, Any]]:
+    kept: List[Dict[str, Any]] = []
+    for row in rows:
+        addr = _row_contract_address(row)
+        if addr and addr.lower() in preexisting_spam and not is_known_valid(addr):
+            continue
+        kept.append(row)
+    return kept
+
+
+def _mark_contracts(rows: List[Dict[str, Any]], *, is_spam: bool) -> None:
+    seen = set()
+    for row in rows:
+        addr = _row_contract_address(row)
+        if not addr:
+            continue
+        addr_l = addr.lower()
+        if addr_l in seen:
+            continue
+        seen.add(addr_l)
+        if is_spam:
+            mark_contract_spam(addr)
+        else:
+            mark_contract_valid(addr)
 
 
 def _collect_contract_addresses(rows: List[Dict[str, Any]]) -> List[str]:
@@ -165,12 +230,20 @@ def run_export(
         end_block=end_block,
         sort=sort,
     )
-    process_wallet_transactions(rows)
-    _cache_contract_metadata(rows)
+    preexisting_spam = get_spam_contracts()
+    clean_rows, spam_rows = _split_airdrops(rows)
+    _mark_contracts(clean_rows, is_spam=False)
+    _mark_contracts(spam_rows, is_spam=True)
+    clean_rows = _filter_preexisting_spam(clean_rows, preexisting_spam)
+    spam_rows = _filter_preexisting_spam(spam_rows, preexisting_spam)
+    process_wallet_transactions(clean_rows)
+    _cache_contract_metadata(clean_rows)
     log.info("Fetched %d transactions", len(rows))
 
     fieldnames = _fieldnames(rows)
-    write_csv_rows(WALLET_ACTIVITY_CSV_PATH, rows, fieldnames)
+    write_csv_rows(WALLET_ACTIVITY_CSV_PATH, clean_rows, fieldnames)
+    write_csv_rows(WALLET_ACTIVITY_SPAM_CSV_PATH, spam_rows, fieldnames)
+    log.info("Wrote spam CSV: %s", WALLET_ACTIVITY_SPAM_CSV_PATH)
     log.info("Wrote CSV: %s", WALLET_ACTIVITY_CSV_PATH)
 
 

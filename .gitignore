@@ -1,3 +1,4 @@
 .env
 __pycache__/
 *log_cache.jsonl
+*tx_receipts.jsonl

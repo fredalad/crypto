@@ -1391,6 +1391,12 @@
     "name": "FortressToken AI",
     "symbol": "FORTRESS"
   },
+  "0x404c418e93521261f4255e2ee65c5639c53dd591": {
+    "address": "0x404c418e93521261f4255e2ee65c5639c53dd591",
+    "decimals": 8,
+    "name": "CEO",
+    "symbol": "CEO"
+  },
   "0x405af3fef222f8e1192c4c00677cd80d52234ce1": {
     "address": "0x405af3fef222f8e1192c4c00677cd80d52234ce1",
     "decimals": null,
