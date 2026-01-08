@@ -1,16 +1,4 @@
 {
-  "0x0000000000001ff3684f28c67538d4d072c22734": {
-    "address": "0x0000000000001ff3684f28c67538d4d072c22734",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x01d40099fcd87c018969b0e8d4ab1633fb34763c": {
-    "address": "0x01d40099fcd87c018969b0e8d4ab1633fb34763c",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x03264d29e2498284c0043d8f83e040778ab6290a": {
     "address": "0x03264d29e2498284c0043d8f83e040778ab6290a",
     "decimals": 18,
@@ -35,12 +23,6 @@
     "name": "Based Coin",
     "symbol": "BASED"
   },
-  "0x09aea4b2242abc8bb4bb78d537a67a245a7bec64": {
-    "address": "0x09aea4b2242abc8bb4bb78d537a67a245a7bec64",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25": {
     "address": "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25",
     "decimals": 18,
@@ -53,41 +35,11 @@
     "name": "Virtual Protocol",
     "symbol": "VIRTUAL"
   },
-  "0x0c1d14b66e74fbb35d53a0c97dbe93fa8a97bbe7": {
-    "address": "0x0c1d14b66e74fbb35d53a0c97dbe93fa8a97bbe7",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x0c3e14ca158e874f513c70caafeea49a85d4ccc6": {
-    "address": "0x0c3e14ca158e874f513c70caafeea49a85d4ccc6",
-    "decimals": 18,
-    "name": "Brian Armstrong Saves Ethereum",
-    "symbol": "BASE-69"
-  },
   "0x1111111111166b7fe7bd91427724b487980afc69": {
     "address": "0x1111111111166b7fe7bd91427724b487980afc69",
     "decimals": 18,
     "name": "Zora",
     "symbol": "ZORA"
-  },
-  "0x1111111254eeb25477b68fb85ed929f73a960582": {
-    "address": "0x1111111254eeb25477b68fb85ed929f73a960582",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x163fb041c2e0026fcfa8e215f123b2cd55b2da81": {
-    "address": "0x163fb041c2e0026fcfa8e215f123b2cd55b2da81",
-    "decimals": 18,
-    "name": "Base Wif Hair ",
-    "symbol": "HAIR"
-  },
-  "0x16613524e02ad97edfef371bc883f2f5d6c480a5": {
-    "address": "0x16613524e02ad97edfef371bc883f2f5d6c480a5",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda": {
     "address": "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda",
@@ -95,41 +47,11 @@
     "name": "PERPY",
     "symbol": "PERPY"
   },
-  "0x19850575dbdb1ee6e1a38234316870fc0949a7ce": {
-    "address": "0x19850575dbdb1ee6e1a38234316870fc0949a7ce",
-    "decimals": 18,
-    "name": "PepeGold",
-    "symbol": "PG"
-  },
-  "0x1a82875fdfcda393bc1cc44492515586cbc8697b": {
-    "address": "0x1a82875fdfcda393bc1cc44492515586cbc8697b",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x1aa9609ddfba43cda2e5872722f3463b31247444": {
-    "address": "0x1aa9609ddfba43cda2e5872722f3463b31247444",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x1bc0c42215582d5a085795f4badbac3ff36d1bcb": {
     "address": "0x1bc0c42215582d5a085795f4badbac3ff36d1bcb",
     "decimals": 18,
     "name": "tokenbot",
     "symbol": "CLANKER"
-  },
-  "0x1c664940858dcea1e5a3b87951f1f74911102cb5": {
-    "address": "0x1c664940858dcea1e5a3b87951f1f74911102cb5",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x227f65131a261548b057215bb1d5ab2997964c7d": {
-    "address": "0x227f65131a261548b057215bb1d5ab2997964c7d",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b": {
     "address": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
@@ -143,23 +65,11 @@
     "name": "Base tBTC v2",
     "symbol": "tBTC"
   },
-  "0x268602800bbd7ae5e112c7badac6b31d769a5297": {
-    "address": "0x268602800bbd7ae5e112c7badac6b31d769a5297",
-    "decimals": 9,
-    "name": "PepePawn",
-    "symbol": "PEPA"
-  },
   "0x26c69e4924bd0d7d52d680b33616042ee13f621c": {
     "address": "0x26c69e4924bd0d7d52d680b33616042ee13f621c",
     "decimals": 18,
     "name": "SALUKI",
     "symbol": "SALUKI"
-  },
-  "0x26ca7aefbc73cb20364df9bba4fdf642c52a60e4": {
-    "address": "0x26ca7aefbc73cb20364df9bba4fdf642c52a60e4",
-    "decimals": 18,
-    "name": "VVV",
-    "symbol": "VVV"
   },
   "0x26f3901ac8a79c50fb0d8289c74f0d09adc42e29": {
     "address": "0x26f3901ac8a79c50fb0d8289c74f0d09adc42e29",
@@ -167,35 +77,11 @@
     "name": "Threshold Network Token",
     "symbol": "T"
   },
-  "0x28047b764d603a25146a0b8a8d414740dc1e650e": {
-    "address": "0x28047b764d603a25146a0b8a8d414740dc1e650e",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x282ece21a112950f62ec4493e2bd2b27a74c7937": {
-    "address": "0x282ece21a112950f62ec4493e2bd2b27a74c7937",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x28dcf4abc65a3e0971602bdbaa95f14ceec09a2a": {
-    "address": "0x28dcf4abc65a3e0971602bdbaa95f14ceec09a2a",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a": {
     "address": "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a",
     "decimals": 18,
     "name": "Bark Ruffalo by Virtuals",
     "symbol": "PAWSY"
-  },
-  "0x2b74b62c564456c48055bd515a62594742b3f545": {
-    "address": "0x2b74b62c564456c48055bd515a62594742b3f545",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0x2c001233ed5e731b98b15b30267f78c7560b71f2": {
     "address": "0x2c001233ed5e731b98b15b30267f78c7560b71f2",
@@ -203,71 +89,17 @@
     "name": "BUBU",
     "symbol": "BUBU"
   },
-  "0x2c235f5cdab976f15c5595c1131174efd325ad5b": {
-    "address": "0x2c235f5cdab976f15c5595c1131174efd325ad5b",
-    "decimals": 18,
-    "name": "Meow",
-    "symbol": "Meow"
-  },
   "0x2dc1c8be620b95cba25d78774f716f05b159c8b9": {
     "address": "0x2dc1c8be620b95cba25d78774f716f05b159c8b9",
     "decimals": 18,
     "name": "Based Bonk",
     "symbol": "Bonk"
   },
-  "0x2efc22fbee14674cb05410ea6ed66473774ab443": {
-    "address": "0x2efc22fbee14674cb05410ea6ed66473774ab443",
-    "decimals": 18,
-    "name": "Snow By Virtuals",
-    "symbol": "SNOW"
-  },
   "0x306fd3e7b169aa4ee19412323e1a5995b8c1a1f4": {
     "address": "0x306fd3e7b169aa4ee19412323e1a5995b8c1a1f4",
     "decimals": 18,
     "name": "Black Agnus",
     "symbol": "FTW"
-  },
-  "0x30c1d9b1cbd5590d6da01069a331e110482a8a91": {
-    "address": "0x30c1d9b1cbd5590d6da01069a331e110482a8a91",
-    "decimals": 18,
-    "name": "Based Mog Coin",
-    "symbol": "Mog"
-  },
-  "0x319e23d38d8ee58783ff5331507b808709bd00b0": {
-    "address": "0x319e23d38d8ee58783ff5331507b808709bd00b0",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x35f7635ceba0c40f8ab396b3c305cf135f9699b2": {
-    "address": "0x35f7635ceba0c40f8ab396b3c305cf135f9699b2",
-    "decimals": 18,
-    "name": "Brett Trump",
-    "symbol": "BRUMP"
-  },
-  "0x37c756be7a834b069103edfde5679af1721f4360": {
-    "address": "0x37c756be7a834b069103edfde5679af1721f4360",
-    "decimals": 18,
-    "name": "ShitpostCoin",
-    "symbol": "SPC"
-  },
-  "0x3943a85126b0029ce206b0260c71f02be628c9fb": {
-    "address": "0x3943a85126b0029ce206b0260c71f02be628c9fb",
-    "decimals": 9,
-    "name": "Altdeer",
-    "symbol": "ALT"
-  },
-  "0x3a23f943181408eac424116af7b7790c94cb97a5": {
-    "address": "0x3a23f943181408eac424116af7b7790c94cb97a5",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x3bec18da21db7afff81253b48a18f0d91a4811e0": {
-    "address": "0x3bec18da21db7afff81253b48a18f0d91a4811e0",
-    "decimals": 18,
-    "name": "Endless Protocol",
-    "symbol": "EP1"
   },
   "0x3d63825b0d8669307366e6c8202f656b9e91d368": {
     "address": "0x3d63825b0d8669307366e6c8202f656b9e91d368",
@@ -287,47 +119,11 @@
     "name": "Ionic",
     "symbol": "ION"
   },
-  "0x3ef3d8ba38ebe18db133cec108f4d14ce00dd9ae": {
-    "address": "0x3ef3d8ba38ebe18db133cec108f4d14ce00dd9ae",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x413112e5434c7d3b00cad0948d89dca460f6fb46": {
-    "address": "0x413112e5434c7d3b00cad0948d89dca460f6fb46",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x41b2126661c673c2bedd208cc72e85dc51a5320a": {
-    "address": "0x41b2126661c673c2bedd208cc72e85dc51a5320a",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x41c1bfd7ddd9d8de1a843090db615eaa45e16210": {
-    "address": "0x41c1bfd7ddd9d8de1a843090db615eaa45e16210",
-    "decimals": 18,
-    "name": "GPT",
-    "symbol": "GPT"
-  },
   "0x4200000000000000000000000000000000000006": {
     "address": "0x4200000000000000000000000000000000000006",
     "decimals": 18,
     "name": "Wrapped Ether",
     "symbol": "WETH"
-  },
-  "0x430c09546ae9249ab75b9a4ef7b5fd9a4006d6f3": {
-    "address": "0x430c09546ae9249ab75b9a4ef7b5fd9a4006d6f3",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x457e800ee4ee8a774b1abae2fe290cace5946954": {
-    "address": "0x457e800ee4ee8a774b1abae2fe290cace5946954",
-    "decimals": 18,
-    "name": "Based Replicandy",
-    "symbol": "Replicandy"
   },
   "0x4b6104755afb5da4581b81c552da3a25608c73b8": {
     "address": "0x4b6104755afb5da4581b81c552da3a25608c73b8",
@@ -353,65 +149,11 @@
     "name": "Degen",
     "symbol": "DEGEN"
   },
-  "0x5013ea8783bfeaa8c4850a54eacd54d7a3b7f889": {
-    "address": "0x5013ea8783bfeaa8c4850a54eacd54d7a3b7f889",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x50cb611830cf25197469395004c2d10e9763b2cd": {
-    "address": "0x50cb611830cf25197469395004c2d10e9763b2cd",
-    "decimals": 9,
-    "name": "CodexField",
-    "symbol": "CODEX"
-  },
-  "0x51f97f435d55501c2150355d40889fea44e490aa": {
-    "address": "0x51f97f435d55501c2150355d40889fea44e490aa",
-    "decimals": 18,
-    "name": "Datalytics",
-    "symbol": "DATA"
-  },
-  "0x527b83782b2ef0c5506e79333ca709d81644952f": {
-    "address": "0x527b83782b2ef0c5506e79333ca709d81644952f",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x52b492a33e447cdb854c7fc19f1e57e8bfa1777d": {
     "address": "0x52b492a33e447cdb854c7fc19f1e57e8bfa1777d",
     "decimals": 18,
     "name": "BasedPepe",
     "symbol": "PEPE"
-  },
-  "0x52e5886773ee56b5c1c335bf3d0ec2a0e2f3b0a9": {
-    "address": "0x52e5886773ee56b5c1c335bf3d0ec2a0e2f3b0a9",
-    "decimals": 18,
-    "name": "SHIFU BASED",
-    "symbol": "SHIFU"
-  },
-  "0x5566191043c05b12899102bac9c4daaf6401f066": {
-    "address": "0x5566191043c05b12899102bac9c4daaf6401f066",
-    "decimals": 18,
-    "name": "Based Alf",
-    "symbol": "Alf"
-  },
-  "0x556aeda0e826fa05b8133f707bf5691599e515d9": {
-    "address": "0x556aeda0e826fa05b8133f707bf5691599e515d9",
-    "decimals": 18,
-    "name": "SOSO",
-    "symbol": "SOSO"
-  },
-  "0x5598bbfa2f4fe8151f45bba0a3ede1b54b51a0a9": {
-    "address": "0x5598bbfa2f4fe8151f45bba0a3ede1b54b51a0a9",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x581632b90ab75c871641fef5ce51dfd528e45aee": {
-    "address": "0x581632b90ab75c871641fef5ce51dfd528e45aee",
-    "decimals": 9,
-    "name": "Zama",
-    "symbol": "ZAMA"
   },
   "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9": {
     "address": "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9",
@@ -425,83 +167,11 @@
     "name": "Aave Token",
     "symbol": "AAVE"
   },
-  "0x6399ed6725cc163d019aa64ff55b22149d7179a8": {
-    "address": "0x6399ed6725cc163d019aa64ff55b22149d7179a8",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x6711bd0a6faadda3db6edb39d68d295e138239a6": {
-    "address": "0x6711bd0a6faadda3db6edb39d68d295e138239a6",
-    "decimals": 10,
-    "name": "UNI",
-    "symbol": "Visit unib.pro to swap"
-  },
-  "0x6727aa0a27c7b39cc78506934154c963996c755c": {
-    "address": "0x6727aa0a27c7b39cc78506934154c963996c755c",
-    "decimals": 18,
-    "name": "Dogeman Style",
-    "symbol": "DOGEMAN"
-  },
-  "0x67d6f959519731ea3402f23767585991f04cdb67": {
-    "address": "0x67d6f959519731ea3402f23767585991f04cdb67",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x695e449525d42055d368f84e97912032c7410a46": {
-    "address": "0x695e449525d42055d368f84e97912032c7410a46",
-    "decimals": 18,
-    "name": "DOGX",
-    "symbol": "DOGX"
-  },
-  "0x6a7d1b43b42f8a30b729bffbdae2884b683b545c": {
-    "address": "0x6a7d1b43b42f8a30b729bffbdae2884b683b545c",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x6b82714e0e4964595a97fe2b1c3ad03dbb246fdf": {
-    "address": "0x6b82714e0e4964595a97fe2b1c3ad03dbb246fdf",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x6cb442acf35158d5eda88fe602221b67b400be3e": {
-    "address": "0x6cb442acf35158d5eda88fe602221b67b400be3e",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x6da9ad429457a0cbb1c7aa02e40297a43d1f67aa": {
-    "address": "0x6da9ad429457a0cbb1c7aa02e40297a43d1f67aa",
-    "decimals": 18,
-    "name": "CryptoBunny",
-    "symbol": "CRB"
-  },
-  "0x6df1c91424f79e40e33b1a48f0687b666be71075": {
-    "address": "0x6df1c91424f79e40e33b1a48f0687b666be71075",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x6e2c81b6c2c0e02360f00a0da694e489acb0b05e": {
     "address": "0x6e2c81b6c2c0e02360f00a0da694e489acb0b05e",
     "decimals": 18,
     "name": "Reflect",
     "symbol": "RFL"
-  },
-  "0x6ff5693b99212da76ad316178a184ab56d299b43": {
-    "address": "0x6ff5693b99212da76ad316178a184ab56d299b43",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x724fdd6e22b666a525d45d91f0a3687fa3b44063": {
-    "address": "0x724fdd6e22b666a525d45d91f0a3687fa3b44063",
-    "decimals": 9,
-    "name": "Zama",
-    "symbol": "ZAMA"
   },
   "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979": {
     "address": "0x74ccbe53f77b08632ce0cb91d3a545bf6b8e0979",
@@ -509,23 +179,11 @@
     "name": "Fantom Bomb",
     "symbol": "fBOMB"
   },
-  "0x75a465395df64fea66a64d871ee01229e5bf4fda": {
-    "address": "0x75a465395df64fea66a64d871ee01229e5bf4fda",
-    "decimals": 18,
-    "name": "AVAI",
-    "symbol": "AVAI"
-  },
   "0x76734b57dfe834f102fb61e1ebf844adf8dd931e": {
     "address": "0x76734b57dfe834f102fb61e1ebf844adf8dd931e",
     "decimals": 8,
     "name": "weirdo",
     "symbol": "weirdo"
-  },
-  "0x7735216561e13c7f96f9550c4554ba208a3a3f65": {
-    "address": "0x7735216561e13c7f96f9550c4554ba208a3a3f65",
-    "decimals": 9,
-    "name": "AI Avatar",
-    "symbol": "AIAV"
   },
   "0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c": {
     "address": "0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c",
@@ -533,23 +191,11 @@
     "name": "HeyAnon",
     "symbol": "Anon"
   },
-  "0x7f0277bdc4413ff405adab2cce633bde7aa7ebdb": {
-    "address": "0x7f0277bdc4413ff405adab2cce633bde7aa7ebdb",
-    "decimals": 9,
-    "name": "ZenChain",
-    "symbol": "ZTC"
-  },
   "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913": {
     "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
     "decimals": 6,
     "name": "USD Coin",
     "symbol": "USDC"
-  },
-  "0x8797660b918d9769d7b6e6ec98e125b29922fff0": {
-    "address": "0x8797660b918d9769d7b6e6ec98e125b29922fff0",
-    "decimals": 9,
-    "name": "Base Lotto",
-    "symbol": "BLOTTO"
   },
   "0x8890de1637912fbbba36b8b19365cdc99122bd6e": {
     "address": "0x8890de1637912fbbba36b8b19365cdc99122bd6e",
@@ -563,29 +209,11 @@
     "name": "ChainLink Token",
     "symbol": "LINK"
   },
-  "0x8d3b31cef783eaf21c951a26ece68dfcd4d12d42": {
-    "address": "0x8d3b31cef783eaf21c951a26ece68dfcd4d12d42",
-    "decimals": 18,
-    "name": "MemeCash",
-    "symbol": "MECA"
-  },
   "0x901f1d2bf312e6fa1716df603df8f86315bcb355": {
     "address": "0x901f1d2bf312e6fa1716df603df8f86315bcb355",
     "decimals": 18,
     "name": "Links",
     "symbol": "LINKS"
-  },
-  "0x904efbbaab6cf3e4499968af1b68aa54d5b586df": {
-    "address": "0x904efbbaab6cf3e4499968af1b68aa54d5b586df",
-    "decimals": 18,
-    "name": "Anthrax",
-    "symbol": "ANTHRAX"
-  },
-  "0x93ee62191632cdb63710f6dbe497dbc6640242f4": {
-    "address": "0x93ee62191632cdb63710f6dbe497dbc6640242f4",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0x940181a94a35a4569e4529a3cdfb74e38fd98631": {
     "address": "0x940181a94a35a4569e4529a3cdfb74e38fd98631",
@@ -599,41 +227,11 @@
     "name": "Bsop",
     "symbol": "Bsop"
   },
-  "0x996802075582af2ee133fb30cc5a9e8a671d3c3a": {
-    "address": "0x996802075582af2ee133fb30cc5a9e8a671d3c3a",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0x99ae0d6f5b311a361f57cc9714be236d87316085": {
-    "address": "0x99ae0d6f5b311a361f57cc9714be236d87316085",
-    "decimals": 9,
-    "name": "Baby Pepe",
-    "symbol": "BEPE"
-  },
-  "0x9a9754f9d7982aba360c47e5f90d76e616ba2925": {
-    "address": "0x9a9754f9d7982aba360c47e5f90d76e616ba2925",
-    "decimals": 18,
-    "name": "Trump Card",
-    "symbol": "TC"
-  },
-  "0x9b42e5f8c45222b2715f804968251c747c588fd7": {
-    "address": "0x9b42e5f8c45222b2715f804968251c747c588fd7",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0x9b8df6e244526ab5f6e6400d331db28c8fdddb55": {
     "address": "0x9b8df6e244526ab5f6e6400d331db28c8fdddb55",
     "decimals": 18,
     "name": "Solana (Universal)",
     "symbol": "uSOL"
-  },
-  "0x9c298e20713daecbbcc748629ef4337bfa98658f": {
-    "address": "0x9c298e20713daecbbcc748629ef4337bfa98658f",
-    "decimals": 18,
-    "name": "MoonCat",
-    "symbol": "MC"
   },
   "0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083": {
     "address": "0x9d0e8f5b25384c7310cb8c6ae32c8fbeb645d083",
@@ -641,53 +239,17 @@
     "name": "Derive",
     "symbol": "DRV"
   },
-  "0x9f6218959f3a1d0f5e55c974678dae820087b315": {
-    "address": "0x9f6218959f3a1d0f5e55c974678dae820087b315",
-    "decimals": 18,
-    "name": "OpenAI",
-    "symbol": "OpenAI"
-  },
-  "0x9f880edee65317034677182f2e7d6a5619f65720": {
-    "address": "0x9f880edee65317034677182f2e7d6a5619f65720",
-    "decimals": 18,
-    "name": "XMOON",
-    "symbol": "XMOON"
-  },
-  "0xa0d9c1e9e48ca30c8d8c3b5d69ff5dc1f6dffc24": {
-    "address": "0xa0d9c1e9e48ca30c8d8c3b5d69ff5dc1f6dffc24",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xa238dd80c259a72e81d7e4664a9801593f98d1c5": {
-    "address": "0xa238dd80c259a72e81d7e4664a9801593f98d1c5",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0xa88594d404727625a9437c3f886c7643872296ae": {
     "address": "0xa88594d404727625a9437c3f886c7643872296ae",
     "decimals": 18,
     "name": "WELL",
     "symbol": "WELL"
   },
-  "0xabab594dad78a9a6d19b376ccfb45935ec7c8790": {
-    "address": "0xabab594dad78a9a6d19b376ccfb45935ec7c8790",
-    "decimals": 18,
-    "name": "Spot Points",
-    "symbol": "SPOT"
-  },
   "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4": {
     "address": "0xac1bd2486aaf3b5c0fc3fd868558b082a531b2b4",
     "decimals": 18,
     "name": "Toshi",
     "symbol": "TOSHI"
-  },
-  "0xaed66849e77dc6340565fab4a3e7a354bbb09c54": {
-    "address": "0xaed66849e77dc6340565fab4a3e7a354bbb09c54",
-    "decimals": 18,
-    "name": "XCN",
-    "symbol": "XCN"
   },
   "0xb1a03eda10342529bbf8eb700a06c60441fef25d": {
     "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
@@ -707,24 +269,6 @@
     "name": "Based Doge",
     "symbol": "BDOGE"
   },
-  "0xb57ec27f68bd356e300d57079b6cdbe57d50830d": {
-    "address": "0xb57ec27f68bd356e300d57079b6cdbe57d50830d",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xb6abc5598a53c8432f9c849528d9d30e30c205fa": {
-    "address": "0xb6abc5598a53c8432f9c849528d9d30e30c205fa",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xb70695a052c02ca2f6eda07ccf4a66a3f5cc612c": {
-    "address": "0xb70695a052c02ca2f6eda07ccf4a66a3f5cc612c",
-    "decimals": 18,
-    "name": "NVIDIA GeForce",
-    "symbol": "NVIDIA"
-  },
   "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376": {
     "address": "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
     "decimals": 6,
@@ -736,12 +280,6 @@
     "decimals": 18,
     "name": "toby",
     "symbol": "toby"
-  },
-  "0xbda319bc7cc8f0829df39ec0fff5d1e061ffadf7": {
-    "address": "0xbda319bc7cc8f0829df39ec0fff5d1e061ffadf7",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36": {
     "address": "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36",
@@ -755,42 +293,6 @@
     "name": "Cookie",
     "symbol": "COOKIE"
   },
-  "0xc0447440f621e53ce7fc3c4d723925672cb1b23b": {
-    "address": "0xc0447440f621e53ce7fc3c4d723925672cb1b23b",
-    "decimals": 18,
-    "name": "BSX",
-    "symbol": "BSX"
-  },
-  "0xc1789999e3a80f71cdaad44aa8521a0f5829d55b": {
-    "address": "0xc1789999e3a80f71cdaad44aa8521a0f5829d55b",
-    "decimals": 18,
-    "name": "BASEAI",
-    "symbol": "BASEAI"
-  },
-  "0xc20386bbd4ef57b9322c985d983c022a237120bd": {
-    "address": "0xc20386bbd4ef57b9322c985d983c022a237120bd",
-    "decimals": 18,
-    "name": "Pully Quality",
-    "symbol": "PUQI"
-  },
-  "0xc3f7ca0d509d6b228b8a95b5c84e3b75639a68e9": {
-    "address": "0xc3f7ca0d509d6b228b8a95b5c84e3b75639a68e9",
-    "decimals": 9,
-    "name": "Brevis",
-    "symbol": "BREV"
-  },
-  "0xc4b114f4bbd42229f22c077b854128107ed6a607": {
-    "address": "0xc4b114f4bbd42229f22c077b854128107ed6a607",
-    "decimals": 18,
-    "name": "Degen Coin Toss",
-    "symbol": "DCT"
-  },
-  "0xc849418f46a25d302f55d25c40a82c99404e5245": {
-    "address": "0xc849418f46a25d302f55d25c40a82c99404e5245",
-    "decimals": 18,
-    "name": "Kiki Flaminki",
-    "symbol": "KIKI"
-  },
   "0xc8e51fefd7d595c217c7ab641513faa4ad522b26": {
     "address": "0xc8e51fefd7d595c217c7ab641513faa4ad522b26",
     "decimals": 18,
@@ -803,29 +305,11 @@
     "name": "Cygnus Global USD",
     "symbol": "cgUSD"
   },
-  "0xcb1137e326b8c48a5b8b29a5ccc19b6e8b9782d2": {
-    "address": "0xcb1137e326b8c48a5b8b29a5ccc19b6e8b9782d2",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf": {
     "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
     "decimals": 8,
     "name": "Coinbase Wrapped BTC",
     "symbol": "cbBTC"
-  },
-  "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43": {
-    "address": "0xcf77a3ba9a5ca399b7c97c74d54e5b1beb874e43",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xd072013392c1438f28ec9e9a90059a888de4a937": {
-    "address": "0xd072013392c1438f28ec9e9a90059a888de4a937",
-    "decimals": 9,
-    "name": "ForTON",
-    "symbol": "FRT"
   },
   "0xd461a534af11ef58e9f9add73129a1f45485a8dc": {
     "address": "0xd461a534af11ef58e9f9add73129a1f45485a8dc",
@@ -839,12 +323,6 @@
     "name": "Aave Base WETH",
     "symbol": "aBasWETH"
   },
-  "0xd66c27ec3c0dfcd20678ff5f5c3cbb6ede033b92": {
-    "address": "0xd66c27ec3c0dfcd20678ff5f5c3cbb6ede033b92",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0xd968196fa6977c4e58f2af5ac01c655ea8332d22": {
     "address": "0xd968196fa6977c4e58f2af5ac01c655ea8332d22",
     "decimals": 18,
@@ -857,59 +335,17 @@
     "name": "Super OETH",
     "symbol": "superOETHb"
   },
-  "0xde8ff0d3e8ab225110b088a250b546015c567e27": {
-    "address": "0xde8ff0d3e8ab225110b088a250b546015c567e27",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xe113c82a9b6382d60ac264f61aae60f764f57d5a": {
-    "address": "0xe113c82a9b6382d60ac264f61aae60f764f57d5a",
-    "decimals": 9,
-    "name": "DUCKY (Duckythebrain)",
-    "symbol": "DUCKY"
-  },
-  "0xe871a267a418c200f8b92ae21397221122b79808": {
-    "address": "0xe871a267a418c200f8b92ae21397221122b79808",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
-  "0xe9884e45313e797eef951ef349a2de02ae58cbaf": {
-    "address": "0xe9884e45313e797eef951ef349a2de02ae58cbaf",
-    "decimals": 18,
-    "name": "Verasity",
-    "symbol": "VRA"
-  },
-  "0xeca59a0fbd6498b4d3d6e4143a30c2e8d8f68686": {
-    "address": "0xeca59a0fbd6498b4d3d6e4143a30c2e8d8f68686",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0xed6e000def95780fb89734c07ee2ce9f6dcaf110": {
     "address": "0xed6e000def95780fb89734c07ee2ce9f6dcaf110",
     "decimals": 18,
     "name": "Edge",
     "symbol": "EDGE"
   },
-  "0xee096fdd7fe7a759f3e8b0855b02976cf0fd25f9": {
-    "address": "0xee096fdd7fe7a759f3e8b0855b02976cf0fd25f9",
-    "decimals": null,
-    "name": null,
-    "symbol": null
-  },
   "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5": {
     "address": "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5",
     "decimals": 9,
     "name": "Bachi on Base",
     "symbol": "BACHI"
-  },
-  "0xf33a96b5932d9e9b9a0eda447abd8c9d48d2e0c8": {
-    "address": "0xf33a96b5932d9e9b9a0eda447abd8c9d48d2e0c8",
-    "decimals": null,
-    "name": null,
-    "symbol": null
   },
   "0xf43eb8de897fbc7f2502483b2bef7bb9ea179229": {
     "address": "0xf43eb8de897fbc7f2502483b2bef7bb9ea179229",
@@ -922,12 +358,6 @@
     "decimals": 18,
     "name": "Lit Protocol",
     "symbol": "LITKEY"
-  },
-  "0xfae7d01301e2eeede488f0953547e712a56c5e1d": {
-    "address": "0xfae7d01301e2eeede488f0953547e712a56c5e1d",
-    "decimals": 18,
-    "name": "OracleAI",
-    "symbol": "OracleAI"
   },
   "0xfde4c96c8593536e31f229ea8f37b2ada2699bb2": {
     "address": "0xfde4c96c8593536e31f229ea8f37b2ada2699bb2",

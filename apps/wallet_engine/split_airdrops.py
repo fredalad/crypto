@@ -7,6 +7,7 @@ from typing import Any, Dict, List, Tuple
 
 from apps.shared.config import WALLET_ACTIVITY_CSV_PATH, WALLET_ACTIVITY_SPAM_CSV_PATH
 from apps.wallet_engine.contract_cache import (
+    dedupe_valid_against_spam,
     get_spam_contracts,
     is_known_valid,
     mark_contract_spam,
@@ -59,16 +60,22 @@ def _row_contract_address(row: Dict[str, Any]) -> str:
     return ""
 
 
-def _filter_preexisting_spam(
-    rows: List[Dict[str, Any]], preexisting_spam: set[str]
-) -> List[Dict[str, Any]]:
+def _move_preexisting_spam(
+    clean_rows: List[Dict[str, Any]],
+    spam_rows: List[Dict[str, Any]],
+    preexisting_spam: set[str],
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     kept: List[Dict[str, Any]] = []
-    for row in rows:
+    moved: List[Dict[str, Any]] = []
+    for row in clean_rows:
         addr = _row_contract_address(row)
         if addr and addr.lower() in preexisting_spam and not is_known_valid(addr):
-            continue
-        kept.append(row)
-    return kept
+            moved.append(row)
+        else:
+            kept.append(row)
+    if moved:
+        spam_rows = spam_rows + moved
+    return kept, spam_rows
 
 
 def _mark_contracts(rows: List[Dict[str, Any]], *, is_spam: bool) -> None:
@@ -114,8 +121,12 @@ def run() -> None:
     clean_rows, spam_rows = _split_rows(rows)
     _mark_contracts(clean_rows, is_spam=False)
     _mark_contracts(spam_rows, is_spam=True)
-    clean_rows = _filter_preexisting_spam(clean_rows, preexisting_spam)
-    spam_rows = _filter_preexisting_spam(spam_rows, preexisting_spam)
+    removed = dedupe_valid_against_spam()
+    if removed:
+        log.info("Removed %d overlapping contracts from valid list", removed)
+    clean_rows, spam_rows = _move_preexisting_spam(
+        clean_rows, spam_rows, preexisting_spam
+    )
     _write_csv(WALLET_ACTIVITY_CSV_PATH, clean_rows, fieldnames)
     _write_csv(WALLET_ACTIVITY_SPAM_CSV_PATH, spam_rows, fieldnames)
 

@@ -243,28 +243,28 @@ def mark_contract_valid(address: str, meta: Optional[Dict[str, Any]] = None) -> 
     addr = _normalize_address(address)
     if not addr:
         return
-    valid = _get_valid_registry()
     spam = _get_spam_registry()
+    if addr in spam:
+        return
+    valid = _get_valid_registry()
     if addr in valid:
         return
     record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
     valid[addr] = record
-    if addr in spam:
-        spam.pop(addr, None)
     _save_registry(CONTRACTS_VALID_PATH, valid)
-    _save_registry(CONTRACTS_SPAM_PATH, spam)
 
 
 def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
     addr = _normalize_address(address)
     if not addr:
         return
-    valid = _get_valid_registry()
-    if addr in valid:
-        return
     spam = _get_spam_registry()
     if addr in spam:
         return
+    valid = _get_valid_registry()
+    if addr in valid:
+        valid.pop(addr, None)
+        _save_registry(CONTRACTS_VALID_PATH, valid)
     record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
     spam[addr] = record
     _save_registry(CONTRACTS_SPAM_PATH, spam)
@@ -277,9 +277,25 @@ def mark_contract_spam_force(address: str, meta: Optional[Dict[str, Any]] = None
     spam = _get_spam_registry()
     if addr in spam:
         return
+    valid = _get_valid_registry()
+    if addr in valid:
+        valid.pop(addr, None)
+        _save_registry(CONTRACTS_VALID_PATH, valid)
     record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
     spam[addr] = record
     _save_registry(CONTRACTS_SPAM_PATH, spam)
+
+
+def dedupe_valid_against_spam() -> int:
+    valid = _get_valid_registry()
+    spam = _get_spam_registry()
+    overlaps = [addr for addr in valid.keys() if addr in spam]
+    if not overlaps:
+        return 0
+    for addr in overlaps:
+        valid.pop(addr, None)
+    _save_registry(CONTRACTS_VALID_PATH, valid)
+    return len(overlaps)
 
 
 def is_known_spam(address: str) -> bool:
