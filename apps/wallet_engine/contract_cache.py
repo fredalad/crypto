@@ -34,7 +34,6 @@ DECIMALS_SELECTOR = "0x313ce567"
 CACHE_DIR = os.path.join(os.path.dirname(__file__), "cache")
 CACHE_PATH = os.path.join(CACHE_DIR, "contracts.json")
 CONTRACTS_SPAM_PATH = os.path.join(CACHE_DIR, "contracts_spam.json")
-CONTRACTS_VALID_PATH = os.path.join(CACHE_DIR, "contracts_valid.json")
 LEGACY_DIR = os.path.join(CACHE_DIR, "contracts")
 
 log = get_logger("wallet_engine.contract_cache")
@@ -42,7 +41,6 @@ log = get_logger("wallet_engine.contract_cache")
 _CLIENT: Optional[EtherscanV2] = None
 _CACHE: Optional[Dict[str, Dict[str, Any]]] = None
 _SPAM_REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
-_VALID_REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
 
 
 def _ensure_logging() -> None:
@@ -115,13 +113,6 @@ def _get_spam_registry() -> Dict[str, Dict[str, Any]]:
     return _SPAM_REGISTRY
 
 
-def _get_valid_registry() -> Dict[str, Dict[str, Any]]:
-    global _VALID_REGISTRY
-    if _VALID_REGISTRY is None:
-        _VALID_REGISTRY = _load_registry(CONTRACTS_VALID_PATH)
-    return _VALID_REGISTRY
-
-
 def _save_registry(path: str, data: Dict[str, Dict[str, Any]]) -> None:
     _save_json_atomic(path, data)
 
@@ -173,6 +164,10 @@ def _get_cached_meta(address: str) -> Dict[str, Any]:
     cached = cache.get(_normalize_address(address))
     if isinstance(cached, dict):
         return cached
+    return _empty_meta(address)
+
+
+def _empty_meta(address: str) -> Dict[str, Any]:
     return {
         "address": _normalize_address(address),
         "name": None,
@@ -246,12 +241,12 @@ def mark_contract_valid(address: str, meta: Optional[Dict[str, Any]] = None) -> 
     spam = _get_spam_registry()
     if addr in spam:
         return
-    valid = _get_valid_registry()
-    if addr in valid:
+    cache = _load_cache()
+    if addr in cache:
         return
     record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
-    valid[addr] = record
-    _save_registry(CONTRACTS_VALID_PATH, valid)
+    cache[addr] = record
+    _save_json_atomic(CACHE_PATH, cache)
 
 
 def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
@@ -261,11 +256,11 @@ def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> N
     spam = _get_spam_registry()
     if addr in spam:
         return
-    valid = _get_valid_registry()
-    if addr in valid:
-        valid.pop(addr, None)
-        _save_registry(CONTRACTS_VALID_PATH, valid)
-    record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
+    cache = _load_cache()
+    record = meta if isinstance(meta, dict) else cache.get(addr) or _empty_meta(addr)
+    if addr in cache:
+        cache.pop(addr, None)
+        _save_json_atomic(CACHE_PATH, cache)
     spam[addr] = record
     _save_registry(CONTRACTS_SPAM_PATH, spam)
 
@@ -277,32 +272,18 @@ def mark_contract_spam_force(address: str, meta: Optional[Dict[str, Any]] = None
     spam = _get_spam_registry()
     if addr in spam:
         return
-    valid = _get_valid_registry()
-    if addr in valid:
-        valid.pop(addr, None)
-        _save_registry(CONTRACTS_VALID_PATH, valid)
-    record = meta if isinstance(meta, dict) else _get_cached_meta(addr)
+    cache = _load_cache()
+    record = meta if isinstance(meta, dict) else cache.get(addr) or _empty_meta(addr)
+    if addr in cache:
+        cache.pop(addr, None)
+        _save_json_atomic(CACHE_PATH, cache)
     spam[addr] = record
     _save_registry(CONTRACTS_SPAM_PATH, spam)
-
-
-def dedupe_valid_against_spam() -> int:
-    valid = _get_valid_registry()
-    spam = _get_spam_registry()
-    overlaps = [addr for addr in valid.keys() if addr in spam]
-    if not overlaps:
-        return 0
-    for addr in overlaps:
-        valid.pop(addr, None)
-    _save_registry(CONTRACTS_VALID_PATH, valid)
-    return len(overlaps)
 
 
 def is_known_spam(address: str) -> bool:
     addr = _normalize_address(address)
     if not addr:
-        return False
-    if addr in _get_valid_registry():
         return False
     return addr in _get_spam_registry()
 
@@ -311,7 +292,9 @@ def is_known_valid(address: str) -> bool:
     addr = _normalize_address(address)
     if not addr:
         return False
-    return addr in _get_valid_registry()
+    if addr in _get_spam_registry():
+        return False
+    return addr in _load_cache()
 
 
 def get_spam_contracts() -> set[str]:
@@ -319,7 +302,8 @@ def get_spam_contracts() -> set[str]:
 
 
 def get_valid_contracts() -> set[str]:
-    return set(_get_valid_registry().keys())
+    spam = _get_spam_registry()
+    return {addr for addr in _load_cache().keys() if addr not in spam}
 
 
 def get_contract_metadata(address: str) -> Dict[str, Any]:
@@ -327,10 +311,17 @@ def get_contract_metadata(address: str) -> Dict[str, Any]:
     addr = _normalize_address(address)
     if not addr:
         raise ValueError("Missing contract address")
+    if addr in _get_spam_registry():
+        return _empty_meta(addr)
     cache = _load_cache()
     cached = cache.get(addr)
-    if cached is not None:
-        return cached
+    if isinstance(cached, dict):
+        if (
+            cached.get("name") is not None
+            or cached.get("symbol") is not None
+            or cached.get("decimals") is not None
+        ):
+            return cached
 
     name = _decode_abi_string(_safe_eth_call(addr, NAME_SELECTOR))
     symbol = _decode_abi_string(_safe_eth_call(addr, SYMBOL_SELECTOR))
@@ -351,3 +342,15 @@ def get_contract_metadata(address: str) -> Dict[str, Any]:
 def is_erc20(address: str) -> bool:
     meta = get_contract_metadata(address)
     return meta.get("decimals") is not None
+
+
+def dedupe_valid_against_spam() -> int:
+    cache = _load_cache()
+    spam = _get_spam_registry()
+    overlaps = [addr for addr in cache.keys() if addr in spam]
+    if not overlaps:
+        return 0
+    for addr in overlaps:
+        cache.pop(addr, None)
+    _save_json_atomic(CACHE_PATH, cache)
+    return len(overlaps)

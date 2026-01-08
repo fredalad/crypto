@@ -9,14 +9,12 @@ from typing import Any, Dict, List
 import requests
 
 from apps.wallet_engine.coingecko_validate import _is_token_on_coingecko
-from apps.wallet_engine.contract_cache import (
-    CONTRACTS_VALID_PATH,
-    mark_contract_spam_force,
-)
+from apps.wallet_engine.contract_cache import CACHE_PATH, mark_contract_spam_force
 
 try:
     from apps.shared.logging_utils import get_logger, setup_logging
 except Exception:  # pragma: no cover - fallback when shared logging isn't available
+
     def setup_logging(level: str = "INFO") -> None:
         logging.basicConfig(
             level=getattr(logging, level.upper(), logging.INFO),
@@ -27,7 +25,7 @@ except Exception:  # pragma: no cover - fallback when shared logging isn't avail
         return logging.getLogger(name)
 
 
-log = get_logger("wallet_engine.validate_contracts_valid")
+log = get_logger("wallet_engine.validate_contracts")
 
 
 def _load_json(path: str) -> Dict[str, Any]:
@@ -46,7 +44,7 @@ def _normalize_address(address: str) -> str:
 
 
 def _load_valid_addresses() -> List[str]:
-    data = _load_json(CONTRACTS_VALID_PATH)
+    data = _load_json(CACHE_PATH)
     if not data:
         return []
     addresses = {_normalize_address(addr) for addr in data.keys()}
@@ -55,8 +53,8 @@ def _load_valid_addresses() -> List[str]:
 
 def run() -> None:
     setup_logging("INFO")
-    if not os.path.exists(CONTRACTS_VALID_PATH):
-        log.info("Missing valid contracts file: %s", CONTRACTS_VALID_PATH)
+    if not os.path.exists(CACHE_PATH):
+        log.info("Missing contracts file: %s", CACHE_PATH)
         return
 
     addresses = _load_valid_addresses()

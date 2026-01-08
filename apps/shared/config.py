@@ -42,7 +42,6 @@ WALLET_ACTIVITY_SPAM_CSV_PATH = os.path.join(WALLET_DATA_DIR, "base_activity_spa
 WALLET_LOG_CACHE_PATH = os.path.join(WALLET_DATA_DIR, "log_cache.jsonl")
 WALLET_SPAM_TOKENS_PATH = os.path.join(WALLET_DATA_DIR, "spam_tokens.json")
 WALLET_SPAM_TX_HASHES_PATH = os.path.join(WALLET_DATA_DIR, "spam_tx_hashes.json")
-TOKEN_CACHE_PATH = os.path.abspath(os.path.join(SHARED_DIR, "..", "..", "token_cache.json"))
 WALLET_ENRICH_2025_BASENAME = "base_2025"
 PROTOCOL_POOLS_OUT_PREFIX = os.path.join(PROTOCOL_DATA_DIR, "pools")
 
