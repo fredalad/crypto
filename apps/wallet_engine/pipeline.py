@@ -10,7 +10,9 @@ from apps.shared.config import (
     ETHERSCAN_API_KEY,
     ETHERSCAN_API_URL,
     REQUEST_SLEEP_SEC,
+    WALLET_ACTIVITY_CONTRACTS_CSV_PATH,
     WALLET_ACTIVITY_CSV_PATH,
+    WALLET_ACTIVITY_NO_CONTRACT_CSV_PATH,
     WALLET_ACTIVITY_SPAM_CSV_PATH,
     require_api_key,
 )
@@ -216,7 +218,7 @@ def _is_nonspam_function(function_name: str) -> bool:
     )
 
 
-def _move_approve_rows(
+def _move_nonspam_rows(
     base_path: str,
     spam_path: str,
     fieldnames: List[str],
@@ -400,16 +402,48 @@ def run_export(
     )
     if moved:
         log.info("Merged %d spam rows into base by hash", moved)
-    moved = _move_approve_rows(
+    moved = _move_nonspam_rows(
         WALLET_ACTIVITY_CSV_PATH,
         WALLET_ACTIVITY_SPAM_CSV_PATH,
         fieldnames,
     )
     if moved:
-        log.info("Moved %d approve rows into base", moved)
+        log.info("Moved %d non-spam rows into base", moved)
     log.info("Wrote spam CSV: %s", WALLET_ACTIVITY_SPAM_CSV_PATH)
     log.info("Wrote CSV: %s", WALLET_ACTIVITY_CSV_PATH)
 
 
 def enrich() -> None:
     raise NotImplementedError("Wallet enrichment pipeline not implemented yet.")
+
+
+def split_base_activity_by_contract_address(
+    *,
+    log_level: str = "INFO",
+) -> None:
+    setup_logging(log_level)
+    if not os.path.exists(WALLET_ACTIVITY_CSV_PATH):
+        log.info("Missing CSV: %s", WALLET_ACTIVITY_CSV_PATH)
+        return
+    rows, fieldnames = _read_csv_rows(WALLET_ACTIVITY_CSV_PATH)
+    if not rows:
+        write_csv_rows(WALLET_ACTIVITY_CONTRACTS_CSV_PATH, [], fieldnames)
+        write_csv_rows(WALLET_ACTIVITY_NO_CONTRACT_CSV_PATH, [], fieldnames)
+        log.info("No rows found in %s", WALLET_ACTIVITY_CSV_PATH)
+        return
+
+    with_contract: List[Dict[str, Any]] = []
+    without_contract: List[Dict[str, Any]] = []
+    for row in rows:
+        contract_addr = (row.get("contractAddress") or "").strip()
+        if contract_addr:
+            with_contract.append(row)
+        else:
+            without_contract.append(row)
+
+    write_csv_rows(WALLET_ACTIVITY_CONTRACTS_CSV_PATH, with_contract, fieldnames)
+    write_csv_rows(WALLET_ACTIVITY_NO_CONTRACT_CSV_PATH, without_contract, fieldnames)
+    log.info("Contract rows: %d", len(with_contract))
+    log.info("No-contract rows: %d", len(without_contract))
+    log.info("Wrote CSV: %s", WALLET_ACTIVITY_CONTRACTS_CSV_PATH)
+    log.info("Wrote CSV: %s", WALLET_ACTIVITY_NO_CONTRACT_CSV_PATH)

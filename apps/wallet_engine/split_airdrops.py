@@ -159,7 +159,7 @@ def _is_nonspam_function(function_name: str) -> bool:
     )
 
 
-def _move_approve_rows(
+def _move_nonspam_rows(
     base_path: str,
     spam_path: str,
     fieldnames: List[str],
@@ -244,13 +244,13 @@ def run() -> None:
     )
     if moved:
         log.info("Merged %d spam rows into base by hash", moved)
-    moved = _move_approve_rows(
+    moved = _move_nonspam_rows(
         WALLET_ACTIVITY_CSV_PATH,
         WALLET_ACTIVITY_SPAM_CSV_PATH,
         fieldnames,
     )
     if moved:
-        log.info("Moved %d approve rows into base", moved)
+        log.info("Moved %d non-spam rows into base", moved)
 
     log.info("Clean rows: %d", len(clean_rows))
     log.info("Spam rows: %d", len(spam_rows))
