@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import csv
+import os
 from typing import Any, Dict, List
 
 from apps.shared.config import (
@@ -15,10 +17,13 @@ from apps.shared.config import (
 from apps.shared.csv_utils import write_csv_rows
 from apps.shared.etherscan_v2 import EtherscanV2
 from apps.shared.logging_utils import get_logger, setup_logging
+from apps.wallet_engine.coingecko_validate import validate_addresses
 from apps.wallet_engine.contract_cache import (
     dedupe_valid_against_spam,
     get_spam_contracts,
     get_contract_metadata,
+    is_allowlisted,
+    is_ignored,
     is_known_valid,
     mark_contract_spam,
     mark_contract_valid,
@@ -80,7 +85,19 @@ def _split_airdrops(
     clean_rows: List[Dict[str, Any]] = []
     spam_rows: List[Dict[str, Any]] = []
     for row in rows:
+        addr = _row_contract_address(row)
+        if addr and is_ignored(addr):
+            continue
+        if row.get("tx_type") == "nft":
+            clean_rows.append(row)
+            continue
         function_name = (row.get("functionName") or "").strip().lower()
+        if addr and is_allowlisted(addr):
+            clean_rows.append(row)
+            continue
+        if _is_nonspam_function(function_name):
+            clean_rows.append(row)
+            continue
         if (
             "airdrop" in function_name
             or "dispersetoken" in function_name
@@ -104,6 +121,16 @@ def _row_contract_address(row: Dict[str, Any]) -> str:
     return ""
 
 
+def _filter_ignored(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    kept: List[Dict[str, Any]] = []
+    for row in rows:
+        addr = _row_contract_address(row)
+        if addr and is_ignored(addr):
+            continue
+        kept.append(row)
+    return kept
+
+
 def _move_preexisting_spam(
     clean_rows: List[Dict[str, Any]],
     spam_rows: List[Dict[str, Any]],
@@ -112,6 +139,9 @@ def _move_preexisting_spam(
     kept: List[Dict[str, Any]] = []
     moved: List[Dict[str, Any]] = []
     for row in clean_rows:
+        if row.get("tx_type") == "nft":
+            kept.append(row)
+            continue
         addr = _row_contract_address(row)
         if addr and addr.lower() in preexisting_spam and not is_known_valid(addr):
             moved.append(row)
@@ -122,9 +152,101 @@ def _move_preexisting_spam(
     return kept, spam_rows
 
 
+def _row_tx_hash(row: Dict[str, Any]) -> str:
+    return (row.get("hash") or "").strip().lower()
+
+
+def _read_csv_rows(path: str) -> tuple[List[Dict[str, Any]], List[str]]:
+    if not os.path.exists(path) or os.path.getsize(path) == 0:
+        return [], []
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        rows = list(reader)
+        return rows, reader.fieldnames or []
+
+
+def _merge_csv_hashes(
+    base_path: str,
+    spam_path: str,
+    fieldnames: List[str],
+) -> int:
+    base_rows, base_fields = _read_csv_rows(base_path)
+    spam_rows, spam_fields = _read_csv_rows(spam_path)
+    if not base_rows or not spam_rows:
+        return 0
+    base_hashes = {_row_tx_hash(row) for row in base_rows if _row_tx_hash(row)}
+    if not base_hashes:
+        return 0
+    kept_spam: List[Dict[str, Any]] = []
+    moved: List[Dict[str, Any]] = []
+    out_fields = fieldnames or base_fields or spam_fields
+    base_sig = {
+        tuple((row.get(field) or "") for field in out_fields) for row in base_rows
+    }
+    for row in spam_rows:
+        tx_hash = _row_tx_hash(row)
+        if tx_hash and tx_hash in base_hashes:
+            signature = tuple((row.get(field) or "") for field in out_fields)
+            if signature not in base_sig:
+                moved.append(row)
+                base_sig.add(signature)
+        else:
+            kept_spam.append(row)
+    if not moved:
+        return 0
+    base_rows = base_rows + moved
+    write_csv_rows(base_path, base_rows, out_fields)
+    write_csv_rows(spam_path, kept_spam, out_fields)
+    return len(moved)
+
+
+def _is_nonspam_function(function_name: str) -> bool:
+    lowered = (function_name or "").strip().lower()
+    return any(
+        keyword in lowered
+        for keyword in (
+            "approve",
+            "withdraw",
+            "getreward",
+            "supply",
+            "deposit",
+            "repay",
+            "claim",
+        )
+    )
+
+
+def _move_approve_rows(
+    base_path: str,
+    spam_path: str,
+    fieldnames: List[str],
+) -> int:
+    base_rows, base_fields = _read_csv_rows(base_path)
+    spam_rows, spam_fields = _read_csv_rows(spam_path)
+    if not spam_rows:
+        return 0
+    kept_spam: List[Dict[str, Any]] = []
+    moved: List[Dict[str, Any]] = []
+    for row in spam_rows:
+        function_name = row.get("functionName") or ""
+        if _is_nonspam_function(function_name):
+            moved.append(row)
+        else:
+            kept_spam.append(row)
+    if not moved:
+        return 0
+    out_fields = fieldnames or base_fields or spam_fields
+    base_rows = base_rows + moved
+    write_csv_rows(base_path, base_rows, out_fields)
+    write_csv_rows(spam_path, kept_spam, out_fields)
+    return len(moved)
+
+
 def _mark_contracts(rows: List[Dict[str, Any]], *, is_spam: bool) -> None:
     seen = set()
     for row in rows:
+        if is_spam and row.get("tx_type") == "nft":
+            continue
         addr = _row_contract_address(row)
         if not addr:
             continue
@@ -144,14 +266,26 @@ def _collect_contract_addresses(rows: List[Dict[str, Any]]) -> List[str]:
         tx_type = row.get("tx_type")
         if tx_type in ("token", "nft"):
             addr = (row.get("contractAddress") or "").strip()
-            if addr:
+            if addr and not is_ignored(addr):
                 addresses.add(addr)
             continue
         if tx_type == "native":
             to_addr = (row.get("to") or "").strip()
             input_data = (row.get("input") or "").strip()
             if to_addr and input_data and input_data != "0x":
-                addresses.add(to_addr)
+                if not is_ignored(to_addr):
+                    addresses.add(to_addr)
+    return sorted(addresses)
+
+
+def _collect_token_contract_addresses(rows: List[Dict[str, Any]]) -> List[str]:
+    addresses = set()
+    for row in rows:
+        if row.get("tx_type") != "token":
+            continue
+        addr = (row.get("contractAddress") or "").strip()
+        if addr and not is_ignored(addr):
+            addresses.add(addr)
     return sorted(addresses)
 
 
@@ -237,13 +371,18 @@ def run_export(
         end_block=end_block,
         sort=sort,
     )
-    preexisting_spam = get_spam_contracts()
+    rows = _filter_ignored(rows)
     clean_rows, spam_rows = _split_airdrops(rows)
     _mark_contracts(clean_rows, is_spam=False)
     _mark_contracts(spam_rows, is_spam=True)
     removed = dedupe_valid_against_spam()
     if removed:
-        log.info("Removed %d overlapping contracts from valid list", removed)
+        log.info("Removed %d overlapping contracts from contracts.json", removed)
+    validate_addresses(_collect_token_contract_addresses(clean_rows))
+    removed = dedupe_valid_against_spam()
+    if removed:
+        log.info("Removed %d overlapping contracts from contracts.json", removed)
+    preexisting_spam = get_spam_contracts()
     clean_rows, spam_rows = _move_preexisting_spam(
         clean_rows, spam_rows, preexisting_spam
     )
@@ -254,6 +393,20 @@ def run_export(
     fieldnames = _fieldnames(rows)
     write_csv_rows(WALLET_ACTIVITY_CSV_PATH, clean_rows, fieldnames)
     write_csv_rows(WALLET_ACTIVITY_SPAM_CSV_PATH, spam_rows, fieldnames)
+    moved = _merge_csv_hashes(
+        WALLET_ACTIVITY_CSV_PATH,
+        WALLET_ACTIVITY_SPAM_CSV_PATH,
+        fieldnames,
+    )
+    if moved:
+        log.info("Merged %d spam rows into base by hash", moved)
+    moved = _move_approve_rows(
+        WALLET_ACTIVITY_CSV_PATH,
+        WALLET_ACTIVITY_SPAM_CSV_PATH,
+        fieldnames,
+    )
+    if moved:
+        log.info("Moved %d approve rows into base", moved)
     log.info("Wrote spam CSV: %s", WALLET_ACTIVITY_SPAM_CSV_PATH)
     log.info("Wrote CSV: %s", WALLET_ACTIVITY_CSV_PATH)
 

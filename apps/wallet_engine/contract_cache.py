@@ -38,6 +38,19 @@ LEGACY_DIR = os.path.join(CACHE_DIR, "contracts")
 
 log = get_logger("wallet_engine.contract_cache")
 
+ALWAYS_VALID_ADDRESSES = {
+    "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+    "0x59dca05b6c26dbd64b5381374aaac5cd05644c28",
+    "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6",
+    "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e",
+    "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+    "0x827922686190790b37229fd06084350e74485b72",
+    "0x1fba65de0a9cbd2d1df82d141897042d36bb6c86",
+}
+ALWAYS_IGNORE_ADDRESSES = {
+    "0x6bc33580f41f7c40fd2dbadc03cc9cb986b2b80e",
+}
+
 _CLIENT: Optional[EtherscanV2] = None
 _CACHE: Optional[Dict[str, Dict[str, Any]]] = None
 _SPAM_REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
@@ -55,6 +68,14 @@ def _ensure_cache_dir() -> None:
 
 def _normalize_address(address: str) -> str:
     return (address or "").strip().lower()
+
+
+def is_allowlisted(address: str) -> bool:
+    return _normalize_address(address) in ALWAYS_VALID_ADDRESSES
+
+
+def is_ignored(address: str) -> bool:
+    return _normalize_address(address) in ALWAYS_IGNORE_ADDRESSES
 
 
 def _build_client() -> EtherscanV2:
@@ -167,6 +188,48 @@ def _get_cached_meta(address: str) -> Dict[str, Any]:
     return _empty_meta(address)
 
 
+def _remove_allowlisted_from_spam() -> int:
+    spam = _get_spam_registry()
+    if not spam:
+        return 0
+    removed = 0
+    for addr in list(spam.keys()):
+        if is_allowlisted(addr):
+            spam.pop(addr, None)
+            removed += 1
+    if removed:
+        _save_registry(CONTRACTS_SPAM_PATH, spam)
+    return removed
+
+
+def _remove_ignored_from_spam() -> int:
+    spam = _get_spam_registry()
+    if not spam:
+        return 0
+    removed = 0
+    for addr in list(spam.keys()):
+        if is_ignored(addr):
+            spam.pop(addr, None)
+            removed += 1
+    if removed:
+        _save_registry(CONTRACTS_SPAM_PATH, spam)
+    return removed
+
+
+def _remove_ignored_from_cache() -> int:
+    cache = _load_cache()
+    if not cache:
+        return 0
+    removed = 0
+    for addr in list(cache.keys()):
+        if is_ignored(addr):
+            cache.pop(addr, None)
+            removed += 1
+    if removed:
+        _save_json_atomic(CACHE_PATH, cache)
+    return removed
+
+
 def _empty_meta(address: str) -> Dict[str, Any]:
     return {
         "address": _normalize_address(address),
@@ -238,6 +301,11 @@ def mark_contract_valid(address: str, meta: Optional[Dict[str, Any]] = None) -> 
     addr = _normalize_address(address)
     if not addr:
         return
+    if is_ignored(addr):
+        _remove_ignored_from_cache()
+        return
+    if is_allowlisted(addr):
+        _remove_allowlisted_from_spam()
     spam = _get_spam_registry()
     if addr in spam:
         return
@@ -253,6 +321,13 @@ def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> N
     addr = _normalize_address(address)
     if not addr:
         return
+    if is_ignored(addr):
+        _remove_ignored_from_spam()
+        _remove_ignored_from_cache()
+        return
+    if is_allowlisted(addr):
+        _remove_allowlisted_from_spam()
+        return
     spam = _get_spam_registry()
     if addr in spam:
         return
@@ -265,9 +340,18 @@ def mark_contract_spam(address: str, meta: Optional[Dict[str, Any]] = None) -> N
     _save_registry(CONTRACTS_SPAM_PATH, spam)
 
 
-def mark_contract_spam_force(address: str, meta: Optional[Dict[str, Any]] = None) -> None:
+def mark_contract_spam_force(
+    address: str, meta: Optional[Dict[str, Any]] = None
+) -> None:
     addr = _normalize_address(address)
     if not addr:
+        return
+    if is_ignored(addr):
+        _remove_ignored_from_spam()
+        _remove_ignored_from_cache()
+        return
+    if is_allowlisted(addr):
+        _remove_allowlisted_from_spam()
         return
     spam = _get_spam_registry()
     if addr in spam:
@@ -285,6 +369,10 @@ def is_known_spam(address: str) -> bool:
     addr = _normalize_address(address)
     if not addr:
         return False
+    if is_allowlisted(addr):
+        return False
+    if is_ignored(addr):
+        return False
     return addr in _get_spam_registry()
 
 
@@ -292,12 +380,18 @@ def is_known_valid(address: str) -> bool:
     addr = _normalize_address(address)
     if not addr:
         return False
+    if is_allowlisted(addr):
+        return True
+    if is_ignored(addr):
+        return False
     if addr in _get_spam_registry():
         return False
     return addr in _load_cache()
 
 
 def get_spam_contracts() -> set[str]:
+    _remove_allowlisted_from_spam()
+    _remove_ignored_from_spam()
     return set(_get_spam_registry().keys())
 
 
@@ -311,7 +405,9 @@ def get_contract_metadata(address: str) -> Dict[str, Any]:
     addr = _normalize_address(address)
     if not addr:
         raise ValueError("Missing contract address")
-    if addr in _get_spam_registry():
+    if is_ignored(addr):
+        return _empty_meta(addr)
+    if addr in _get_spam_registry() and not is_allowlisted(addr):
         return _empty_meta(addr)
     cache = _load_cache()
     cached = cache.get(addr)
@@ -346,6 +442,9 @@ def is_erc20(address: str) -> bool:
 
 def dedupe_valid_against_spam() -> int:
     cache = _load_cache()
+    _remove_allowlisted_from_spam()
+    _remove_ignored_from_spam()
+    _remove_ignored_from_cache()
     spam = _get_spam_registry()
     overlaps = [addr for addr in cache.keys() if addr in spam]
     if not overlaps:

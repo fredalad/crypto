@@ -15,6 +15,9 @@ from apps.shared.config import (
     WALLET_ACTIVITY_CSV_PATH,
 )
 from apps.wallet_engine.contract_cache import (
+    is_allowlisted,
+    is_ignored,
+    is_known_spam,
     mark_contract_spam_force,
 )
 
@@ -97,22 +100,34 @@ def _is_token_on_coingecko(
     return None, last_reason
 
 
-def run() -> None:
+def validate_addresses(addresses: Iterable[str]) -> set[str]:
     setup_logging("INFO")
-    rows = _read_base_activity()
-    addresses = sorted(_iter_contract_addresses(rows))
-    if not addresses:
-        log.info("No contractAddress values found in %s", WALLET_ACTIVITY_CSV_PATH)
-        return
+    normalized = {_normalize_address(addr) for addr in addresses if _normalize_address(addr)}
+    if not normalized:
+        log.info("No contract addresses to validate.")
+        return set()
 
-    log.info("Contract addresses total=%d", len(addresses))
+    ordered = sorted(normalized)
+    total = len(ordered)
+    log.info("Validating %d contracts via Coingecko", total)
 
     session = requests.Session()
     min_interval_s = 2.1  # 30 requests/minute guardrail
     last_call = 0.0
-    total = len(addresses)
+    spam_found: set[str] = set()
 
-    for i, addr in enumerate(addresses, start=1):
+    for i, addr in enumerate(ordered, start=1):
+        if is_ignored(addr):
+            log.info("[%d/%d] skipped %s reason=ignored", i, total, addr)
+            continue
+        if is_allowlisted(addr):
+            log.info("[%d/%d] valid %s reason=allowlist", i, total, addr)
+            continue
+        if is_known_spam(addr):
+            spam_found.add(addr)
+            log.info("[%d/%d] bad %s reason=already_spam", i, total, addr)
+            continue
+
         now = time.monotonic()
         delta = now - last_call
         if delta < min_interval_s:
@@ -131,11 +146,24 @@ def run() -> None:
             )
             continue
         if result:
-            status = "valid"
-        else:
-            mark_contract_spam_force(addr)
-            status = "bad"
-        log.info("[%d/%d] %s %s reason=%s", i, total, status, addr, reason)
+            log.info("[%d/%d] valid %s reason=%s", i, total, addr, reason)
+            continue
+
+        mark_contract_spam_force(addr)
+        spam_found.add(addr)
+        log.info("[%d/%d] bad %s reason=%s", i, total, addr, reason)
+
+    return spam_found
+
+
+def run() -> None:
+    setup_logging("INFO")
+    rows = _read_base_activity()
+    addresses = _iter_contract_addresses(rows)
+    if not addresses:
+        log.info("No contractAddress values found in %s", WALLET_ACTIVITY_CSV_PATH)
+        return
+    validate_addresses(addresses)
 
 
 if __name__ == "__main__":

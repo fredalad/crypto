@@ -1,33 +1,9 @@
 {
-  "0x03264d29e2498284c0043d8f83e040778ab6290a": {
-    "address": "0x03264d29e2498284c0043d8f83e040778ab6290a",
-    "decimals": 18,
-    "name": "based aura",
-    "symbol": "aura"
-  },
   "0x04055057677807d2a53d2b25a80ff3b4d932ae1a": {
     "address": "0x04055057677807d2a53d2b25a80ff3b4d932ae1a",
     "decimals": 18,
     "name": "LogX Network",
     "symbol": "LOGX"
-  },
-  "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938": {
-    "address": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938",
-    "decimals": 18,
-    "name": "USDz",
-    "symbol": "USDz"
-  },
-  "0x07d15798a67253d76cea61f0ea6f57aedc59dffb": {
-    "address": "0x07d15798a67253d76cea61f0ea6f57aedc59dffb",
-    "decimals": 18,
-    "name": "Based Coin",
-    "symbol": "BASED"
-  },
-  "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25": {
-    "address": "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25",
-    "decimals": 18,
-    "name": "Ricky the Raccoon",
-    "symbol": "RICKY"
   },
   "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b": {
     "address": "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b",
@@ -41,17 +17,17 @@
     "name": "Zora",
     "symbol": "ZORA"
   },
-  "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda": {
-    "address": "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda",
-    "decimals": 18,
-    "name": "PERPY",
-    "symbol": "PERPY"
-  },
   "0x1bc0c42215582d5a085795f4badbac3ff36d1bcb": {
     "address": "0x1bc0c42215582d5a085795f4badbac3ff36d1bcb",
     "decimals": 18,
     "name": "tokenbot",
     "symbol": "CLANKER"
+  },
+  "0x1fba65de0a9cbd2d1df82d141897042d36bb6c86": {
+    "address": "0x1fba65de0a9cbd2d1df82d141897042d36bb6c86",
+    "decimals": null,
+    "name": null,
+    "symbol": null
   },
   "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b": {
     "address": "0x22af33fe49fd1fa80c7149773dde5890d3c76f3b",
@@ -65,11 +41,11 @@
     "name": "Base tBTC v2",
     "symbol": "tBTC"
   },
-  "0x26c69e4924bd0d7d52d680b33616042ee13f621c": {
-    "address": "0x26c69e4924bd0d7d52d680b33616042ee13f621c",
+  "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e": {
+    "address": "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e",
     "decimals": 18,
-    "name": "SALUKI",
-    "symbol": "SALUKI"
+    "name": "Aave Base Variable Debt WETH",
+    "symbol": "variableDebtBasWETH"
   },
   "0x26f3901ac8a79c50fb0d8289c74f0d09adc42e29": {
     "address": "0x26f3901ac8a79c50fb0d8289c74f0d09adc42e29",
@@ -77,35 +53,11 @@
     "name": "Threshold Network Token",
     "symbol": "T"
   },
-  "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a": {
-    "address": "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a",
-    "decimals": 18,
-    "name": "Bark Ruffalo by Virtuals",
-    "symbol": "PAWSY"
-  },
-  "0x2c001233ed5e731b98b15b30267f78c7560b71f2": {
-    "address": "0x2c001233ed5e731b98b15b30267f78c7560b71f2",
-    "decimals": 18,
-    "name": "BUBU",
-    "symbol": "BUBU"
-  },
-  "0x2dc1c8be620b95cba25d78774f716f05b159c8b9": {
-    "address": "0x2dc1c8be620b95cba25d78774f716f05b159c8b9",
-    "decimals": 18,
-    "name": "Based Bonk",
-    "symbol": "Bonk"
-  },
   "0x306fd3e7b169aa4ee19412323e1a5995b8c1a1f4": {
     "address": "0x306fd3e7b169aa4ee19412323e1a5995b8c1a1f4",
     "decimals": 18,
     "name": "Black Agnus",
     "symbol": "FTW"
-  },
-  "0x3d63825b0d8669307366e6c8202f656b9e91d368": {
-    "address": "0x3d63825b0d8669307366e6c8202f656b9e91d368",
-    "decimals": 6,
-    "name": "Wild Goat Coin",
-    "symbol": "WGC"
   },
   "0x3ecced5b416e58664f04a39dd18935eb71d33b15": {
     "address": "0x3ecced5b416e58664f04a39dd18935eb71d33b15",
@@ -125,23 +77,17 @@
     "name": "Wrapped Ether",
     "symbol": "WETH"
   },
-  "0x4b6104755afb5da4581b81c552da3a25608c73b8": {
-    "address": "0x4b6104755afb5da4581b81c552da3a25608c73b8",
-    "decimals": 18,
-    "name": "Ski Mask Kitten",
-    "symbol": "SKITTEN"
-  },
-  "0x4c96a67b0577358894407af7bc3158fc1dffbeb5": {
-    "address": "0x4c96a67b0577358894407af7bc3158fc1dffbeb5",
-    "decimals": 18,
-    "name": "Degen Point Of View",
-    "symbol": "POV"
-  },
   "0x4d58608eff50b691a3b76189af2a7a123df1e9ba": {
     "address": "0x4d58608eff50b691a3b76189af2a7a123df1e9ba",
     "decimals": 9,
     "name": "Boysclub",
     "symbol": "BOYS"
+  },
+  "0x4e65fe4dba92790696d040ac24aa414708f5c0ab": {
+    "address": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
+    "decimals": 6,
+    "name": "Aave Base USDC",
+    "symbol": "aBasUSDC"
   },
   "0x4ed4e862860bed51a9570b96d89af5e1b0efefed": {
     "address": "0x4ed4e862860bed51a9570b96d89af5e1b0efefed",
@@ -155,11 +101,11 @@
     "name": "BasedPepe",
     "symbol": "PEPE"
   },
-  "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9": {
-    "address": "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9",
-    "decimals": 18,
-    "name": "Sekuya",
-    "symbol": "SKYA"
+  "0x59dca05b6c26dbd64b5381374aaac5cd05644c28": {
+    "address": "0x59dca05b6c26dbd64b5381374aaac5cd05644c28",
+    "decimals": 6,
+    "name": "Aave Base Variable Debt USDC",
+    "symbol": "variableDebtBasUSDC"
   },
   "0x63706e401c06ac8513145b7687a14804d17f814b": {
     "address": "0x63706e401c06ac8513145b7687a14804d17f814b",
@@ -191,17 +137,17 @@
     "name": "HeyAnon",
     "symbol": "Anon"
   },
+  "0x827922686190790b37229fd06084350e74485b72": {
+    "address": "0x827922686190790b37229fd06084350e74485b72",
+    "decimals": null,
+    "name": "Slipstream Position NFT v1",
+    "symbol": "AERO-CL-POS"
+  },
   "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913": {
     "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
     "decimals": 6,
     "name": "USD Coin",
     "symbol": "USDC"
-  },
-  "0x8890de1637912fbbba36b8b19365cdc99122bd6e": {
-    "address": "0x8890de1637912fbbba36b8b19365cdc99122bd6e",
-    "decimals": 18,
-    "name": "Slap",
-    "symbol": "SLAP"
   },
   "0x88fb150bdc53a65fe94dea0c9ba0a6daf8c6e196": {
     "address": "0x88fb150bdc53a65fe94dea0c9ba0a6daf8c6e196",
@@ -251,23 +197,11 @@
     "name": "Toshi",
     "symbol": "TOSHI"
   },
-  "0xb1a03eda10342529bbf8eb700a06c60441fef25d": {
-    "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
-    "decimals": 18,
-    "name": "Mister Miggles",
-    "symbol": "MIGGLES"
-  },
   "0xb3b32f9f8827d4634fe7d973fa1034ec9fddb3b3": {
     "address": "0xb3b32f9f8827d4634fe7d973fa1034ec9fddb3b3",
     "decimals": 18,
     "name": "B3",
     "symbol": "B3"
-  },
-  "0xb3ecba1330fe26bb36f40344992c481c2c916f23": {
-    "address": "0xb3ecba1330fe26bb36f40344992c481c2c916f23",
-    "decimals": 18,
-    "name": "Based Doge",
-    "symbol": "BDOGE"
   },
   "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376": {
     "address": "0xb79dd08ea68a908a97220c76d19a6aa9cbde4376",
@@ -275,29 +209,17 @@
     "name": "USD+",
     "symbol": "USD+"
   },
-  "0xb8d98a102b0079b69ffbc760c8d857a31653e56e": {
-    "address": "0xb8d98a102b0079b69ffbc760c8d857a31653e56e",
-    "decimals": 18,
-    "name": "toby",
-    "symbol": "toby"
-  },
-  "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36": {
-    "address": "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36",
-    "decimals": 18,
-    "name": "VIRGEN by Virtuals",
-    "symbol": "VIRGEN"
+  "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6": {
+    "address": "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6",
+    "decimals": 8,
+    "name": "Aave Base cbBTC",
+    "symbol": "aBascbBTC"
   },
   "0xc0041ef357b183448b235a8ea73ce4e4ec8c265f": {
     "address": "0xc0041ef357b183448b235a8ea73ce4e4ec8c265f",
     "decimals": 18,
     "name": "Cookie",
     "symbol": "COOKIE"
-  },
-  "0xc8e51fefd7d595c217c7ab641513faa4ad522b26": {
-    "address": "0xc8e51fefd7d595c217c7ab641513faa4ad522b26",
-    "decimals": 18,
-    "name": "CrappyBird",
-    "symbol": "CRAPPY"
   },
   "0xca72827a3d211cfd8f6b00ac98824872b72cab49": {
     "address": "0xca72827a3d211cfd8f6b00ac98824872b72cab49",
@@ -310,12 +232,6 @@
     "decimals": 8,
     "name": "Coinbase Wrapped BTC",
     "symbol": "cbBTC"
-  },
-  "0xd461a534af11ef58e9f9add73129a1f45485a8dc": {
-    "address": "0xd461a534af11ef58e9f9add73129a1f45485a8dc",
-    "decimals": 18,
-    "name": "Kevin",
-    "symbol": "KEVIN"
   },
   "0xd4a0e0b9149bcee3c920d2e00b5de09138fd8bb7": {
     "address": "0xd4a0e0b9149bcee3c920d2e00b5de09138fd8bb7",
@@ -340,12 +256,6 @@
     "decimals": 18,
     "name": "Edge",
     "symbol": "EDGE"
-  },
-  "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5": {
-    "address": "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5",
-    "decimals": 9,
-    "name": "Bachi on Base",
-    "symbol": "BACHI"
   },
   "0xf43eb8de897fbc7f2502483b2bef7bb9ea179229": {
     "address": "0xf43eb8de897fbc7f2502483b2bef7bb9ea179229",

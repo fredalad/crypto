@@ -11,6 +11,12 @@
     "name": "HYRAX",
     "symbol": "HYX"
   },
+  "0x0077ae08200c05af9741b38366e26f7b1e7bfe2d": {
+    "address": "0x0077ae08200c05af9741b38366e26f7b1e7bfe2d",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
   "0x00b7f751385788f640cf66ea73ded6ca9325ecbf": {
     "address": "0x00b7f751385788f640cf66ea73ded6ca9325ecbf",
     "decimals": 8,
@@ -71,6 +77,12 @@
     "name": "DEGEN",
     "symbol": "DEGEN"
   },
+  "0x03264d29e2498284c0043d8f83e040778ab6290a": {
+    "address": "0x03264d29e2498284c0043d8f83e040778ab6290a",
+    "decimals": 18,
+    "name": "based aura",
+    "symbol": "aura"
+  },
   "0x035d6c2a708dfad94f1c962c772ccc1a37d7933a": {
     "address": "0x035d6c2a708dfad94f1c962c772ccc1a37d7933a",
     "decimals": 18,
@@ -88,6 +100,12 @@
     "decimals": 18,
     "name": "Goblin Money",
     "symbol": "GM"
+  },
+  "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938": {
+    "address": "0x04d5ddf5f3a8939889f11e97f8c4bb48317f1938",
+    "decimals": 18,
+    "name": "USDz",
+    "symbol": "USDz"
   },
   "0x050203e705cc4bf72a4b22d875dff76a08ef15e7": {
     "address": "0x050203e705cc4bf72a4b22d875dff76a08ef15e7",
@@ -137,6 +155,12 @@
     "name": "BNKR",
     "symbol": "BNKR"
   },
+  "0x07d15798a67253d76cea61f0ea6f57aedc59dffb": {
+    "address": "0x07d15798a67253d76cea61f0ea6f57aedc59dffb",
+    "decimals": 18,
+    "name": "Based Coin",
+    "symbol": "BASED"
+  },
   "0x08051106afcb0f16c44757ffa2bb0e3b5f56193b": {
     "address": "0x08051106afcb0f16c44757ffa2bb0e3b5f56193b",
     "decimals": 18,
@@ -184,6 +208,12 @@
     "decimals": null,
     "name": null,
     "symbol": null
+  },
+  "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25": {
+    "address": "0x09b052085e9c6291fbf0dfb0918c861bcb47eb25",
+    "decimals": 18,
+    "name": "Ricky the Raccoon",
+    "symbol": "RICKY"
   },
   "0x0a1437ed00f6b88d8a1b44761d83803a212d0541": {
     "address": "0x0a1437ed00f6b88d8a1b44761d83803a212d0541",
@@ -335,6 +365,12 @@
     "name": null,
     "symbol": null
   },
+  "0x115429c5a06a9eba62179bf8262120f03c6d296d": {
+    "address": "0x115429c5a06a9eba62179bf8262120f03c6d296d",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
   "0x117ad4db2943b8088cbb61b5a38c78d5b9e9b0ee": {
     "address": "0x117ad4db2943b8088cbb61b5a38c78d5b9e9b0ee",
     "decimals": 8,
@@ -430,6 +466,12 @@
     "decimals": null,
     "name": null,
     "symbol": null
+  },
+  "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda": {
+    "address": "0x168fc40dba90a07e821abbdbbc1c6d2303e51eda",
+    "decimals": 18,
+    "name": "PERPY",
+    "symbol": "PERPY"
   },
   "0x1781f8c4e23b5d9e724d978d6e8d20f2c94d6bf3": {
     "address": "0x1781f8c4e23b5d9e724d978d6e8d20f2c94d6bf3",
@@ -641,12 +683,6 @@
     "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
     "symbol": "ENA-W (www.ethena.markets)"
   },
-  "0x1fba65de0a9cbd2d1df82d141897042d36bb6c86": {
-    "address": "0x1fba65de0a9cbd2d1df82d141897042d36bb6c86",
-    "decimals": 18,
-    "name": "dogwifhat",
-    "symbol": "WIF"
-  },
   "0x200c11b16c526dbc75ab164295eeea829be4e3bd": {
     "address": "0x200c11b16c526dbc75ab164295eeea829be4e3bd",
     "decimals": 0,
@@ -743,12 +779,6 @@
     "name": "GCAT",
     "symbol": "GCAT"
   },
-  "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e": {
-    "address": "0x24e6e0795b3c7c71d965fcc4f371803d1c1dca1e",
-    "decimals": 18,
-    "name": "Aave Base Variable Debt WETH",
-    "symbol": "variableDebtBasWETH"
-  },
   "0x24e8c42c62df54d5122cc5c1edd74f7ba1931520": {
     "address": "0x24e8c42c62df54d5122cc5c1edd74f7ba1931520",
     "decimals": 0,
@@ -796,6 +826,12 @@
     "decimals": 9,
     "name": "PepePawn",
     "symbol": "PEPA"
+  },
+  "0x26c69e4924bd0d7d52d680b33616042ee13f621c": {
+    "address": "0x26c69e4924bd0d7d52d680b33616042ee13f621c",
+    "decimals": 18,
+    "name": "SALUKI",
+    "symbol": "SALUKI"
   },
   "0x26ca7aefbc73cb20364df9bba4fdf642c52a60e4": {
     "address": "0x26ca7aefbc73cb20364df9bba4fdf642c52a60e4",
@@ -851,6 +887,12 @@
     "name": "Capybara Bes",
     "symbol": "CAPYBARA"
   },
+  "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a": {
+    "address": "0x29e39327b5b1e500b87fc0fcae3856cd8f96ed2a",
+    "decimals": 18,
+    "name": "Bark Ruffalo by Virtuals",
+    "symbol": "PAWSY"
+  },
   "0x29fd86c905ddbbcecf4377e90bdeb0ad0c322cb7": {
     "address": "0x29fd86c905ddbbcecf4377e90bdeb0ad0c322cb7",
     "decimals": 18,
@@ -880,6 +922,12 @@
     "decimals": null,
     "name": null,
     "symbol": null
+  },
+  "0x2c001233ed5e731b98b15b30267f78c7560b71f2": {
+    "address": "0x2c001233ed5e731b98b15b30267f78c7560b71f2",
+    "decimals": 18,
+    "name": "BUBU",
+    "symbol": "BUBU"
   },
   "0x2c235f5cdab976f15c5595c1131174efd325ad5b": {
     "address": "0x2c235f5cdab976f15c5595c1131174efd325ad5b",
@@ -940,6 +988,12 @@
     "decimals": null,
     "name": "\u2705$BRETT Airdrop",
     "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
+  },
+  "0x2dc1c8be620b95cba25d78774f716f05b159c8b9": {
+    "address": "0x2dc1c8be620b95cba25d78774f716f05b159c8b9",
+    "decimals": 18,
+    "name": "Based Bonk",
+    "symbol": "Bonk"
   },
   "0x2dc25d405b39e67b6bf6078ce251bbe7eb32156a": {
     "address": "0x2dc25d405b39e67b6bf6078ce251bbe7eb32156a",
@@ -1241,6 +1295,12 @@
     "name": "Osmund Saddler",
     "symbol": "OS"
   },
+  "0x3d63825b0d8669307366e6c8202f656b9e91d368": {
+    "address": "0x3d63825b0d8669307366e6c8202f656b9e91d368",
+    "decimals": 6,
+    "name": "Wild Goat Coin",
+    "symbol": "WGC"
+  },
   "0x3da11afc8f9be14a043d67b1d1147332dfea4b12": {
     "address": "0x3da11afc8f9be14a043d67b1d1147332dfea4b12",
     "decimals": null,
@@ -1499,6 +1559,12 @@
     "name": "\u2705ETH Pool Staked",
     "symbol": "Claim your reward on t.me/s/PoolStaked"
   },
+  "0x4b6104755afb5da4581b81c552da3a25608c73b8": {
+    "address": "0x4b6104755afb5da4581b81c552da3a25608c73b8",
+    "decimals": 18,
+    "name": "Ski Mask Kitten",
+    "symbol": "SKITTEN"
+  },
   "0x4ba9ace0222b147ff4e047637bdf10b755637d31": {
     "address": "0x4ba9ace0222b147ff4e047637bdf10b755637d31",
     "decimals": 18,
@@ -1553,6 +1619,12 @@
     "name": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 ",
     "symbol": "Airdrop(s) to be claimed at https://t.ly/drops"
   },
+  "0x4c96a67b0577358894407af7bc3158fc1dffbeb5": {
+    "address": "0x4c96a67b0577358894407af7bc3158fc1dffbeb5",
+    "decimals": 18,
+    "name": "Degen Point Of View",
+    "symbol": "POV"
+  },
   "0x4d194f2b58ec904c10f9719d3d7bb2c14a6ea7f9": {
     "address": "0x4d194f2b58ec904c10f9719d3d7bb2c14a6ea7f9",
     "decimals": 1,
@@ -1582,12 +1654,6 @@
     "decimals": 18,
     "name": "CHENGU BASED",
     "symbol": "CHENGU"
-  },
-  "0x4e65fe4dba92790696d040ac24aa414708f5c0ab": {
-    "address": "0x4e65fe4dba92790696d040ac24aa414708f5c0ab",
-    "decimals": 6,
-    "name": "Aave Base USDC",
-    "symbol": "aBasUSDC"
   },
   "0x4ea7812ce74adb0c84a408f80a3aa39baeb8565c": {
     "address": "0x4ea7812ce74adb0c84a408f80a3aa39baeb8565c",
@@ -1841,12 +1907,6 @@
     "name": "SKI MASK LUNA",
     "symbol": "SKILUNA"
   },
-  "0x59dca05b6c26dbd64b5381374aaac5cd05644c28": {
-    "address": "0x59dca05b6c26dbd64b5381374aaac5cd05644c28",
-    "decimals": 6,
-    "name": "Aave Base Variable Debt USDC",
-    "symbol": "variableDebtBasUSDC"
-  },
   "0x5a5bc7d1054ca0d443ba8cd95e060d1f5993edb0": {
     "address": "0x5a5bc7d1054ca0d443ba8cd95e060d1f5993edb0",
     "decimals": 18,
@@ -1864,6 +1924,12 @@
     "decimals": 8,
     "name": "Puffer",
     "symbol": "Puffer"
+  },
+  "0x5b40ece0059a2e6a0b0e6e1b090149ec8c12e8a2": {
+    "address": "0x5b40ece0059a2e6a0b0e6e1b090149ec8c12e8a2",
+    "decimals": null,
+    "name": null,
+    "symbol": null
   },
   "0x5b49a57a6cca4d083045eeb7d36a43cc6f0d7d06": {
     "address": "0x5b49a57a6cca4d083045eeb7d36a43cc6f0d7d06",
@@ -2021,6 +2087,12 @@
     "name": "Baby Anon",
     "symbol": "BANON"
   },
+  "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9": {
+    "address": "0x623cd3a3edf080057892aaf8d773bbb7a5c9b6e9",
+    "decimals": 18,
+    "name": "Sekuya",
+    "symbol": "SKYA"
+  },
   "0x625b2c48020901df23a95136cdfd173220b6fbbd": {
     "address": "0x625b2c48020901df23a95136cdfd173220b6fbbd",
     "decimals": 18,
@@ -2032,6 +2104,12 @@
     "decimals": 18,
     "name": "body guari",
     "symbol": "guari"
+  },
+  "0x62da18390928e438dde260d1526cab03086effc0": {
+    "address": "0x62da18390928e438dde260d1526cab03086effc0",
+    "decimals": null,
+    "name": null,
+    "symbol": null
   },
   "0x6399ed6725cc163d019aa64ff55b22149d7179a8": {
     "address": "0x6399ed6725cc163d019aa64ff55b22149d7179a8",
@@ -2074,6 +2152,12 @@
     "decimals": 10,
     "name": "UNI",
     "symbol": "Visit unib.pro to swap"
+  },
+  "0x67159b4b3311f05647d8f70e09660e270af8d223": {
+    "address": "0x67159b4b3311f05647d8f70e09660e270af8d223",
+    "decimals": null,
+    "name": null,
+    "symbol": null
   },
   "0x6727aa0a27c7b39cc78506934154c963996c755c": {
     "address": "0x6727aa0a27c7b39cc78506934154c963996c755c",
@@ -2170,12 +2254,6 @@
     "decimals": 18,
     "name": "Neroxler",
     "symbol": "NRX"
-  },
-  "0x6bc33580f41f7c40fd2dbadc03cc9cb986b2b80e": {
-    "address": "0x6bc33580f41f7c40fd2dbadc03cc9cb986b2b80e",
-    "decimals": 6,
-    "name": "\ua4f4\ua4e2\ua4d3\ua4da",
-    "symbol": "\ua4f4\ua4e2\ua4d3\ua4da"
   },
   "0x6bc4d90c2c02beca9f8c9f2134462c6b2afde31f": {
     "address": "0x6bc4d90c2c02beca9f8c9f2134462c6b2afde31f",
@@ -2627,12 +2705,6 @@
     "name": "Scorpion Ai",
     "symbol": "SCORPION"
   },
-  "0x827922686190790b37229fd06084350e74485b72": {
-    "address": "0x827922686190790b37229fd06084350e74485b72",
-    "decimals": null,
-    "name": "Slipstream Position NFT v1",
-    "symbol": "AERO-CL-POS"
-  },
   "0x82bc53a05c3141c9ed5ce287f1cdb976b96a8131": {
     "address": "0x82bc53a05c3141c9ed5ce287f1cdb976b96a8131",
     "decimals": 18,
@@ -2723,6 +2795,12 @@
     "name": "Chad Brain",
     "symbol": "BRAIN"
   },
+  "0x8890de1637912fbbba36b8b19365cdc99122bd6e": {
+    "address": "0x8890de1637912fbbba36b8b19365cdc99122bd6e",
+    "decimals": 18,
+    "name": "Slap",
+    "symbol": "SLAP"
+  },
   "0x8909aa2b7ffd828a2f6c3cf17e7826becb2a53bb": {
     "address": "0x8909aa2b7ffd828a2f6c3cf17e7826becb2a53bb",
     "decimals": 8,
@@ -2758,6 +2836,12 @@
     "decimals": 8,
     "name": "Bsu",
     "symbol": "Bsu"
+  },
+  "0x8b6e75c22b0edbf45d94799c2bd53c1d94716506": {
+    "address": "0x8b6e75c22b0edbf45d94799c2bd53c1d94716506",
+    "decimals": 18,
+    "name": "Shitcoin",
+    "symbol": "Shitcoin"
   },
   "0x8bba350a5c3a134516bb73f03d1dd25fe68c925a": {
     "address": "0x8bba350a5c3a134516bb73f03d1dd25fe68c925a",
@@ -3569,6 +3653,12 @@
     "name": "xADA",
     "symbol": "xADA"
   },
+  "0xb1a03eda10342529bbf8eb700a06c60441fef25d": {
+    "address": "0xb1a03eda10342529bbf8eb700a06c60441fef25d",
+    "decimals": 18,
+    "name": "Mister Miggles",
+    "symbol": "MIGGLES"
+  },
   "0xb2db1738fdc9057c6d4828db97240a3752089a70": {
     "address": "0xb2db1738fdc9057c6d4828db97240a3752089a70",
     "decimals": 8,
@@ -3592,6 +3682,12 @@
     "decimals": 8,
     "name": "FWOG",
     "symbol": "FWOG"
+  },
+  "0xb3ecba1330fe26bb36f40344992c481c2c916f23": {
+    "address": "0xb3ecba1330fe26bb36f40344992c481c2c916f23",
+    "decimals": 18,
+    "name": "Based Doge",
+    "symbol": "BDOGE"
   },
   "0xb403e2a71b9aa9a7a4fc35eac3810508f6423942": {
     "address": "0xb403e2a71b9aa9a7a4fc35eac3810508f6423942",
@@ -3719,6 +3815,12 @@
     "name": "\u2705BASED BRETT Airdrop",
     "symbol": "BRETT | t.me/s/claimbrett | *Redeem within 7 days"
   },
+  "0xb8d98a102b0079b69ffbc760c8d857a31653e56e": {
+    "address": "0xb8d98a102b0079b69ffbc760c8d857a31653e56e",
+    "decimals": 18,
+    "name": "toby",
+    "symbol": "toby"
+  },
   "0xb96a7fa2dc5627eb76f91962e1e45e75e572c850": {
     "address": "0xb96a7fa2dc5627eb76f91962e1e45e75e572c850",
     "decimals": 0,
@@ -3797,12 +3899,6 @@
     "name": null,
     "symbol": null
   },
-  "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6": {
-    "address": "0xbdb9300b7cde636d9cd4aff00f6f009ffbbc8ee6",
-    "decimals": 8,
-    "name": "Aave Base cbBTC",
-    "symbol": "aBascbBTC"
-  },
   "0xbe410fe9ac816d01abf6c7391f561b16ec9a353f": {
     "address": "0xbe410fe9ac816d01abf6c7391f561b16ec9a353f",
     "decimals": 18,
@@ -3832,6 +3928,12 @@
     "decimals": 18,
     "name": "Marcoon Swap",
     "symbol": "MARCOON"
+  },
+  "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36": {
+    "address": "0xbf8566956b4e2d8beb90c4c19dbb8c67a9290c36",
+    "decimals": 18,
+    "name": "VIRGEN by Virtuals",
+    "symbol": "VIRGEN"
   },
   "0xbfb63f0cda3c36ada5b9f3f65b6d06f331c2c156": {
     "address": "0xbfb63f0cda3c36ada5b9f3f65b6d06f331c2c156",
@@ -4073,6 +4175,12 @@
     "name": "Avici",
     "symbol": "AVICI"
   },
+  "0xc8e51fefd7d595c217c7ab641513faa4ad522b26": {
+    "address": "0xc8e51fefd7d595c217c7ab641513faa4ad522b26",
+    "decimals": 18,
+    "name": "CrappyBird",
+    "symbol": "CRAPPY"
+  },
   "0xc8e7a9282b584a56a97e359d44f71a592d4216fc": {
     "address": "0xc8e7a9282b584a56a97e359d44f71a592d4216fc",
     "decimals": 18,
@@ -4289,6 +4397,12 @@
     "name": "NatosAI",
     "symbol": "NatosAI"
   },
+  "0xd262a4c7108c8139b2b189758e8d17c3dfc91a38": {
+    "address": "0xd262a4c7108c8139b2b189758e8d17c3dfc91a38",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
   "0xd26ca3d6fdc71a900ef17f1976d9ef3e3de739f1": {
     "address": "0xd26ca3d6fdc71a900ef17f1976d9ef3e3de739f1",
     "decimals": 0,
@@ -4342,6 +4456,12 @@
     "decimals": 18,
     "name": "Grab",
     "symbol": "GRAB"
+  },
+  "0xd461a534af11ef58e9f9add73129a1f45485a8dc": {
+    "address": "0xd461a534af11ef58e9f9add73129a1f45485a8dc",
+    "decimals": 18,
+    "name": "Kevin",
+    "symbol": "KEVIN"
   },
   "0xd49da57f8f761e6c2172d27b478f349f3a100723": {
     "address": "0xd49da57f8f761e6c2172d27b478f349f3a100723",
@@ -4595,6 +4715,12 @@
     "name": "Zinga Land",
     "symbol": "ZINGA"
   },
+  "0xe1bd36d8025cfe4f1c1940b2ad8cddc3e9294c52": {
+    "address": "0xe1bd36d8025cfe4f1c1940b2ad8cddc3e9294c52",
+    "decimals": null,
+    "name": null,
+    "symbol": null
+  },
   "0xe25781af407137dd241fab3d6832de1331a54917": {
     "address": "0xe25781af407137dd241fab3d6832de1331a54917",
     "decimals": 8,
@@ -4769,6 +4895,12 @@
     "name": "$BRETT Airdrop: t.me/s/claimbrett",
     "symbol": "Redeem: t.me/s/claimbrett"
   },
+  "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5": {
+    "address": "0xeecc15f24b8fe65cfd18d4095f91a7adefdd53d5",
+    "decimals": 9,
+    "name": "Bachi on Base",
+    "symbol": "BACHI"
+  },
   "0xeee58f68d722b51ac52fa7ecef2f5b5a48fb74ca": {
     "address": "0xeee58f68d722b51ac52fa7ecef2f5b5a48fb74ca",
     "decimals": 18,
@@ -4840,6 +4972,12 @@
     "decimals": 18,
     "name": "BattleBits",
     "symbol": "BATTLEBITS"
+  },
+  "0xf2102a7fc4c37af48646e00130b994e89f7b0e2c": {
+    "address": "0xf2102a7fc4c37af48646e00130b994e89f7b0e2c",
+    "decimals": null,
+    "name": null,
+    "symbol": null
   },
   "0xf2128d035ddfe0509c7fe9c2fc8ab1b581e759b1": {
     "address": "0xf2128d035ddfe0509c7fe9c2fc8ab1b581e759b1",
